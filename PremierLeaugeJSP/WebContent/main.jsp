@@ -21,6 +21,7 @@
             padding-top: 20px;
             border-radius: 8px;
             margin-left: 4px;
+            margin-top: 16px;
             
         }
 
@@ -33,7 +34,7 @@
 
         .sidenav ul {
             font-size: 20px;
-            margin-left: 4px;
+            margin-left: 8px;
             color: white;
             list-style: none;
             padding: 0;
@@ -44,23 +45,22 @@
         }
 
 	     .main {
-        	position: absolute;
-            margin-left: 220px; /* Same as the width of the sidebar */
+        	text-align: center;
+            margin-left: 220px; 
+            margin-top: 36px;
             top: 200px;
-            left: 200px;
+            
         }
 
-        /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-            /* @media screen and (max-height: 450px) {
-                .sidenav {padding-top: 15px;}
-                .sidenav a {font-size: 18px;}
-        }
-         */
-
+		.main__title {
+			margin-bottom: 16px;
+		}
+		
         .main table {
+        	margin: auto;
             border-collapse: collapse;
             text-align: center;
-            width: 800px;
+            width: 1000px;
         }
 
         .main table th,td {
@@ -68,15 +68,29 @@
         }
 
         .table__divide {
+        	margin: auto;
             max-height: 500px;
             overflow-y: scroll;
-            width: 817px;
+            overflow-x: hidden;
+            width: 1000px;
         }
         
+  		.table__divide::-webkit-scrollbar {
+    		width: 10px;
+  		}
+  		
+	  	.table__divide::-webkit-scrollbar-thumb {
+	    	background-color: purple;
+	  	}
+	  	
+	  	.table__divide::-webkit-scrollbar-track {
+	    	background-color: grey;
+	  	}
+	  	
         .main table .teamname {
-           display: flex;
-           align-items: center;
-           justify-content: center;
+           	display: flex;
+           	align-items: center;
+           	justify-content: center;
         }
 
         .main table img {
@@ -85,6 +99,62 @@
             height: 30px;
         } 
 	
+		@media screen and (max-width: 1600px) {
+			
+			.main table {
+				width: 800px;
+			}
+			
+			.table__divide {
+				width: 800px;
+				max-height: 300px;
+			}
+			
+		}
+		
+		@media screen and (max-width: 1200px) {
+			.sidenav {
+				display: none;
+			}
+				
+	    	.main {
+	        	text-align: center;
+	            margin-left: 0px; 
+	            margin-top: 36px;
+	            top: 200px;
+            
+       		 }
+       		 
+       		 .head__teamlist {
+       		 	margin-right: 16px;
+       		 }
+		}
+		
+		@media screen and (max-width: 1000px) {
+			
+			.main table {
+				width: 600px;
+			}
+			
+			.table__divide {
+				width: 600px;
+				max-height: 300px;
+			}
+			
+		}
+		
+		
+		@media screen and (max-width: 800px) {
+			.main table {
+				width: 400px;
+			}
+			
+			.table__divide {
+				width: 400px;
+				max-height: 300px;
+			}
+		}
+		
 </style>
 <body>
 
@@ -101,7 +171,15 @@
 	        </ul>
     </div>
 
+	
     <div class="main">
+    	
+    	<div class="main__title">
+    		<h1>
+    			2020-2021 프리미어리그 순위
+    		</h1>
+    	</div>
+    	
         <table class="main__table">
             <colgroup>
                 <col width="8%">

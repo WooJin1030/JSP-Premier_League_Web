@@ -19,7 +19,7 @@
             border: none;
             cursor: pointer;
         }
-
+		
         .head {
             display: flex;
             align-items: center;
@@ -28,20 +28,48 @@
         }
         
         .head__logo img{
-            width: 200px;
-            height: 150px;
+            width: 250px;
+            height: 200px;
         }
 
         .head__teamlist {
             background-color: rgb(55,0,60);
             padding: 18px;
-            border-radius: 8px;
+            border-radius: 30px;
         }
         .head__teamlist img {
             width: 40px;
             height: 40px;
             margin-right: 4px;
         }
+        
+        .head__teamlist button {
+        	transition: all 300ms ease-in;
+        }
+        
+        .head__teamlist button:hover {
+        	transform: scale(1.1);
+        }
+        
+       @media screen and (max-width: 1600px) {
+       		
+       		.head__logo img {
+       			width: 200px;
+       			height: 150px;
+       		}
+       
+			.head__teamlist img {
+				width: 30px;
+				height: 30px;
+			}
+        }
+        
+        @media screen and (max-width: 800px) {
+        	.head__teamlist {
+        		display:none;
+        	}
+        }
+        
         
 </style>        
 </head>
