@@ -158,7 +158,7 @@
 </style>
 <body>
 
-	<jsp:include page="header.jsp"></jsp:include>
+	<jsp:include page="header.jsp" />
 	
 	    <div class="sidenav">
 	        <h3 class="sidenav__text">
@@ -528,5 +528,8 @@
             </table>
         </div>   
     </div>
+    
+    <jsp:include page="footer.jsp" />
+    
 </body>
 </html>
