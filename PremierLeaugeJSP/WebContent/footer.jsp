@@ -8,21 +8,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Footer</title>
 <style>
-.footer {
-  margin: 50px 0;
-  padding-top: 50px;
-  border-top: 3px solid rgba(0, 0, 0, 0.1);
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  .footer__text {
-    color: rgba(0, 0, 0, 0.2);
-    font-weight: 800;
-    text-transform: uppercase;
-  }
-}
+	.footer {
+	  margin: 30px 0;
+	  padding-top: 50px;
+	  border-top: 3px solid rgba(0, 0, 0, 0.1);
+	  width: 100%;
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: center;
+	  align-items: center;
+	  .footer__text {
+	    color: rgba(0, 0, 0, 0.2);
+	    font-weight: 800;
+	    text-transform: uppercase;
+	  }
+	}
 
+	@media screen and (max-width: 1800px) and (min-height: 680px) and (min-width: 800px){
+		.footer {
+			position: absolute;
+			bottom: 0;
+		}
+	}
+		
 </style>
 </head>
 <body>

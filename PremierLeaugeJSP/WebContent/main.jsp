@@ -10,7 +10,7 @@
 </head>
 <style>
         .sidenav {
-            height: 70%; 
+            height: 55%; 
             width: 220px;
             position: fixed; 
             z-index: 1;
@@ -69,7 +69,7 @@
 
         .table__divide {
         	margin: auto;
-            max-height: 500px;
+            max-height: 400px;
             overflow-y: scroll;
             overflow-x: hidden;
             width: 1000px;
@@ -98,7 +98,19 @@
             width: 30px;
             height: 30px;
         } 
-	
+		
+		@media screen and (min-width: 1800px) {
+			.main table {
+				width: 1200px;
+			}
+			
+			.table__divide {
+				width: 1200px;
+				max-height: 600px;
+			}
+		
+		}
+		
 		@media screen and (max-width: 1600px) {
 			
 			.main table {
@@ -154,6 +166,23 @@
 				max-height: 300px;
 			}
 		}
+		
+		@media screen and (max-height: 800px) {
+			
+			.sidenav {
+				display: none;
+			}
+				
+	    	.main {
+	        	text-align: center;
+	            margin-left: 0px; 
+	            margin-top: 36px;
+	            top: 200px;
+            
+       		 }
+		}
+		
+		
 		
 </style>
 <body>
