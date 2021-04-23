@@ -23,6 +23,7 @@
             border-radius: 8px;
             margin-left: 4px;
             margin-top: 16px;
+            overflow: hidden;
             
         }
 
@@ -50,6 +51,7 @@
             margin-left: 220px; 
             margin-top: 36px;
             top: 200px;
+            min-height: 70vh;
             
         }
 
@@ -67,6 +69,7 @@
         .main table th,td {
             border: 1px solid gray;
         }
+        
 
         .table__divide {
         	margin: auto;
@@ -91,26 +94,16 @@
         .main table .teamname {
            	display: flex;
            	align-items: center;
-           	justify-content: center;
+           	justify-content: flex-start;
         }
-
+	
         .main table img {
-            margin-right: 8px;
+            margin-right: 16px;
+            margin-left: 8px;
             width: 30px;
             height: 30px;
         } 
 		
-		@media screen and (min-width: 1800px) {
-			.main table {
-				width: 1200px;
-			}
-			
-			.table__divide {
-				width: 1200px;
-				max-height: 600px;
-			}
-		
-		}
 		
 		@media screen and (max-width: 1600px) {
 			
@@ -120,7 +113,7 @@
 			
 			.table__divide {
 				width: 800px;
-				max-height: 300px;
+				max-height: 400px;
 			}
 			
 		}
@@ -145,8 +138,17 @@
 		
 		@media screen and (max-width: 1000px) {
 			
+	
 			.main table {
 				width: 600px;
+			}
+			
+			.main table .teamname span {
+				display: none;	
+			}
+			
+			.main table .teamname {
+				justify-content: center;	
 			}
 			
 			.table__divide {
@@ -158,6 +160,19 @@
 		
 		
 		@media screen and (max-width: 800px) {
+		
+			.sidenav {
+				display: none;
+			}
+			
+			.main {
+	        	text-align: center;
+	            margin-left: 0px; 
+	            margin-top: 36px;
+	            top: 200px;
+            
+       		 }
+			
 			.main table {
 				width: 400px;
 			}
@@ -169,19 +184,11 @@
 		}
 		
 		@media screen and (max-height: 800px) {
-			
-			.sidenav {
-				display: none;
-			}
-				
-	    	.main {
-	        	text-align: center;
-	            margin-left: 0px; 
-	            margin-top: 36px;
-	            top: 200px;
-            
-       		 }
+
+	
 		}
+		
+		
 		
 		
 		
@@ -318,7 +325,16 @@
 	         				<c:if test = "${team.getTeam() eq 'Sheffield United'}">
 	                    	<img src="./img/섀필드.png" alt="SheffieldUnited">
 	                    	</c:if>
-	                        <span>${team.getTeam()}</span>
+	                    	<c:choose>
+	                    		<c:when test = "${team.getTeam() eq 'West Bromwich Albion'}">
+	                    		<span>West Bromwich</span>
+	                    		</c:when>
+	                    	
+	             				<c:otherwise>
+	             				<span>${team.getTeam()}</span>
+	             				</c:otherwise>
+	             			</c:choose>
+   
 	                    </td>
 	                    <td>${team.getPlayed()}</td>               
 	                    <td>${team.getWin()}</td>
