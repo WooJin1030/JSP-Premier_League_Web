@@ -258,7 +258,66 @@
 	            	<tr>
 	                	<td class="ranking">${team.getRank()}</td>
 	                    <td class="teamname">
+	                    	<c:if test = "${team.getTeam() eq 'Manchester City'}">
 	                    	<img src="./img/맨체스터시티.png" alt="ManchesterCity">
+	                    	</c:if>
+	                    	<c:if test = "${team.getTeam() eq 'Manchester United'}">
+	                    	<img src="./img/맨유.png" alt="ManchesterUnited">
+	                    	</c:if>
+	                    	<c:if test = "${team.getTeam() eq 'Leicester'}">
+	                    	<img src="./img/레스터시티.png" alt="Leicester">
+	                    	</c:if>
+	                    	<c:if test = "${team.getTeam() eq 'West Ham'}">
+	                    	<img src="./img/웨스트햄.png" alt="WestHam">
+	                    	</c:if>
+	                    	<c:if test = "${team.getTeam() eq 'Chelsea'}">
+	                    	<img src="./img/첼시.png" alt="Chelsea">
+	                    	</c:if>
+	                    	<c:if test = "${team.getTeam() eq 'Liverpool'}">
+	                    	<img src="./img/리버풀.png" alt="Liverpool">
+	                    	</c:if>
+	                    	<c:if test = "${team.getTeam() eq 'Tottenham'}">
+	                    	<img src="./img/토트넘.png" alt="Tottenham">
+	                    	</c:if>
+	                    	<c:if test = "${team.getTeam() eq 'Everton'}">
+	                    	<img src="./img/에버튼.png" alt="Everton">
+	                    	</c:if>
+	                    	<c:if test = "${team.getTeam() eq 'Leeds'}">
+	                    	<img src="./img/리즈.png" alt="Leeds">
+	                    	</c:if>
+	                    	<c:if test = "${team.getTeam() eq 'Arsenal'}">
+	                    	<img src="./img/아스날.png" alt="Arsenal">
+	                    	</c:if>
+	                    	<c:if test = "${team.getTeam() eq 'Aston Villa'}">
+	                    	<img src="./img/아스톤빌라.png" alt="AstonVilla">
+	                    	</c:if>
+	                    	<c:if test = "${team.getTeam() eq 'Wolverhampton Wanderers'}">
+	                    	<img src="./img/울버햄튼.png" alt="WolverhamptonWanderers">
+	                    	</c:if>
+	                    	<c:if test = "${team.getTeam() eq 'Crystal Palace'}">
+	                    	<img src="./img/크리스탈펠리스.png" alt="CrystalPalace">
+	                    	</c:if>	
+	                    	<c:if test = "${team.getTeam() eq 'Southampton'}">
+	                    	<img src="./img/사우스햄튼.png" alt="Southampton">
+	                    	</c:if>
+	                    	<c:if test = "${team.getTeam() eq 'Newcastle United'}">
+	                    	<img src="./img/뉴캐슬.png" alt="NewcastleUnited">
+	                    	</c:if>
+	                    	<c:if test = "${team.getTeam() eq 'Brighton'}">
+	                    	<img src="./img/브라이튼.png" alt="Brighton">
+	                    	</c:if>
+	                    	<c:if test = "${team.getTeam() eq 'Burnley'}">
+	                    	<img src="./img/번리.png" alt="Burnley">
+	                    	</c:if>
+	                    	<c:if test = "${team.getTeam() eq 'Fulham'}">
+	                    	<img src="./img/풀럼.png" alt="Fulham">
+	                    	</c:if>
+	                    	<c:if test = "${team.getTeam() eq 'West Bromwich Albion'}">
+	                    	<img src="./img/웨스트브롬.png" alt="WestBromwichAlbion">
+	                    	</c:if>
+	         				<c:if test = "${team.getTeam() eq 'Sheffield United'}">
+	                    	<img src="./img/섀필드.png" alt="SheffieldUnited">
+	                    	</c:if>
 	                        <span>${team.getTeam()}</span>
 	                    </td>
 	                    <td>${team.getPlayed()}</td>               
@@ -270,275 +329,6 @@
 	                    <td>${team.getPoints()}</td>
 	                </tr>              
 	             </c:forEach>
-	                <!--   
-                    <tr>
-                        <td class="ranking">1</td>
-                        <td class="teamname">
-                            <img src="./img/맨체스터시티.png" alt="ManchesterCity">
-                            <span>맨시티</span>
-                        </td>
-                        <td>32</td>
-                        <td>74</td>
-                        <td>23</td>
-                        <td>5</td>
-                        <td>4</td>
-                        <td>67</td>
-                        <td>23</td>
-                        <td>44</td>
-                    </tr>
-                    <tr>
-                        <td class="ranking">1</td>
-                        <td class="teamname">
-                            <img src="./img/맨체스터시티.png" alt="ManchesterCity">
-                            <span>맨시티</span>
-                        </td>
-                        <td>32</td>               
-                        <td>23</td>
-                        <td>5</td>
-                        <td>4</td>
-                        <td>67</td>
-                        <td>23</td>
-                        <td>74</td>
-                    </tr>
-                    <tr>
-                        <td class="ranking">1</td>
-                        <td class="teamname">
-                            <img src="./img/맨체스터시티.png" alt="ManchesterCity">
-                            <span>맨시티</span>
-                        </td>
-                        <td>32</td>               
-                        <td>23</td>
-                        <td>5</td>
-                        <td>4</td>
-                        <td>67</td>
-                        <td>23</td>
-                        <td>74</td>
-                    </tr>
-                    <tr>
-                        <td class="ranking">1</td>
-                        <td class="teamname">
-                            <img src="./img/맨체스터시티.png" alt="ManchesterCity">
-                            <span>맨시티</span>
-                        </td>
-                        <td>32</td>               
-                        <td>23</td>
-                        <td>5</td>
-                        <td>4</td>
-                        <td>67</td>
-                        <td>23</td>
-                        <td>74</td>
-                    </tr>
-                    <tr>
-                        <td class="ranking">1</td>
-                        <td class="teamname">
-                            <img src="./img/맨체스터시티.png" alt="ManchesterCity">
-                            <span>맨시티</span>
-                        </td>
-                        <td>32</td>               
-                        <td>23</td>
-                        <td>5</td>
-                        <td>4</td>
-                        <td>67</td>
-                        <td>23</td>
-                        <td>74</td>
-                    </tr>
-                    <tr>
-                        <td class="ranking">1</td>
-                        <td class="teamname">
-                            <img src="./img/맨체스터시티.png" alt="ManchesterCity">
-                            <span>맨시티</span>
-                        </td>
-                        <td>32</td>               
-                        <td>23</td>
-                        <td>5</td>
-                        <td>4</td>
-                        <td>67</td>
-                        <td>23</td>
-                        <td>74</td>
-                    </tr>
-                    <tr>
-                        <td class="ranking">1</td>
-                        <td class="teamname">
-                            <img src="./img/맨체스터시티.png" alt="ManchesterCity">
-                            <span>맨시티</span>
-                        </td>
-                        <td>32</td>               
-                        <td>23</td>
-                        <td>5</td>
-                        <td>4</td>
-                        <td>67</td>
-                        <td>23</td>
-                        <td>74</td>
-                    </tr>
-                    <tr>
-                        <td class="ranking">1</td>
-                        <td class="teamname">
-                            <img src="./img/맨체스터시티.png" alt="ManchesterCity">
-                            <span>맨시티</span>
-                        </td>
-                        <td>32</td>               
-                        <td>23</td>
-                        <td>5</td>
-                        <td>4</td>
-                        <td>67</td>
-                        <td>23</td>
-                        <td>74</td>
-                    </tr>
-                    <tr>
-                        <td class="ranking">1</td>
-                        <td class="teamname">
-                            <img src="./img/맨체스터시티.png" alt="ManchesterCity">
-                            <span>맨시티</span>
-                        </td>
-                        <td>32</td>               
-                        <td>23</td>
-                        <td>5</td>
-                        <td>4</td>
-                        <td>67</td>
-                        <td>23</td>
-                        <td>74</td>
-                    </tr>
-                    <tr>
-                        <td class="ranking">1</td>
-                        <td class="teamname">
-                            <img src="./img/맨체스터시티.png" alt="ManchesterCity">
-                            <span>맨시티</span>
-                        </td>
-                        <td>32</td>               
-                        <td>23</td>
-                        <td>5</td>
-                        <td>4</td>
-                        <td>67</td>
-                        <td>23</td>
-                        <td>74</td>
-                    </tr>
-                    <tr>
-                        <td class="ranking">1</td>
-                        <td class="teamname">
-                            <img src="./img/맨체스터시티.png" alt="ManchesterCity">
-                            <span>맨시티</span>
-                        </td>
-                        <td>32</td>               
-                        <td>23</td>
-                        <td>5</td>
-                        <td>4</td>
-                        <td>67</td>
-                        <td>23</td>
-                        <td>74</td>
-                    </tr>
-                    <tr>
-                        <td class="ranking">1</td>
-                        <td class="teamname">
-                            <img src="./img/맨체스터시티.png" alt="ManchesterCity">
-                            <span>맨시티</span>
-                        </td>
-                        <td>32</td>               
-                        <td>23</td>
-                        <td>5</td>
-                        <td>4</td>
-                        <td>67</td>
-                        <td>23</td>
-                        <td>74</td>
-                    </tr>
-                    <tr>
-                        <td class="ranking">1</td>
-                        <td class="teamname">
-                            <img src="./img/맨체스터시티.png" alt="ManchesterCity">
-                            <span>맨시티</span>
-                        </td>
-                        <td>32</td>               
-                        <td>23</td>
-                        <td>5</td>
-                        <td>4</td>
-                        <td>67</td>
-                        <td>23</td>
-                        <td>74</td>
-                    </tr>
-                    <tr>
-                        <td class="ranking">1</td>
-                        <td class="teamname">
-                            <img src="./img/맨체스터시티.png" alt="ManchesterCity">
-                            <span>맨시티</span>
-                        </td>
-                        <td>32</td>               
-                        <td>23</td>
-                        <td>5</td>
-                        <td>4</td>
-                        <td>67</td>
-                        <td>23</td>
-                        <td>74</td>
-                    </tr>
-                    <tr>
-                        <td class="ranking">1</td>
-                        <td class="teamname">
-                            <img src="./img/맨체스터시티.png" alt="ManchesterCity">
-                            <span>맨시티</span>
-                        </td>
-                        <td>32</td>               
-                        <td>23</td>
-                        <td>5</td>
-                        <td>4</td>
-                        <td>67</td>
-                        <td>23</td>
-                        <td>74</td>
-                    </tr>
-                    <tr>
-                        <td class="ranking">1</td>
-                        <td class="teamname">
-                            <img src="./img/맨체스터시티.png" alt="ManchesterCity">
-                            <span>맨시티</span>
-                        </td>
-                        <td>32</td>               
-                        <td>23</td>
-                        <td>5</td>
-                        <td>4</td>
-                        <td>67</td>
-                        <td>23</td>
-                        <td>74</td>
-                    </tr>
-                    <tr>
-                        <td class="ranking">1</td>
-                        <td class="teamname">
-                            <img src="./img/맨체스터시티.png" alt="ManchesterCity">
-                            <span>맨시티</span>
-                        </td>
-                        <td>32</td>               
-                        <td>23</td>
-                        <td>5</td>
-                        <td>4</td>
-                        <td>67</td>
-                        <td>23</td>
-                        <td>74</td>
-                    </tr>
-                    <tr>
-                        <td class="ranking">1</td>
-                        <td class="teamname">
-                            <img src="./img/맨체스터시티.png" alt="ManchesterCity">
-                            <span>맨시티</span>
-                        </td>
-                        <td>32</td>               
-                        <td>23</td>
-                        <td>5</td>
-                        <td>4</td>
-                        <td>67</td>
-                        <td>23</td>
-                        <td>74</td>
-                    </tr>
-                    <tr>
-                        <td class="ranking">1</td>
-                        <td class="teamname">
-                            <img src="./img/맨체스터시티.png" alt="ManchesterCity">
-                            <span>맨시티</span>
-                        </td>
-                        <td>32</td>               
-                        <td>23</td>
-                        <td>5</td>
-                        <td>4</td>
-                        <td>67</td>
-                        <td>23</td>
-                        <td>74</td>
-                    </tr>
-                    --> 
                 </tbody>              
             </table>
         </div>   
