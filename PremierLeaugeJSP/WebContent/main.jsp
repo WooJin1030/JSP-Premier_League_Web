@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -211,48 +212,65 @@
     	
         <table class="main__table">
             <colgroup>
-                <col width="8%">
+                <col width="9%">
                 <col width="28%">
-                <col width="8%">
-                <col width="8%">
-                <col width="8%">
-                <col width="8%">
-                <col width="8%">
-                <col width="8%">
-                <col width="8%">
-                <col width="8%">   
+                <col width="9%">
+                <col width="9%">
+                <col width="9%">
+                <col width="9%">
+                <col width="9%">
+                <col width="9%">
+                <col width="9%">  
             </colgroup>
             <thead>
                 <tr>
                     <th>순위</th>
-                    <th class=>팀명</th>
-                    <th>경기</th>
-                    <th>승점</th>
+                    <th>팀명</th>
+                    <th>경기수</th>
                     <th>승</th>
                     <th>무</th>
                     <th>패</th>
                     <th>득점</th>
                     <th>실점</th>
-                    <th>득실차</th>
+                    <th>승점</th>
               </tr>
             </thead>
 
         </table>
         <div class="table__divide">
+        	
             <table class="main__table">
                 <colgroup>
-                    <col width="8%">
+                    <col width="9%">
                     <col width="28%">
-                    <col width="8%">
-                    <col width="8%">
-                    <col width="8%">
-                    <col width="8%">
-                    <col width="8%">
-                    <col width="8%">
-                    <col width="8%">
-                    <col width="8%">        
+                    <col width="9%">
+                    <col width="9%">
+                    <col width="9%">
+                    <col width="9%">
+                    <col width="9%">
+                    <col width="9%">
+                    <col width="9%">
+        
                 </colgroup>
                 <tbody>
+                
+                <c:forEach var="team" items="${leagueTable}">
+	            	<tr>
+	                	<td class="ranking">${team.getRank()}</td>
+	                    <td class="teamname">
+	                    	<img src="./img/맨체스터시티.png" alt="ManchesterCity">
+	                        <span>${team.getTeam()}</span>
+	                    </td>
+	                    <td>${team.getPlayed()}</td>               
+	                    <td>${team.getWin()}</td>
+	                    <td>${team.getDraw()}</td>
+	                    <td>${team.getLoss()}</td>
+	                    <td>${team.getGoalsFor()}</td>
+	                    <td>${team.getGoalsAgainst()}</td>
+	                    <td>${team.getPoints()}</td>
+	                </tr>              
+	             </c:forEach>
+	                <!--   
                     <tr>
                         <td class="ranking">1</td>
                         <td class="teamname">
@@ -274,14 +292,13 @@
                             <img src="./img/맨체스터시티.png" alt="ManchesterCity">
                             <span>맨시티</span>
                         </td>
-                        <td>32</td>
-                        <td>74</td>
+                        <td>32</td>               
                         <td>23</td>
                         <td>5</td>
                         <td>4</td>
                         <td>67</td>
                         <td>23</td>
-                        <td>44</td>
+                        <td>74</td>
                     </tr>
                     <tr>
                         <td class="ranking">1</td>
@@ -289,14 +306,13 @@
                             <img src="./img/맨체스터시티.png" alt="ManchesterCity">
                             <span>맨시티</span>
                         </td>
-                        <td>32</td>
-                        <td>74</td>
+                        <td>32</td>               
                         <td>23</td>
                         <td>5</td>
                         <td>4</td>
                         <td>67</td>
                         <td>23</td>
-                        <td>44</td>
+                        <td>74</td>
                     </tr>
                     <tr>
                         <td class="ranking">1</td>
@@ -304,14 +320,13 @@
                             <img src="./img/맨체스터시티.png" alt="ManchesterCity">
                             <span>맨시티</span>
                         </td>
-                        <td>32</td>
-                        <td>74</td>
+                        <td>32</td>               
                         <td>23</td>
                         <td>5</td>
                         <td>4</td>
                         <td>67</td>
                         <td>23</td>
-                        <td>44</td>
+                        <td>74</td>
                     </tr>
                     <tr>
                         <td class="ranking">1</td>
@@ -319,14 +334,13 @@
                             <img src="./img/맨체스터시티.png" alt="ManchesterCity">
                             <span>맨시티</span>
                         </td>
-                        <td>32</td>
-                        <td>74</td>
+                        <td>32</td>               
                         <td>23</td>
                         <td>5</td>
                         <td>4</td>
                         <td>67</td>
                         <td>23</td>
-                        <td>44</td>
+                        <td>74</td>
                     </tr>
                     <tr>
                         <td class="ranking">1</td>
@@ -334,14 +348,13 @@
                             <img src="./img/맨체스터시티.png" alt="ManchesterCity">
                             <span>맨시티</span>
                         </td>
-                        <td>32</td>
-                        <td>74</td>
+                        <td>32</td>               
                         <td>23</td>
                         <td>5</td>
                         <td>4</td>
                         <td>67</td>
                         <td>23</td>
-                        <td>44</td>
+                        <td>74</td>
                     </tr>
                     <tr>
                         <td class="ranking">1</td>
@@ -349,14 +362,13 @@
                             <img src="./img/맨체스터시티.png" alt="ManchesterCity">
                             <span>맨시티</span>
                         </td>
-                        <td>32</td>
-                        <td>74</td>
+                        <td>32</td>               
                         <td>23</td>
                         <td>5</td>
                         <td>4</td>
                         <td>67</td>
                         <td>23</td>
-                        <td>44</td>
+                        <td>74</td>
                     </tr>
                     <tr>
                         <td class="ranking">1</td>
@@ -364,14 +376,13 @@
                             <img src="./img/맨체스터시티.png" alt="ManchesterCity">
                             <span>맨시티</span>
                         </td>
-                        <td>32</td>
-                        <td>74</td>
+                        <td>32</td>               
                         <td>23</td>
                         <td>5</td>
                         <td>4</td>
                         <td>67</td>
                         <td>23</td>
-                        <td>44</td>
+                        <td>74</td>
                     </tr>
                     <tr>
                         <td class="ranking">1</td>
@@ -379,14 +390,13 @@
                             <img src="./img/맨체스터시티.png" alt="ManchesterCity">
                             <span>맨시티</span>
                         </td>
-                        <td>32</td>
-                        <td>74</td>
+                        <td>32</td>               
                         <td>23</td>
                         <td>5</td>
                         <td>4</td>
                         <td>67</td>
                         <td>23</td>
-                        <td>44</td>
+                        <td>74</td>
                     </tr>
                     <tr>
                         <td class="ranking">1</td>
@@ -394,14 +404,13 @@
                             <img src="./img/맨체스터시티.png" alt="ManchesterCity">
                             <span>맨시티</span>
                         </td>
-                        <td>32</td>
-                        <td>74</td>
+                        <td>32</td>               
                         <td>23</td>
                         <td>5</td>
                         <td>4</td>
                         <td>67</td>
                         <td>23</td>
-                        <td>44</td>
+                        <td>74</td>
                     </tr>
                     <tr>
                         <td class="ranking">1</td>
@@ -409,14 +418,13 @@
                             <img src="./img/맨체스터시티.png" alt="ManchesterCity">
                             <span>맨시티</span>
                         </td>
-                        <td>32</td>
-                        <td>74</td>
+                        <td>32</td>               
                         <td>23</td>
                         <td>5</td>
                         <td>4</td>
                         <td>67</td>
                         <td>23</td>
-                        <td>44</td>
+                        <td>74</td>
                     </tr>
                     <tr>
                         <td class="ranking">1</td>
@@ -424,14 +432,13 @@
                             <img src="./img/맨체스터시티.png" alt="ManchesterCity">
                             <span>맨시티</span>
                         </td>
-                        <td>32</td>
-                        <td>74</td>
+                        <td>32</td>               
                         <td>23</td>
                         <td>5</td>
                         <td>4</td>
                         <td>67</td>
                         <td>23</td>
-                        <td>44</td>
+                        <td>74</td>
                     </tr>
                     <tr>
                         <td class="ranking">1</td>
@@ -439,14 +446,13 @@
                             <img src="./img/맨체스터시티.png" alt="ManchesterCity">
                             <span>맨시티</span>
                         </td>
-                        <td>32</td>
-                        <td>74</td>
+                        <td>32</td>               
                         <td>23</td>
                         <td>5</td>
                         <td>4</td>
                         <td>67</td>
                         <td>23</td>
-                        <td>44</td>
+                        <td>74</td>
                     </tr>
                     <tr>
                         <td class="ranking">1</td>
@@ -454,14 +460,13 @@
                             <img src="./img/맨체스터시티.png" alt="ManchesterCity">
                             <span>맨시티</span>
                         </td>
-                        <td>32</td>
-                        <td>74</td>
+                        <td>32</td>               
                         <td>23</td>
                         <td>5</td>
                         <td>4</td>
                         <td>67</td>
                         <td>23</td>
-                        <td>44</td>
+                        <td>74</td>
                     </tr>
                     <tr>
                         <td class="ranking">1</td>
@@ -469,14 +474,13 @@
                             <img src="./img/맨체스터시티.png" alt="ManchesterCity">
                             <span>맨시티</span>
                         </td>
-                        <td>32</td>
-                        <td>74</td>
+                        <td>32</td>               
                         <td>23</td>
                         <td>5</td>
                         <td>4</td>
                         <td>67</td>
                         <td>23</td>
-                        <td>44</td>
+                        <td>74</td>
                     </tr>
                     <tr>
                         <td class="ranking">1</td>
@@ -484,14 +488,13 @@
                             <img src="./img/맨체스터시티.png" alt="ManchesterCity">
                             <span>맨시티</span>
                         </td>
-                        <td>32</td>
-                        <td>74</td>
+                        <td>32</td>               
                         <td>23</td>
                         <td>5</td>
                         <td>4</td>
                         <td>67</td>
                         <td>23</td>
-                        <td>44</td>
+                        <td>74</td>
                     </tr>
                     <tr>
                         <td class="ranking">1</td>
@@ -499,14 +502,13 @@
                             <img src="./img/맨체스터시티.png" alt="ManchesterCity">
                             <span>맨시티</span>
                         </td>
-                        <td>32</td>
-                        <td>74</td>
+                        <td>32</td>               
                         <td>23</td>
                         <td>5</td>
                         <td>4</td>
                         <td>67</td>
                         <td>23</td>
-                        <td>44</td>
+                        <td>74</td>
                     </tr>
                     <tr>
                         <td class="ranking">1</td>
@@ -514,14 +516,13 @@
                             <img src="./img/맨체스터시티.png" alt="ManchesterCity">
                             <span>맨시티</span>
                         </td>
-                        <td>32</td>
-                        <td>74</td>
+                        <td>32</td>               
                         <td>23</td>
                         <td>5</td>
                         <td>4</td>
                         <td>67</td>
                         <td>23</td>
-                        <td>44</td>
+                        <td>74</td>
                     </tr>
                     <tr>
                         <td class="ranking">1</td>
@@ -529,31 +530,16 @@
                             <img src="./img/맨체스터시티.png" alt="ManchesterCity">
                             <span>맨시티</span>
                         </td>
-                        <td>32</td>
-                        <td>74</td>
+                        <td>32</td>               
                         <td>23</td>
                         <td>5</td>
                         <td>4</td>
                         <td>67</td>
                         <td>23</td>
-                        <td>44</td>
-                    </tr>
-                    <tr>
-                        <td class="ranking">1</td>
-                        <td class="teamname">
-                            <img src="./img/맨체스터시티.png" alt="ManchesterCity">
-                            <span>맨시티</span>
-                        </td>
-                        <td>32</td>
                         <td>74</td>
-                        <td>23</td>
-                        <td>5</td>
-                        <td>4</td>
-                        <td>67</td>
-                        <td>23</td>
-                        <td>44</td>
                     </tr>
-                </tbody>         
+                    --> 
+                </tbody>              
             </table>
         </div>   
     </div>
