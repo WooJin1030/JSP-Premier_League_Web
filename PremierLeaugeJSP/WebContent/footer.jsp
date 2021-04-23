@@ -17,8 +17,6 @@
 	  flex-direction: column;
 	  justify-content: center;
 	  align-items: center;
-	  position: absolute;
-	  bottom: 0;
 
 	  .footer__text {
 	    color: rgba(0, 0, 0, 0.2);
@@ -26,14 +24,6 @@
 	    text-transform: uppercase;
 	  }
 	}
-	
-
-	@media screen and (max-height: 680px) {
-		.footer {
-			display: none;
-		}
-	}
-
 	
 
 </style>
