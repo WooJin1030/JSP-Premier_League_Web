@@ -292,17 +292,29 @@
 			height: 150px;
 		}
 		
-			/* team player */
+		/* team player */
 		
-		
-		.leftPage {
+		.teamDetail__player {
 			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
 		}
-		
-		
+
 		.teamDetail__player__li {
 			margin-bottom: 32px;
 		}
+		
+		.teamDetail__player__position {
+			margin-bottom: 32px;
+		}
+		
+		.gk, .df, .mf, .fw {
+			border: 2px solid black;
+			border-radius: 4px;
+			padding: 24px;
+		}
+		
+	
 		
 		/* stadium */
 		
