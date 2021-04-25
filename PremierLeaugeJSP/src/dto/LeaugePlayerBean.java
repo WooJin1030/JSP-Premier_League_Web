@@ -6,7 +6,7 @@ public class LeaugePlayerBean implements java.io.Serializable {
 	
 	private String imgUrl;
 	private int id;
-	private int number;
+	private String number;
 	private String name;
 	private String position;
 	private int age;
@@ -14,10 +14,10 @@ public class LeaugePlayerBean implements java.io.Serializable {
 	private int assists;
 	
 	public LeaugePlayerBean() {
-		this(null, 0, 0, null, null, 0, 0, 0);
+		this(null, 0, null, null, null, 0, 0, 0);
 	}
 
-	public LeaugePlayerBean(String imgUrl, int id, int number, String name, String position, int age, int goals, int assists) {
+	public LeaugePlayerBean(String imgUrl, int id, String number, String name, String position, int age, int goals, int assists) {
 		super();
 		this.imgUrl = imgUrl;
 		this.id = id;
@@ -46,11 +46,11 @@ public class LeaugePlayerBean implements java.io.Serializable {
 		this.imgUrl = imgUrl;
 	}
 
-	public int getNumber() {
+	public String getNumber() {
 		return number;
 	}
 
-	public void setNumber(int number) {
+	public void setNumber(String number) {
 		this.number = number;
 	}
 

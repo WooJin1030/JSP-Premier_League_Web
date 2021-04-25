@@ -45,8 +45,17 @@ public class just {
 		      
 				 for(int i=0 ; i<member2Array.size() ; i++){
 					 	JSONObject temp2Obj = (JSONObject) member2Array.get(i);
+					 	
+//					 	int number;
+//					 	if ((String)temp2Obj.get("number") == JSONObject("null")) {
+//					 		number = 0;
+//					 	} else {
+//					 		number = Integer.parseInt(temp2Obj.get("number").toString());
+//					 	}
+					 	
 		                System.out.println(temp2Obj.get("number"));
-		                System.out.println(temp2Obj.get("name"));
+		               // System.out.println(Integer.parseInt((String)tempObj.get("number")));
+//		                System.out.println(temp2Obj.get("name"));
 //		                System.out.println(temp2Obj.get("position"));
 //		                System.out.println(temp2Obj.get("age"));
 //		                System.out.println(temp2Obj.get("goals"));

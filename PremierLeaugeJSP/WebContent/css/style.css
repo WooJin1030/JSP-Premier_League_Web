@@ -194,11 +194,11 @@
             margin-top: 36px;
             top: 200px;
            
-      		 }
+      	}
       		 
-      		 .head__teamlist {
+      	.head__teamlist {
       		 	margin-right: 16px;
-      		 }
+      	}
 	}
 	
 	@media screen and (max-width: 1000px) {
@@ -238,15 +238,15 @@
            
       		 }
 		
-	.main table {
-		width: 400px;
-	}
-		
-	.table__divide {
-		width: 400px;
-		max-height: 300px;
+		.main table {
+			width: 400px;
 		}
-	}
+		
+		.table__divide {
+			width: 400px;
+			max-height: 300px;
+			}
+		}
        
        
        /* team detail */
@@ -280,6 +280,8 @@
 		color: gray;
 	}
 	
+	/* team detail */
+	
 	.teamDetail__main {
 		text-align: center;
 	}
@@ -289,15 +291,25 @@
 		height: 150px;
 	}
 	
-	.teamDetail__player__position {
-		text-align: center;
-		margin-bottom: 16px;
+		/* team player */
+	
+	
+	.teamDetail__player__GK, .teamDetail__player__DF,.teamDetail__player__MF, .teamDetail__player__FW {
+		
 	}
 	
+	.teamDetail__player__position {
+		
+	}
 	
 	.teamDetail__player__li {
-		margin-bottom: 16px;
-		margin-left: 45%;
+		margin-bottom: 32px;
+	}
+	
+	/* stadium */
+	
+	.teamDetail__stadium {
+		text-align: center;
 	}
 	
 	

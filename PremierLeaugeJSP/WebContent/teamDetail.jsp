@@ -14,8 +14,8 @@
 	<jsp:include page="header.jsp" />
 		
 		<div class="teamDetail__title">
-			<img src="./img/맨체스터시티.png"></img>
-			<h1>맨체스터 시티 FC(Manchester City Football Club)</h1>
+			<img src="${imageUrl}"></img>
+			<h1>${teamname}</h1>
 		</div>
 		<hr>
 		<div class="teamDetail__selectBtn">
@@ -26,6 +26,7 @@
 		</div>
 		
 		<div class="teamDetail__main">
+			<h3>team detail!</h3>
 			<!--  
 			<ul>
 				<li>
@@ -56,90 +57,85 @@
 		
 		
 		<div class="teamDetail__player hidden">
-			
-			<h2 class="teamDetail__player__position">골키퍼</h2>		
-			<c:forEach var="player" items="${playerList}">
-				<c:if test="${id eq player.getId()}">
+			<div class="leftPlayer">
+				<h2 class="teamDetail__player__position">골키퍼</h2>		
+				<c:forEach var="player" items="${playerList}">
 					<c:if test="${player.getPosition() eq 'G' }">
 						<div class="teamDetail__player__GK">
 							<ul>
-								
 								<li class="teamDetail__player__li">
-									<h5>${player.getNumber()}</h5>
-									<h5>${player.getName()}</h5>
-									<h5>${player.getAge()}</h5>
+									<h5>등번호: ${player.getNumber()}</h5>
+									<h5>선수 이름: ${player.getName()}</h5>
+									<h5>나이: ${player.getAge()}</h5>
 								</li>
 							</ul>
 						</div>
 					</c:if>
-				</c:if>
-			</c:forEach>
+				</c:forEach>
 			
-			<h2 class="teamDetail__player__position">수비수</h2>
-				<c:forEach var="player" items="${playerList}">
-					<c:if test="${id eq player.getId()}">
+				<h2 class="teamDetail__player__position">수비수</h2>
+					<c:forEach var="player" items="${playerList}">
 						<c:if test="${player.getPosition() eq 'D' }">
-					
 							<div class="teamDetail__player__DF">
 								<ul>
 									
 									<li class="teamDetail__player__li">
-										<h5>${player.getNumber()}</h5>
-										<h5>${player.getName()}</h5>
-										<h5>${player.getAge()}</h5>
-										<h5>${player.getGoals()}</h5>
-										<h5>${player.getAssists()}</h5>
+										<h5>등번호: ${player.getNumber()}</h5>
+										<h5>선수 이름: ${player.getName()}</h5>
+										<h5>나이: ${player.getAge()}</h5>
+										<h5>⚽ ${player.getGoals()}</h5>
+										<h5>도움 수: ${player.getAssists()}</h5>
 									</li>
 									
 								</ul>
 							</div>
 						</c:if>
-					</c:if>
-				</c:forEach>	
+					</c:forEach>	
+			</div>
 			
-			<h2 class="teamDetail__player__position">미드필더</h2>	
+			<div class ="rightPlayer">
+				<h2 class="teamDetail__player__position">미드필더</h2>	
 				<c:forEach var="player" items="${playerList}">
-					<c:if test="${id eq player.getId()}">
-						<c:if test="${player.getPosition() eq 'M' }">
-										
-							<div class="teamDetail__player__MF">
-								<ul>
+					<c:if test="${player.getPosition() eq 'M' }">
 									
-									<li class="teamDetail__player__li">
-										<h5>${player.getNumber()}</h5>
-										<h5>${player.getName()}</h5>
-										<h5>${player.getAge()}</h5>
-										<h5>${player.getGoals()}</h5>
-										<h5>${player.getAssists()}</h5>
-									</li>
-									
-								</ul>
-							</div>
-						</c:if>
+						<div class="teamDetail__player__MF">
+							<ul>
+								
+								<li class="teamDetail__player__li">
+									<h5>등번호: ${player.getNumber()}</h5>
+									<h5>선수 이름: ${player.getName()}</h5>
+									<h5>나이: ${player.getAge()}</h5>
+									<h5>⚽ ${player.getGoals()}</h5>
+									<h5>도움 수: ${player.getAssists()}</h5>
+								</li>
+								
+							</ul>
+						</div>
 					</c:if>
 				</c:forEach>
 				
-			<h2 class="teamDetail__player__position">공격수</h2>
-				<c:forEach var="player" items="${playerList}">
-					<c:if test="${id eq player.getId()}">
+				<h2 class="teamDetail__player__position">공격수</h2>
+					<c:forEach var="player" items="${playerList}">
 						<c:if test="${player.getPosition() eq 'A' }">	
 							
 							<div class="teamDetail__player__FW">
 								<ul>
 									
 									<li class="teamDetail__player__li">
-										<h5>${player.getNumber()}</h5>
-										<h5>${player.getName()}</h5>
-										<h5>${player.getAge()}</h5>
-										<h5>${player.getGoals()}</h5>
-										<h5>${player.getAssists()}</h5>
+										<h5>등번호: ${player.getNumber()}</h5>
+										<h5>선수 이름: ${player.getName()}</h5>
+										<h5>나이: ${player.getAge()}</h5>
+										<h5>⚽ ${player.getGoals()}</h5>
+										<h5>도움 수: ${player.getAssists()}</h5>
 									</li>
 									
 								</ul>
 							</div>
 						</c:if>
-					</c:if>
-				</c:forEach>
+					</c:forEach>
+			</div>
+			
+		
 		</div>
 		
 		<div class="teamDetail__stadium hidden">
