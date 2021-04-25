@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
 import action.HomeAction;
+import action.TeamDetailAction;
 
 public class leagueTableController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -33,6 +34,14 @@ public class leagueTableController extends HttpServlet {
 			action.execute(request, response);
 			
 			RequestDispatcher rd = request.getRequestDispatcher("main.jsp");
+			rd.forward(request, response);
+		}
+		
+		if(command.equals("/TeamDetail.do")) {
+			action = new TeamDetailAction();
+			action.execute(request, response);
+			
+			RequestDispatcher rd = request.getRequestDispatcher("teamDetail.jsp");
 			rd.forward(request, response);
 		}
 	}

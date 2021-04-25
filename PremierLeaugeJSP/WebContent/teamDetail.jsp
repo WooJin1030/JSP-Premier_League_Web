@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,60 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Team Detail</title>
 
-<style>
-	.teamDetail__title {
-		display: flex;
-		justify-content: center;
-	}
-	
-	.teamDetail__title img {
-		margin-right: 16px;
-	}
-	
-	.teamDetail__selectBtn {
-		text-align: center;
-		
-	}
-	
-	hr {
-		margin: 32px 0;
-	}
-	
-	.teamDetail__selectBtn button {
-		font-size: 24px;
-		transition: all 300ms ease-in;
-	}
-	
-	.teamDetail__selectBtn button:hover {
-		transform: scale(1.1);
-		color: gray;
-	}
-	
-	.teamDetail__main {
-		text-align: center;
-	}
-	
-	.teamDetail__main .main__img {
-		width: 150px;
-		height: 150px;
-	}
-	
-	.teamDetail__player {
-	
-		display:flex;
-		justify-content: center;
-		 
-	}
-	
-	.hidden {
-		display: none;
-	}
-	
-</style>
-
 </head>
-
-
 <body>
 	<jsp:include page="header.jsp" />
 		
@@ -71,13 +19,14 @@
 		</div>
 		<hr>
 		<div class="teamDetail__selectBtn">
-			<button class="main">Main</button>
-			<button class="playerInfo">Players</button>
-			<button class="stadiumInfo">Home Stadium</button>
+			<button class="mainBtn">Main</button>
+			<button class="playerInfoBtn">Players</button>
+			<button class="stadiumInfoBtn">Home Stadium</button>
 			<hr>
 		</div>
 		
 		<div class="teamDetail__main">
+			<!--  
 			<ul>
 				<li>
 					<img src="./img/맨체스터시티.png" class="main__img">
@@ -101,162 +50,100 @@
 						<h3>공식 웹사이트</h3>
 					</a>
 				</li>
-			</ul>	
+			</ul>
+			-->	
 		</div>
+		
 		
 		<div class="teamDetail__player hidden">
 			
-			<div class="teamDetail__player__GK">
-				<ul>
-					<h2>골키퍼</h2>
-					<li>
-						<span>13</span>
-						<span>Zack Steffen</span>
-					</li>
-					
-					<li>
-						<span>31</span>
-						<span>Ederson</span>
-					</li>
-					
-					<li>
-						<span>33</span>
-						<span>Sott Carson</span>
-					</li>
-					
-					<li>
-						<span>49</span>
-						<span>Arijanet Muric</span>
-					</li>
-					
-				</ul>
-			</div>
+			<h2 class="teamDetail__player__position">골키퍼</h2>		
+			<c:forEach var="player" items="${playerList}">
+				<c:if test="${id eq player.getId()}">
+					<c:if test="${player.getPosition() eq 'G' }">
+						<div class="teamDetail__player__GK">
+							<ul>
+								
+								<li class="teamDetail__player__li">
+									<h5>${player.getNumber()}</h5>
+									<h5>${player.getName()}</h5>
+									<h5>${player.getAge()}</h5>
+								</li>
+							</ul>
+						</div>
+					</c:if>
+				</c:if>
+			</c:forEach>
 			
-			<div class="teamDetail__player__DF">
-				<ul>
-					<h2>수비수</h2>
-					<li>
-						<span>2</span>
-						<span>Kyle Walker</span>
-					</li>
+			<h2 class="teamDetail__player__position">수비수</h2>
+				<c:forEach var="player" items="${playerList}">
+					<c:if test="${id eq player.getId()}">
+						<c:if test="${player.getPosition() eq 'D' }">
 					
-					<li>
-						<span>3</span>
-						<span>Ruben Dias</span>
-					</li>
-					
-					<li>
-						<span>5</span>
-						<span>John Stones</span>
-					</li>
-					
-					<li>
-						<span>6</span>
-						<span>Nathan Ake</span>
-					</li>
-					
-					<li>
-						<span>12</span>
-						<span>Angeliño</span>
-					</li>
-					
-					<li>
-						<span>14</span>
-						<span>Aymeric Laporte</span>
-					</li>
-					<li>
-						<span>22</span>
-						<span>Benjamin Mendy</span>
-					</li>
-					<li>
-						<span>27</span>
-						<span>João Cancelo</span>
-					</li>
-					<li>
-						<span>34</span>
-						<span>Phillippe Sandler</span>
-					</li>
-					<li>
-						<span>50</span>
-						<span>Eric Garcia</span>
-					</li>
-
-				</ul>
-			</div>
+							<div class="teamDetail__player__DF">
+								<ul>
+									
+									<li class="teamDetail__player__li">
+										<h5>${player.getNumber()}</h5>
+										<h5>${player.getName()}</h5>
+										<h5>${player.getAge()}</h5>
+										<h5>${player.getGoals()}</h5>
+										<h5>${player.getAssists()}</h5>
+									</li>
+									
+								</ul>
+							</div>
+						</c:if>
+					</c:if>
+				</c:forEach>	
 			
-	
-			<div class="teamDetail__player__MF">
-				<ul>
-					<h2>미드필더</h2>
-					<li>
-						<span>8</span>
-						<span>Ilkay Gundogan</span>
-					</li>
-					
-					<li>
-						<span>11</span>
-						<span>Oleksandr Zinchenko</span>
-					</li>
-					
-					<li>
-						<span>16</span>
-						<span>Rodrigo</span>
-					</li>
-					
-					<li>
-						<span>17</span>
-						<span>Kevin De Bruyne</span>
-					</li>
-					
-					<li>
-						<span>20</span>
-						<span>Bernardo Silva</span>
-					</li>
-					
-					<li>
-						<span>25</span>
-						<span>Fernandinho</span>
-					</li>
-					<li>
-						<span>26</span>
-						<span>Riyad Mahrez</span>
-					</li>
-					<li>
-						<span>47</span>
-						<span>Phil Foden</span>
-					</li>
-					<li>
-						<span></span>
-						<span>Patrik Roberts</span>
-					</li>
-				</ul>
-			</div>
-			
-			<div class="teamDetail__player__FW">
-				<ul>
-					<h2>공격수</h2>
-					<li>
-						<span>7</span>
-						<span>Raheem Sterling</span>
-					</li>
-					
-					<li>
-						<span>9</span>
-						<span>Gabriel Jesus</span>
-					</li>
-					
-					<li>
-						<span>10</span>
-						<span>Sergio Agüero</span>
-					</li>
-					
-					<li>
-						<span>21</span>
-						<span>Ferran Torres</span>
-					</li>	
-				</ul>
-			</div>
+			<h2 class="teamDetail__player__position">미드필더</h2>	
+				<c:forEach var="player" items="${playerList}">
+					<c:if test="${id eq player.getId()}">
+						<c:if test="${player.getPosition() eq 'M' }">
+										
+							<div class="teamDetail__player__MF">
+								<ul>
+									
+									<li class="teamDetail__player__li">
+										<h5>${player.getNumber()}</h5>
+										<h5>${player.getName()}</h5>
+										<h5>${player.getAge()}</h5>
+										<h5>${player.getGoals()}</h5>
+										<h5>${player.getAssists()}</h5>
+									</li>
+									
+								</ul>
+							</div>
+						</c:if>
+					</c:if>
+				</c:forEach>
 				
+			<h2 class="teamDetail__player__position">공격수</h2>
+				<c:forEach var="player" items="${playerList}">
+					<c:if test="${id eq player.getId()}">
+						<c:if test="${player.getPosition() eq 'A' }">	
+							
+							<div class="teamDetail__player__FW">
+								<ul>
+									
+									<li class="teamDetail__player__li">
+										<h5>${player.getNumber()}</h5>
+										<h5>${player.getName()}</h5>
+										<h5>${player.getAge()}</h5>
+										<h5>${player.getGoals()}</h5>
+										<h5>${player.getAssists()}</h5>
+									</li>
+									
+								</ul>
+							</div>
+						</c:if>
+					</c:if>
+				</c:forEach>
+		</div>
+		
+		<div class="teamDetail__stadium hidden">
+			<h3>stadium!</h3>
 		</div>
 		
 		<!-- <li><a href="#">에티하드 스타디움</a></li> -->
@@ -267,21 +154,34 @@
 		
 	const mainPage = document.querySelector(".teamDetail__main");
 	const playerPage = document.querySelector(".teamDetail__player");
-	const mainBtn = document.querySelector(".main");
-	const playerBtn = document.querySelector(".playerInfo");
+	const stadiumPage = document.querySelector(".teamDetail__stadium");
 	
-	function showPlayer() {
-		mainPage.classList.add("hidden");
-		playerPage.classList.remove("hidden");
-	}
+	const mainBtn = document.querySelector(".mainBtn");
+	const playerBtn = document.querySelector(".playerInfoBtn");
+	const stadiumBtn = document.querySelector(".stadiumInfoBtn");
+
 	
 	function showMain() {
 		mainPage.classList.remove("hidden");
 		playerPage.classList.add("hidden");
+		stadiumPage.classList.add("hidden");
+	}
+	
+	function showPlayer() {
+		mainPage.classList.add("hidden");
+		playerPage.classList.remove("hidden");
+		stadiumPage.classList.add("hidden");
+	}
+	
+	function showStadium() {
+		mainPage.classList.add("hidden");
+		playerPage.classList.add("hidden");
+		stadiumPage.classList.remove("hidden");
 	}
 	
 	mainBtn.addEventListener("click", showMain);
 	playerBtn.addEventListener("click", showPlayer);
+	stadiumBtn.addEventListener("click", showStadium);
 
 </script>
 	

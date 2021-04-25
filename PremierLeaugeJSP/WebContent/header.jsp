@@ -7,93 +7,21 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>header</title>
-<style>
-        * {
-            margin: 0;
-            box-sizing: border-box;
-        }
-
-        button {
-            outline: none;
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-        }
-        
-		
-		a {
-			border: none;
-			color: black;
-			text-decoration: none;
-		}
-		
-		ul {
-			list-style: none;
-		}
-		
-        .head {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-        }
-        
-        .head__logo img{
-            width: 250px;
-            height: 200px;
-        }
-
-        .head__teamlist {
-            background-color: rgb(55,0,60);
-            padding: 18px;
-            border-radius: 30px;
-        }
-        .head__teamlist a img {
-            width: 40px;
-            height: 40px;
-            margin-right: 16px;
-            transition: all 300ms ease-in;
-        }
-        
-        .head__teamlist a img:hover {
-        	transform: scale(1.1);
-        }
-        
-       @media screen and (max-width: 1600px) {
-       		
-       		.head__logo img {
-       			width: 200px;
-       			height: 150px;
-       		}
-       
-			.head__teamlist img {
-				width: 30px;
-				height: 30px;
-			}
-        }
-        
-        @media screen and (max-width: 800px) {
-        	.head__teamlist {
-        		display:none;
-        	}
-        }
-        
-        
-</style>        
+<link rel="stylesheet" type="text/css" href="./css/style.css">    
 </head>
 <body>
 	    <nav class="head">
-        	<button class="head__logo">
+        	<a href ="HomeAction.do" class="head__logo">
             	<img src="./img/epl icon.png" alt="EplIcon" />
-        	</button>
+        	</a>
 	        <div class="head__teamlist">
-	            <a href="#">
+	            <a href="TeamDetail.do?team=9002">
 	                <img src="./img/아스날.png" alt="Arsenal" />
 	            </a>
-	            <a href="#">
+	            <a href="TeamDetail.do?team=9008">
 	                <img src="./img/아스톤빌라.png" alt="AstonVilla" />
 	            </a> 
-	            <a href="#">
+	            <a href="TeamDetail.do?team=9065">
 	                <img src="./img/브라이튼.png" alt="Brighton" />      
 	            </a> 
 	            <a href="#">
