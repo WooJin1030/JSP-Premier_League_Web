@@ -9,15 +9,15 @@ public class LeaugePlayerBean implements java.io.Serializable {
 	private String number;
 	private String name;
 	private String position;
-	private int age;
+	private String age;
 	private int goals;
 	private int assists;
 	
 	public LeaugePlayerBean() {
-		this(null, 0, null, null, null, 0, 0, 0);
+		this(null, 0, null, null, null, null, 0, 0);
 	}
 
-	public LeaugePlayerBean(String imgUrl, int id, String number, String name, String position, int age, int goals, int assists) {
+	public LeaugePlayerBean(String imgUrl, int id, String number, String name, String position, String age, int goals, int assists) {
 		super();
 		this.imgUrl = imgUrl;
 		this.id = id;
@@ -70,11 +70,11 @@ public class LeaugePlayerBean implements java.io.Serializable {
 		this.position = position;
 	}
 
-	public int getAge() {
+	public String getAge() {
 		return age;
 	}
 
-	public void setAge(int age) {
+	public void setAge(String age) {
 		this.age = age;
 	}
 

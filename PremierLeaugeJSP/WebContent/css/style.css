@@ -197,7 +197,7 @@
       	}
       		 
       	.head__teamlist {
-      		 	margin-right: 16px;
+      		margin-right: 16px;
       	}
 	}
 	
@@ -252,73 +252,71 @@
        /* team detail */
 
 
-    .teamDetail__title {
-		display: flex;
-		justify-content: center;
-	}
-
-	.teamDetail__title img {
-		margin-right: 16px;
-	}
+	    .teamDetail__title {
+			display: flex;
+			justify-content: center;
+			margin-top: 16px;
+		}
 	
-	.teamDetail__selectBtn {
-		text-align: center;
+		.teamDetail__title img {
+			margin-right: 16px;
+		}
 		
-	}
-	
-	hr {
-		margin: 32px 0;
-	}
-	
-	.teamDetail__selectBtn button {
-		font-size: 24px;
-		transition: all 300ms ease-in;
-	}
-	
-	.teamDetail__selectBtn button:hover {
-		transform: scale(1.1);
-		color: gray;
-	}
-	
-	/* team detail */
-	
-	.teamDetail__main {
-		text-align: center;
-	}
-	
-	.teamDetail__main .main__img {
-		width: 150px;
-		height: 150px;
-	}
-	
-		/* team player */
-	
-	
-	.teamDetail__player__GK, .teamDetail__player__DF,.teamDetail__player__MF, .teamDetail__player__FW {
+		.teamDetail__selectBtn {
+			text-align: center;
+			
+		}
 		
-	}
-	
-	.teamDetail__player__position {
+		hr {
+			margin: 32px 0;
+		}
 		
-	}
-	
-	.teamDetail__player__li {
-		margin-bottom: 32px;
-	}
-	
-	/* stadium */
-	
-	.teamDetail__stadium {
-		text-align: center;
-	}
-	
-	
-	.teamDetail__main, .teamDetail__player, .teamDetail__stadium {
-		min-height: 40vh;
-	}
-	
-	.hidden {
-		display: none;
-	}
+		.teamDetail__selectBtn button {
+			font-size: 24px;
+			transition: all 300ms ease-in;
+		}
+		
+		.teamDetail__selectBtn button:hover {
+			transform: scale(1.1);
+			color: gray;
+		}
+		
+		/* team detail */
+		
+		.teamDetail__main {
+			text-align: center;
+		}
+		
+		.teamDetail__main .main__img {
+			width: 150px;
+			height: 150px;
+		}
+		
+			/* team player */
+		
+		
+		.leftPage {
+			display: flex;
+		}
+		
+		
+		.teamDetail__player__li {
+			margin-bottom: 32px;
+		}
+		
+		/* stadium */
+		
+		.teamDetail__stadium {
+			text-align: center;
+		}
+		
+		
+		.teamDetail__main, .teamDetail__player, .teamDetail__stadium {
+			min-height: 40vh;
+		}
+		
+		.hidden {
+			display: none;
+		}
 
        

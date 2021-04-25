@@ -33,7 +33,7 @@ public class BurnleyPlayerManager {
 					(String)tempObj.get("number"), 
 					tempObj.get("name").toString(), 
 					tempObj.get("position").toString(), 
-					Integer.parseInt(tempObj.get("age").toString()), 
+					(String)tempObj.get("age"), 
 					Integer.parseInt(tempObj.get("goals").toString()), 
 					Integer.parseInt(tempObj.get("assists").toString()))); 			
 		}
