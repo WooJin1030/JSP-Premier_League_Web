@@ -12,68 +12,68 @@
 <body>
 	    <nav class="head">
         	<a href ="HomeAction.do" class="head__logo">
-            	<img src="./img/epl icon.png" alt="EplIcon" />
+            	<img src="https://user-images.githubusercontent.com/62231339/116050281-3ea01480-a6b2-11eb-9127-bf7bec2ef439.png" alt="EplIcon" />
         	</a>
 	        <div class="head__teamlist">
 	            <a href="TeamDetail.do?team=9002">
-	                <img src="./img/아스날.png" alt="Arsenal" />
+	                <img src="https://user-images.githubusercontent.com/62231339/116050257-3b0c8d80-a6b2-11eb-8488-7dc68f06383f.png" alt="Arsenal" />
 	            </a>
 	            <a href="TeamDetail.do?team=9008">
-	                <img src="./img/아스톤빌라.png" alt="AstonVilla" />
+	                <img src="https://user-images.githubusercontent.com/62231339/116050276-3e077e00-a6b2-11eb-9c5c-5db8d4adaaa0.png" alt="AstonVilla" />
 	            </a> 
 	            <a href="TeamDetail.do?team=9065">
-	                <img src="./img/브라이튼.png" alt="Brighton" />      
+	                <img src="https://user-images.githubusercontent.com/62231339/116050243-38aa3380-a6b2-11eb-9aa6-f6ff7665d297.png" alt="Brighton" />      
 	            </a> 
 	            <a href="TeamDetail.do?team=9072">
-	                <img src="./img/번리.png" alt="Burnley" />                
+	                <img src="https://user-images.githubusercontent.com/62231339/116050265-3c3dba80-a6b2-11eb-87fd-ce7cdf38602f.png" alt="Burnley" />                
 	            </a> 
 	            <a href="TeamDetail.do?team=9092">
-	                <img src="./img/첼시.png" alt="Chelsea" />                
+	                <img src="https://user-images.githubusercontent.com/62231339/116050252-3a73f700-a6b2-11eb-9017-70300e33cc88.png" alt="Chelsea" />                
 	            </a> 
 	            <a href="TeamDetail.do?team=9127">
-	                <img src="./img/크리스탈펠리스.png" alt="Crystal Palace" />  
+	                <img src="https://user-images.githubusercontent.com/62231339/116050263-3c3dba80-a6b2-11eb-9e4e-c5bf8762cab6.png" alt="Crystal Palace" />  
 	            </a> 
 	            <a href="TeamDetail.do?team=9158">
-	                <img src="./img/에버튼.png" alt="Everton" />               
+	                <img src="https://user-images.githubusercontent.com/62231339/116050273-3d6ee780-a6b2-11eb-92bc-fa42a5451cd8.png" alt="Everton" />               
 	            </a> 
 	            <a href="TeamDetail.do?team=9175">
-	                <img src="./img/풀럼.png" alt="Fullham" />               
+	                <img src="https://user-images.githubusercontent.com/62231339/116050280-3ea01480-a6b2-11eb-8434-8abc4ff34ef3.png" alt="Fullham" />               
 	            </a> 
 	            <a href="TeamDetail.do?team=9238">
-	                <img src="./img/리즈.png" alt="Leeds" />              
+	                <img src="https://user-images.githubusercontent.com/62231339/116050259-3ba52400-a6b2-11eb-99a5-63fa8610bb26.png" alt="Leeds" />              
 	            </a> 
 	            <a href="TeamDetail.do?team=9240">
-	                <img src="./img/레스터시티.png" alt="Leicester" />               
+	                <img src="https://user-images.githubusercontent.com/62231339/116050253-3a73f700-a6b2-11eb-9748-7e20017f6c2c.png" alt="Leicester" />               
 	            </a> 
 	            <a href="TeamDetail.do?team=9249">
-	                <img src="./img/리버풀.png" alt="Liverpool" />        
+	                <img src="https://user-images.githubusercontent.com/62231339/116050246-3942ca00-a6b2-11eb-9ff7-61ecde2a5acd.png" alt="Liverpool" />        
 	            </a> 
 	            <a href="TeamDetail.do?team=9259">
-	                <img src="./img/맨체스터시티.png" alt="ManchesterCity" />      
+	                <img src="https://user-images.githubusercontent.com/62231339/116050274-3e077e00-a6b2-11eb-83fe-58aaece8cfe6.png" alt="ManchesterCity" />      
 	            </a> 
 	            <a href="TeamDetail.do?team=9260">
-	                <img src="./img/맨유.png" alt="ManchesterUnited" />      
+	                <img src="https://user-images.githubusercontent.com/62231339/116050238-38119d00-a6b2-11eb-823f-7539e716d1a4.png" alt="ManchesterUnited" />      
 	            </a> 
 	            <a href="TeamDetail.do?team=9287">
-	                <img src="./img/뉴캐슬.png" alt="Newcastle" />      
+	                <img src="https://user-images.githubusercontent.com/62231339/116050247-39db6080-a6b2-11eb-9a9d-60fad463ad18.png" alt="Newcastle" />      
 	            </a> 
 	            <a href="TeamDetail.do?team=9348">
-	                <img src="./img/섀필드.png" alt="SheffieldUnited" />      
+	                <img src="https://user-images.githubusercontent.com/62231339/116050241-38aa3380-a6b2-11eb-93df-112b1f808f7e.png" alt="SheffieldUnited" />      
 	            </a> 
 	            <a href="TeamDetail.do?team=9363">
-	                <img src="./img/사우스햄튼.png" alt="Southhampton" />     
+	                <img src="https://user-images.githubusercontent.com/62231339/116050269-3cd65100-a6b2-11eb-86e3-b981982632f3.png" alt="Southhampton" />     
 	            </a> 
 	            <a href="TeamDetail.do?team=9406">
-	                <img src="./img/토트넘.png" alt="Tottenham" />     
+	                <img src="https://user-images.githubusercontent.com/62231339/116050271-3d6ee780-a6b2-11eb-86f7-e9380f8d8bb8.png" alt="Tottenham" />     
 	            </a> 
 	            <a href="TeamDetail.do?team=9426">
-	                <img src="./img/웨스트브롬.png" alt="WestBromwich" />     
+	                <img src="https://user-images.githubusercontent.com/62231339/116050250-39db6080-a6b2-11eb-94dc-24d0a270b7b7.png" alt="WestBromwich" />     
 	            </a> 
 	            <a href="TeamDetail.do?team=9427">
-	                <img src="./img/웨스트햄.png" alt="WestHam" />    
+	                <img src="https://user-images.githubusercontent.com/62231339/116050262-3ba52400-a6b2-11eb-9298-3b7de530436b.png" alt="WestHam" />    
 	            </a> 
 	            <a href="TeamDetail.do?team=9446">
-	                <img src="./img/울버햄튼.png" alt="Wolverhampton" />               
+	                <img src="https://user-images.githubusercontent.com/62231339/116050255-3b0c8d80-a6b2-11eb-8625-bf17ce9c0482.png" alt="Wolverhampton" />               
 	            </a>      
         	</div>
         </nav>
