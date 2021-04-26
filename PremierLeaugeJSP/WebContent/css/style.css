@@ -312,19 +312,19 @@
 		}
 		
 		.gk .teamDetail__player__position {
-			color: yellow;
+			color: black;
 		}
 		
 		.df .teamDetail__player__position {
-			color: green;
+			color: black;
 		}
 		
 		.mf .teamDetail__player__position {
-			color: blue;
+			color: black;
 		}
 		
 		.fw .teamDetail__player__position {
-			color: red;
+			color: black;
 		}
 		
 		.gk, .df, .mf, .fw {
