@@ -264,16 +264,19 @@
 		
 		.teamDetail__selectBtn {
 			text-align: center;
+			padding-top: 32px;
+			margin-bottom: 32px;
 			
 		}
 		
 		hr {
-			margin: 32px 0;
+			margin-top: 32px ;
 		}
 		
 		.teamDetail__selectBtn button {
 			font-size: 24px;
 			transition: all 300ms ease-in;
+			color: white;
 		}
 		
 		.teamDetail__selectBtn button:hover {
@@ -308,10 +311,31 @@
 			margin-bottom: 32px;
 		}
 		
+		.gk .teamDetail__player__position {
+			color: yellow;
+		}
+		
+		.df .teamDetail__player__position {
+			color: green;
+		}
+		
+		.mf .teamDetail__player__position {
+			color: blue;
+		}
+		
+		.fw .teamDetail__player__position {
+			color: red;
+		}
+		
 		.gk, .df, .mf, .fw {
 			border: 2px solid black;
 			border-radius: 4px;
 			padding: 24px;
+		}
+		
+		.gk, .df, .mf {
+			margin-right: 16px;
+			margin-bottom: 16px;
 		}
 		
 	

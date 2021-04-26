@@ -18,7 +18,7 @@
 			<h1>${teamname}</h1>
 		</div>
 		<hr>
-		<div class="teamDetail__selectBtn">
+		<div class="teamDetail__selectBtn" style="background-color: ${teamcolor}">
 			<button class="mainBtn">Main</button>
 			<button class="playerInfoBtn">Players</button>
 			<button class="stadiumInfoBtn">Home Stadium</button>
