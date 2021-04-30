@@ -10,10 +10,21 @@
 <body>
 	<jsp:include page="header.jsp" />
 	
+		<div class="teamDetail__title">
+			<img src="${teamInfoList.getLogoUrl()}"></img>
+			<h1>${teamInfoList.getName()}</h1>
+		</div>
+		<hr>
+		<div class="teamDetail__selectBtn" style="background-color: ${teamInfoList.getTeamcolor()}">
+				<button>Players</button>
+			</a>
+			<hr>
+		</div>
+	
 	<div class="teamDetail__player">
 			<div class="gk">
 				<h2 class="teamDetail__player__position">골키퍼</h2>
-				<hr/>		
+				<hr class="teamDetail__player__hr" />		
 				<c:forEach var="player" items="${playerList}">
 					<c:if test="${player.getPosition() eq 'G' }">
 						<div class="teamDetail__player__GK">
@@ -30,7 +41,7 @@
 			</div>
 			<div class="df">
 				<h2 class="teamDetail__player__position">수비수</h2>
-				<hr/>
+				<hr class="teamDetail__player__hr" />
 					<c:forEach var="player" items="${playerList}">
 						<c:if test="${player.getPosition() eq 'D' }">
 							<div class="teamDetail__player__DF">
@@ -51,7 +62,7 @@
 			</div>
 			<div class ="mf">
 				<h2 class="teamDetail__player__position">미드필더</h2>	
-				<hr/>
+				<hr class="teamDetail__player__hr" />
 				<c:forEach var="player" items="${playerList}">
 					<c:if test="${player.getPosition() eq 'M' }">
 									
@@ -73,7 +84,7 @@
 			</div>
 			<div class="fw">
 				<h2 class="teamDetail__player__position">공격수</h2>
-				<hr/>
+				<hr class="teamDetail__player__hr" />
 					<c:forEach var="player" items="${playerList}">
 						<c:if test="${player.getPosition() eq 'A' }">	
 							

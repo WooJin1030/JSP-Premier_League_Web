@@ -21,24 +21,27 @@
 		<div class="teamDetail__selectBtn" style="background-color: ${teamInfoList.getTeamcolor()}">
 			<button class="mainBtn">Main</button>
 			<button class="stadiumInfoBtn">Home Stadium</button>
-			<a href="TeamPlayerAction.do?team=${id}" role="button">Players</a>
+			<a href="TeamPlayerAction.do?team=${id}" class="playerInfoBtn">
+				<button>Players</button>
+			</a>
 
 			<hr>
 		</div>
 		
 		<div class="teamDetail__main">
 			<ul>
-				<li><h3>연고지:  ${teamInfoList.getOrigin()}</h3></li>
-				<li><h3>설립연도:  ${teamInfoList.getEstablishment()}년</h3></li>
-				<li><h3>애칭:  ${teamInfoList.getNickname()}</h3></li>
-				<li><h3>회장:  ${teamInfoList.getChairmanname()}</h3></li>
-				<li>	
+				<li><h2>연고지:  ${teamInfoList.getOrigin()}</h2></li>
+				<li><h2>설립연도:  ${teamInfoList.getEstablishment()}년</h2></li>
+				<li><h2>애칭:  ${teamInfoList.getNickname()}</h2></li>
+				<li><h2>회장:  ${teamInfoList.getChairmanname()}</h2></li>
+				<li class="managerInfo">	
 					<img src="${teamInfoList.getManagerimageurl()}">
-						<h3>감독:  ${teamInfoList.getManagername()} </h3>
+					<h2>감독:  ${teamInfoList.getManagername()} </h2>
 				</li>
 				<li>
 					<a href= ${teamInfoList.getOfficialsite()} >
-						<h3>공식 웹사이트</h3>
+						<h2>공식 웹사이트:  </h2>
+						<h2 class="teamSite">${teamInfoList.getOfficialsite()}</h2>
 					</a>
 				</li>
 			</ul>
@@ -53,13 +56,13 @@
 					<img src="${teamInfoList.getStadiumimageurl()}" />
 				</li>
 				<li> 
-					<h3>경기장명:  ${teamInfoList.getStadiumname()}</h3>
+					<h2>경기장명:  ${teamInfoList.getStadiumname()}</h2>
 				</li>
 				<li> 
-					<h3>경기장 수용 인원:  ${teamInfoList.getCapacity()}</h3>
+					<h2>경기장 수용 인원:  ${teamInfoList.getCapacity()}명</h2>
 				</li>
 				<li> 
-					<h3>경기장 크기:  ${teamInfoList.getFieldsize()}</h3>
+					<h2>경기장 크기:  ${teamInfoList.getFieldsize()}</h2>
 				</li>
 			</ul>
 			

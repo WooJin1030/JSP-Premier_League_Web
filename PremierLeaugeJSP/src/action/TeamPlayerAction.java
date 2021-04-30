@@ -1,10 +1,14 @@
 package action;
 
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.LeagueTeamInfoDAO;
+import dao.LeagueTeamInfoImpl;
 import dao.PlayerManager.ArsenalPlayerManager;
 import dao.PlayerManager.AstonVillaPlayerManager;
 import dao.PlayerManager.BrightonPlayerManager;
@@ -25,12 +29,26 @@ import dao.PlayerManager.TottenhamPlayerManager;
 import dao.PlayerManager.WestBromwichPlayerManager;
 import dao.PlayerManager.WestHamPlayerManager;
 import dao.PlayerManager.WolverhamptonPlayerManager;
+import dto.LeagueTeamInfoBean;
 import dto.LeaugePlayerBean;
+import jdbc.ConnectionProvider;
 
 public class TeamPlayerAction implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		
 		int id = Integer.parseInt(request.getParameter("team"));
+		
+		Connection conn = null;
+		try {
+			conn = ConnectionProvider.getConnection();
+			
+			LeagueTeamInfoDAO service2 = new LeagueTeamInfoImpl(conn);
+			LeagueTeamInfoBean tiList = service2.select(id);
+			request.setAttribute("teamInfoList", tiList);
+		
+		} catch (SQLException ex) {
+			System.out.println("Fail to connection.");
+		}
 		
 		if(id == 9259) {		
 			ManchesterCityPlayerManager service2= ManchesterCityPlayerManager.getInstance();

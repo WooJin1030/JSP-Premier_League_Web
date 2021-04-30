@@ -284,20 +284,71 @@
 			color: gray;
 		}
 		
-		/* team detail */
+		/* team detail main */
 		
 		.teamDetail__main {
-			text-align: center;
+			text-align: left;
+			margin-left: 36px;
+			margin-top: 48px;
+		}
+	
+		.teamDetail__main ul li {
+			margin-bottom: 16px;
 		}
 		
-		.teamDetail__main .main__img {
-			width: 150px;
-			height: 150px;
+		.managerInfo {
+			display: flex;
+			align-items: flex-end;
 		}
+		
+		.managerInfo img {
+			width: 250px;
+			height: 250px;
+			margin-right: 8px;
+		}
+		
+		.teamSite {
+			transition: all 300ms ease-in;
+		}
+		
+		.teamSite:hover {
+			color: red;
+		}
+		
+		
+		/* stadium */
+		
+		.teamDetail__stadium {
+			text-align: left;
+			margin-left: 36px;
+			margin-top: 48px;
+		}
+		
+		.teamDetail__stadium img {
+			width: 600px;
+			height: 400px;
+			margin-bottom: 16px;
+		}
+		
+		.teamDetail__stadium ul li {
+			margin-bottom: 16px;
+		}
+		
+		.hidden {
+			display: none;
+		}
+		
+		
+		.teamDetail__main, .teamDetail__player, .teamDetail__stadium {
+			min-height: 40vh;
+		}
+		
+	
 		
 		/* team player */
 		
 		.teamDetail__player {
+			margin-top: 48px;
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: center;
@@ -307,7 +358,15 @@
 			margin-bottom: 32px;
 		}
 		
+		.teamDetail__player__li h3  {
+			margin-bottom: 2px;
+		}
+		
 		.teamDetail__player__position {
+			margin-bottom: 32px;
+		}
+		
+		.teamDetail__player__hr {
 			margin-bottom: 32px;
 		}
 		
@@ -339,20 +398,5 @@
 		}
 		
 	
-		
-		/* stadium */
-		
-		.teamDetail__stadium {
-			text-align: center;
-		}
-		
-		
-		.teamDetail__main, .teamDetail__player, .teamDetail__stadium {
-			min-height: 40vh;
-		}
-		
-		.hidden {
-			display: none;
-		}
 
        
