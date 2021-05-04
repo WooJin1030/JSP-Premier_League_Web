@@ -22,6 +22,7 @@
 			<button class="mainBtn">Main</button>
 			<button class="stadiumInfoBtn">Home Stadium</button>
 			<a href="TeamPlayerAction.do?team=${id}" class="playerInfoBtn">
+			<a href="TeamArticleAction.do?team=${id}" class="playerInfoBtn">
 				<button>Players</button>
 			</a>
 
@@ -65,7 +66,6 @@
 					<h2>경기장 크기:  ${teamInfoList.getFieldsize()}</h2>
 				</li>
 			</ul>
-			
 			
 			
 		</div>
