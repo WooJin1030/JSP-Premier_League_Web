@@ -54,6 +54,16 @@
       	transform: scale(1.1);
       }
       
+      .head__userPage {
+      	text-align:right;
+      	margin-right: 32px;
+      	font-size: 24px;
+      }
+      
+      .head__userPage a {
+      	padding: 16px;
+      }
+      
      @media screen and (max-width: 1600px) {
      		
      		.head__logo img {

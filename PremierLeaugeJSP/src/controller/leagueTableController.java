@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
 import action.HomeAction;
+import action.MemberJoinAction;
+import action.MemberLoginAction;
 import action.TeamDetailAction;
 import action.TeamPlayerAction;
 
@@ -54,6 +56,26 @@ public class leagueTableController extends HttpServlet {
 			rd.forward(request, response);
 		}
 		
+		if(command.equals("/LoginView.do")) {
+			RequestDispatcher rd = request.getRequestDispatcher("loginForm.jsp");
+			rd.forward(request, response);
+		}
+		
+		if(command.equals("/LoginAction.do")) {
+			action = new MemberLoginAction();
+			action.execute(request, response);
+			
+		}
+		
+		if(command.equals("/JoinView.do")) {
+			RequestDispatcher rd = request.getRequestDispatcher("joinForm.jsp");
+			rd.forward(request, response);
+		}
+		
+		if(command.equals("/JoinAction.do")) {
+			action = new MemberJoinAction();
+			action.execute(request, response);
+		}
 		
 	}
 }

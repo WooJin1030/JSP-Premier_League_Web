@@ -17,7 +17,6 @@
 		<hr>
 		<div class="teamDetail__selectBtn" style="background-color: ${teamInfoList.getTeamcolor()}">
 				<button>Players</button>
-			</a>
 			<hr>
 		</div>
 	

@@ -77,5 +77,13 @@
 	            </a>      
         	</div>
         </nav>
+        <div class="head__userPage">
+       		<a href="LoginView.do" class="head__loginBtn">
+                Login              
+            </a> 
+            <a href="JoinView.do" class="head__joinBtn">
+                Join              
+            </a>   
+       	</div>
 </body>
 </html>
