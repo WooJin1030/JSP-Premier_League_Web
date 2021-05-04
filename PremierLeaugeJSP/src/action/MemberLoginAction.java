@@ -35,7 +35,7 @@ public class MemberLoginAction implements Action {
 				conn = ConnectionProvider.getConnection();
 				MemberDAO service = new MemberImpl(conn);
 				MemberBean idList = service.selectList(id);
-								
+				
 				if(idList == null) {
 					request.setAttribute("errorMessage", "일치하는 id가 없습니다!");
 					
@@ -62,7 +62,8 @@ public class MemberLoginAction implements Action {
 					HttpSession session = request.getSession();
 					
 					session.setAttribute("userId", id);
-					session.setAttribute("userPW", password);
+					session.setAttribute("team", idList.getMyteam());
+					// session.setAttribute("userPW", password);
 					
 					System.out.println("Welcome " + id);
 						
@@ -96,6 +97,17 @@ public class MemberLoginAction implements Action {
 				e.printStackTrace();
 			}
 		}
+		
+		HttpSession session = request.getSession();
+		String sessionId = (String) session.getAttribute("userId");
+		
+		if (sessionId == null || sessionId.equals("")) {
+			request.setAttribute("sessionState", "none");
+		} else {
+			request.setAttribute("sessionState", "loggedIn");
+			request.setAttribute("sessionId", sessionId);
+		}
+		
 		
 	}
 

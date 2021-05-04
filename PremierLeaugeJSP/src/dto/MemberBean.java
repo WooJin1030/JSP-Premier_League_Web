@@ -8,19 +8,19 @@ public class MemberBean implements java.io.Serializable {
 	private String password;
 	private String name;
 	private String email;
-	private int teamname;
+	private String myteam;
 	
 	public MemberBean () {
-		this(null, null, null, null, 0);
+		this(null, null, null, null, null);
 	}
 	
-	public MemberBean(String id, String password, String name, String email, int teamname) {
+	public MemberBean(String id, String password, String name, String email, String myteam) {
 		super();
 		this.id = id;
 		this.password = password;
 		this.name = name;
 		this.email = email;
-		this.teamname = teamname;
+		this.myteam = myteam;
 		
 	}
 	
@@ -56,18 +56,18 @@ public class MemberBean implements java.io.Serializable {
 		this.email = email;
 	}
 
-	public int getTeamname() {
-		return teamname;
+	public String getMyteam() {
+		return myteam;
 	}
 
-	public void setTeamname(int teamname) {
-		this.teamname = teamname;
+	public void setMyteam(String myteam) {
+		this.myteam = myteam;
 	}
 
 	@Override
 	public String toString() {
-		return "MemberBean [id=" + id + ", password=" + password + ", name=" + name + ", email=" + email + ", teamname="
-				+ teamname + "]";
+		return "MemberBean [id=" + id + ", password=" + password + ", name=" + name + ", email=" + email + ", myteam="
+				+ myteam + "]";
 	}
 
 	

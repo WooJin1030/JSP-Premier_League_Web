@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -77,6 +78,7 @@
 	            </a>      
         	</div>
         </nav>
+        <c:if test="${sessionState eq 'none'}">
         <div class="head__userPage">
        		<a href="LoginView.do" class="head__loginBtn">
                 Login              
@@ -85,5 +87,16 @@
                 Join              
             </a>   
        	</div>
+       	</c:if>
+       	<c:if test="${sessionState eq 'loggedIn'}">
+        <div class="head__userPage">
+       		<a href="LoginAction.do?action=logout" class="head__loginBtn">
+                Logout             
+            </a>
+            <a href="MyTeam.do?team=${teamId}" class="head__loginBtn">
+           		${teamId}     
+            </a> 
+       	</div>
+       	</c:if>
 </body>
 </html>

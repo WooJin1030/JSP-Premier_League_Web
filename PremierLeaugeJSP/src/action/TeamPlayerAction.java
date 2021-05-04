@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.LeagueTeamInfoDAO;
 import dao.LeagueTeamInfoImpl;
@@ -153,7 +154,15 @@ public class TeamPlayerAction implements Action {
 			request.setAttribute("teamcolor", "rgb(227,6,19)");		
 		}
 		
+		HttpSession session = request.getSession();
+		String sessionId = (String) session.getAttribute("userId");
 		
+		if (sessionId == null || sessionId.equals("")) {
+			request.setAttribute("sessionState", "none");
+		} else {
+			request.setAttribute("sessionState", "loggedIn");
+			request.setAttribute("sessionId", sessionId);
+		}
 		
 	}
 		

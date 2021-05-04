@@ -25,7 +25,7 @@ public class MemberImpl implements MemberDAO {
 			pstmt.setString(2, bean.getPassword());
 			pstmt.setString(3, bean.getName());
 			pstmt.setString(4, bean.getEmail());
-			pstmt.setInt(5, bean.getTeamname());
+			pstmt.setString(5, bean.getMyteam());
 			
 			return pstmt.executeUpdate();
 			
@@ -84,19 +84,19 @@ public class MemberImpl implements MemberDAO {
 		String password = null;
 		String name = null;
 		String email = null;
-		int teamname = 0;
+		String myteam = null;
 		
 		try {
 			id = rs.getString("id");
 			password = rs.getString("password");
 			name = rs.getString("name");
 			email = rs.getString("email");
-			teamname = rs.getInt(teamname);
+			myteam = rs.getString("myteam");
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
-		return new MemberBean(id, password, name, email, teamname);
+		return new MemberBean(id, password, name, email, myteam);
 	}
 }
