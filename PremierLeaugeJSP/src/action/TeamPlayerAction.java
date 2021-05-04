@@ -1,35 +1,25 @@
 package action;
 
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.List;
+import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
 import dao.LeagueTeamInfoDAO;
 import dao.LeagueTeamInfoImpl;
-import dao.PlayerManager.ArsenalPlayerManager;
-import dao.PlayerManager.AstonVillaPlayerManager;
-import dao.PlayerManager.BrightonPlayerManager;
-import dao.PlayerManager.BurnleyPlayerManager;
-import dao.PlayerManager.ChelseaPlayerManager;
-import dao.PlayerManager.CrystalPalacePlayerManager;
-import dao.PlayerManager.EvertonPlayerManager;
-import dao.PlayerManager.FullhamPlayerManager;
-import dao.PlayerManager.LeedsPlayerManager;
-import dao.PlayerManager.LeicesterPlayerManager;
-import dao.PlayerManager.LiverpoolPlayerManager;
-import dao.PlayerManager.ManchesterCityPlayerManager;
-import dao.PlayerManager.ManchesterUnitedPlayerManager;
-import dao.PlayerManager.NewcastlePlayerManager;
-import dao.PlayerManager.SheffieldPlayerManager;
-import dao.PlayerManager.SouthhamptonPlayerManager;
-import dao.PlayerManager.TottenhamPlayerManager;
-import dao.PlayerManager.WestBromwichPlayerManager;
-import dao.PlayerManager.WestHamPlayerManager;
-import dao.PlayerManager.WolverhamptonPlayerManager;
 import dto.LeagueTeamInfoBean;
 import dto.LeaugePlayerBean;
 import jdbc.ConnectionProvider;
@@ -40,6 +30,7 @@ public class TeamPlayerAction implements Action {
 		int id = Integer.parseInt(request.getParameter("team"));
 		
 		Connection conn = null;
+		
 		try {
 			conn = ConnectionProvider.getConnection();
 			
@@ -51,108 +42,59 @@ public class TeamPlayerAction implements Action {
 			System.out.println("Fail to connection.");
 		}
 		
-		if(id == 9259) {		
-			ManchesterCityPlayerManager service2= ManchesterCityPlayerManager.getInstance();
-			List<LeaugePlayerBean> pList = service2.getList();
-			request.setAttribute("playerList", pList);
-			request.setAttribute("teamcolor", "rgb(152,197,233)");
-		} else if(id == 9260) {
-			ManchesterUnitedPlayerManager service2= ManchesterUnitedPlayerManager.getInstance();
-			List<LeaugePlayerBean> pList = service2.getList();	
-			request.setAttribute("playerList", pList);
-			request.setAttribute("teamcolor", "rgb(199,1,1)");
-		} else if(id == 9240) {
-			LeicesterPlayerManager service2= LeicesterPlayerManager.getInstance();
-			List<LeaugePlayerBean> pList = service2.getList();
-			request.setAttribute("playerList", pList);
-			request.setAttribute("teamcolor", "rgb(11,86,164)");
-		} else if(id == 9427) {
-			WestHamPlayerManager service2= WestHamPlayerManager.getInstance();
-			List<LeaugePlayerBean> pList = service2.getList();
-			request.setAttribute("playerList", pList);
-			request.setAttribute("teamcolor", "rgb(125,43,58)");
-		} else if(id == 9092) {
-			ChelseaPlayerManager service2= ChelseaPlayerManager.getInstance();
-			List<LeaugePlayerBean> pList = service2.getList();
-			request.setAttribute("playerList", pList);
-			request.setAttribute("teamcolor", "rgb(0,20,137)");
-		} else if(id == 9249) {
-			LiverpoolPlayerManager service2= LiverpoolPlayerManager.getInstance();
-			List<LeaugePlayerBean> pList = service2.getList();
-			request.setAttribute("playerList", pList);
-			request.setAttribute("teamcolor", "rgb(227,27,35)");
+		
+		ArrayList<LeaugePlayerBean> pList = new ArrayList<LeaugePlayerBean>();
+		
+		HttpRequest request2 = HttpRequest.newBuilder()
+				.uri(URI.create("https://data.football-api.com/v3/teams/" + id + "?Authorization=0aBDqt7O7T8bpQWX6MH0o9WmWJRmC9GF5vBlbMf5"))
+				.method("GET", HttpRequest.BodyPublishers.noBody())
+				.build();
+		HttpResponse<String> response2;
+		
+		try {
+			response2 = HttpClient.newHttpClient().send(request2, HttpResponse.BodyHandlers.ofString());
+			response2 = HttpClient.newHttpClient().send(request2, HttpResponse.BodyHandlers.ofString());
 			
-		} else if(id == 9406) {
-			TottenhamPlayerManager service2= TottenhamPlayerManager.getInstance();
-			List<LeaugePlayerBean> pList = service2.getList();
-			request.setAttribute("playerList", pList);
-			request.setAttribute("teamcolor", "rgb(17,24,54)");
-		} else if(id == 9158) {
-			EvertonPlayerManager service2= EvertonPlayerManager.getInstance();
-			List<LeaugePlayerBean> pList = service2.getList();
-			request.setAttribute("playerList", pList);
-			request.setAttribute("teamcolor", "rgb(0,46,133)");
-		} else if(id == 9238) {
-			LeedsPlayerManager service2= LeedsPlayerManager.getInstance();
-			List<LeaugePlayerBean> pList = service2.getList();
-			request.setAttribute("playerList", pList);
-			request.setAttribute("teamcolor", "rgb(29,65,137)");
-		} else if(id == 9002) {
-			ArsenalPlayerManager service2= ArsenalPlayerManager.getInstance();
-			List<LeaugePlayerBean> pList = service2.getList();	
-			request.setAttribute("playerList", pList);
-			request.setAttribute("teamcolor", "rgb(240,0,0)");
-		} else if(id == 9008) {
-			AstonVillaPlayerManager service2= AstonVillaPlayerManager.getInstance();
-			List<LeaugePlayerBean> pList = service2.getList();	
-			request.setAttribute("playerList", pList);
-			request.setAttribute("teamcolor", "rgb(103,14,55)");
-		} else if(id == 9446) {
-			WolverhamptonPlayerManager service2= WolverhamptonPlayerManager.getInstance();
-			List<LeaugePlayerBean> pList = service2.getList();	
-			request.setAttribute("playerList", pList);
-			request.setAttribute("teamcolor", "rgb(253,185,19)");
-		} else if(id == 9127) {
-			CrystalPalacePlayerManager service2= CrystalPalacePlayerManager.getInstance();
-			List<LeaugePlayerBean> pList = service2.getList();	
-			request.setAttribute("playerList", pList);
-			request.setAttribute("teamcolor", "rgb(1,74,151)");
-		} else if(id == 9363) {
-			SouthhamptonPlayerManager service2= SouthhamptonPlayerManager.getInstance();
-			List<LeaugePlayerBean> pList = service2.getList();
-			request.setAttribute("playerList", pList);
-			request.setAttribute("teamcolor", "rgb(255,0,40)");
-		} else if(id == 9287) {
-			NewcastlePlayerManager service2= NewcastlePlayerManager.getInstance();
-			List<LeaugePlayerBean> pList = service2.getList();	
-			request.setAttribute("playerList", pList);
-			request.setAttribute("teamcolor", "rgb(0,0,0)");
-		} else if(id == 9065) {
-			BrightonPlayerManager service2= BrightonPlayerManager.getInstance();
-			List<LeaugePlayerBean> pList = service2.getList();	
-			request.setAttribute("playerList", pList);
-			request.setAttribute("teamcolor", "rgb(0,84,166)");
-		} else if(id == 9175) {
-			FullhamPlayerManager service2= FullhamPlayerManager.getInstance();
-			List<LeaugePlayerBean> pList = service2.getList();	
-			request.setAttribute("playerList", pList);
-			request.setAttribute("teamcolor", "rgb(0,0,0)");
-		} else if(id == 9072) {
-			BurnleyPlayerManager service2= BurnleyPlayerManager.getInstance();
-			List<LeaugePlayerBean> pList = service2.getList();	
-			request.setAttribute("playerList", pList);
-			request.setAttribute("teamcolor", "rgb(129,32,76)");
-		} else if(id == 9426) {
-			WestBromwichPlayerManager service2= WestBromwichPlayerManager.getInstance();
-			List<LeaugePlayerBean> pList = service2.getList();	
-			request.setAttribute("playerList", pList);
-			request.setAttribute("teamcolor", "rgb(0,47,104)");
-		} else if(id == 9348) {
-			SheffieldPlayerManager service2= SheffieldPlayerManager.getInstance();
-			List<LeaugePlayerBean> pList = service2.getList();	
-			request.setAttribute("playerList", pList);
-			request.setAttribute("teamcolor", "rgb(227,6,19)");		
-		}
+			String leaguePlayer = (String) response2.body();
+			
+			JSONParser jsonParser = new JSONParser();     
+			JSONArray jsonArr;
+			JSONObject jsonObj = new JSONObject();
+		
+			jsonArr = (JSONArray) jsonParser.parse(leaguePlayer);
+			jsonObj.put("jsonArr", jsonArr);
+			
+			// System.out.println(jsonObj);
+			
+			JSONArray member1Array = (JSONArray) jsonObj.get("jsonArr");
+			JSONObject tempObj = (JSONObject) member1Array.get(0);
+			
+			JSONArray member2Array = (JSONArray) tempObj.get("squad");
+	        // System.out.println(getLeagueArray());
+	      
+			 for(int i = 0 ; i < member2Array.size() ; i++){
+				 	JSONObject temp2Obj = (JSONObject) member2Array.get(i);
+	                String number = (String) temp2Obj.get("number");
+	                String name = (String) temp2Obj.get("name");
+	                String position = (String) temp2Obj.get("position");
+	                String age = (String) temp2Obj.get("age");
+	                int goals = Integer.parseInt((String) temp2Obj.get("goals"));
+	                int assists = Integer.parseInt((String) temp2Obj.get("assists"));
+	                
+	                pList.add(new LeaugePlayerBean(null, id, number, name, position, age, goals, assists));
+	                
+	            }
+			 
+			 request.setAttribute("playerList", pList);
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} catch (ParseException e) {
+            e.printStackTrace();
+        }
+		
 		
 		HttpSession session = request.getSession();
 		String sessionId = (String) session.getAttribute("userId");
