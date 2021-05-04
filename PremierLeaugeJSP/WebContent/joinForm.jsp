@@ -44,7 +44,7 @@
 		    <option value="WestHam">WestHam</option>
 		    <option value="Wolverhampton">Wolverhampton</option>
 		</select>
-		<input type="submit" value="회워가입">
+		<input type="submit" value="회원가입">
 	</form>
 	
 	<jsp:include page="footer.jsp" />

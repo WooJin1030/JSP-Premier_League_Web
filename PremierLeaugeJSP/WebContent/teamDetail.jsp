@@ -22,8 +22,10 @@
 			<button class="mainBtn">Main</button>
 			<button class="stadiumInfoBtn">Home Stadium</button>
 			<a href="TeamPlayerAction.do?team=${id}" class="playerInfoBtn">
-			<a href="TeamArticleAction.do?team=${id}" class="playerInfoBtn">
 				<button>Players</button>
+			</a>
+			<a href="TeamArticleAction.do?team=${id}" class="playerInfoBtn">
+				<button>Articles</button>
 			</a>
 
 			<hr>

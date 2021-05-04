@@ -11,7 +11,10 @@
 	<jsp:include page="header.jsp" />
 	
 	<c:if test="${not empty errorMessage}">
-	<span>${errorMessage}</span>
+	<div class="errorMessage">
+		<span>${errorMessage}</span>
+	</div>
+
 	</c:if>
 	
 	<form method="POST" action="LoginAction.do?action=login">
