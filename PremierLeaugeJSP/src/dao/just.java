@@ -37,23 +37,23 @@ public class just {
 					
 		        	for(int i = 0 ; i < matchArray.size() ; i++){
 		        		JSONObject tempObj = (JSONObject) matchArray.get(i);
-		                System.out.println(tempObj.get("when"));	                
-		                System.out.println(tempObj.get("referee"));
+		                // System.out.println(tempObj.get("when"));	                
+		                // System.out.println(tempObj.get("referee"));
 		                System.out.println(tempObj.get("matchNumber"));
 		                
 		                JSONObject testDataObject = (JSONObject) tempObj.get("team1");
 		                System.out.println(testDataObject.get("teamName"));
-		                System.out.println(testDataObject.get("teamScore"));
-		                System.out.println(testDataObject.get("firstHalfScore"));
-		                
+		                System.out.println(String.valueOf(testDataObject.get("teamScore")).getClass().getName());
+//		                System.out.println(testDataObject.get("firstHalfScore"));
+//		                
 		                JSONObject testDataObject2 = (JSONObject) tempObj.get("team2");
-		                System.out.println(testDataObject2.get("teamName"));
-		                System.out.println(testDataObject2.get("teamScore"));
-		                System.out.println(testDataObject2.get("firstHalfScore"));
-		         
+//		                System.out.println(testDataObject2.get("teamName"));
+//		                System.out.println(testDataObject2.get("teamScore"));
+//		                System.out.println(testDataObject2.get("firstHalfScore"));
+//		         
 		        	} 
 					
-					matchArray.forEach( match -> parseTestData( (JSONObject) match ) );
+					// matchArray.forEach( match -> parseTestData( (JSONObject) match ) );
 					
 				} catch (IOException | InterruptedException e) {
 					// TODO Auto-generated catch block

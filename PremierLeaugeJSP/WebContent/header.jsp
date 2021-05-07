@@ -93,9 +93,11 @@
        		<a href="LoginAction.do?action=logout" class="head__loginBtn">
                 Logout             
             </a>
-            <a href="MyTeam.do?team=${memberTeam.getName()}" class="head__loginBtn">
-           		<img src="${memberTeam.getLogoUrl()}">
-            </a> 
+            <c:if test="${!empty memberTeam.getName()}">
+	            <a href="MyTeam.do?team=${memberTeam.getName()}" class="head__loginBtn">
+	           		<img src="${memberTeam.getLogoUrl()}">
+	            </a> 
+	        </c:if>
        	</div>
        	</c:if>
 </body>

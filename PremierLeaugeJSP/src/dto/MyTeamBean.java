@@ -1,8 +1,9 @@
 package dto;
 
 
-public class MyTeamBean {
-	private static final long serialVersionUID = 1L;
+public class MyTeamBean implements Comparable<MyTeamBean> {
+	
+	// private static final long serialVersionUID = 1L;
 	private String when;
 	private String referee;
 	private int matchNumber;
@@ -111,5 +112,13 @@ public class MyTeamBean {
 				+ team2FirstHalfScore + "]";
 	}
 	
+	@Override
+	public int compareTo(MyTeamBean compareMyteam) {
+		
+	   int compareMatchNumber = compareMyteam.getMatchNumber();
+        return this.matchNumber-compareMatchNumber;
+
+	}
+
 
 }
