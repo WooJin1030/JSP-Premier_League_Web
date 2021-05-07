@@ -47,29 +47,12 @@ public class leagueTableData {
 	        JSONArray memberArray = (JSONArray) jsonObj.get("records");
 	        
 	        setLeagueArray(memberArray);
-	        
-	        // System.out.println(getLeagueArray());
-	      
-//	        System.out.println("=====Members=====");
-//	        	for(int i=0 ; i<memberArray.size() ; i++){
-//	        		JSONObject tempObj = (JSONObject) memberArray.get(i);
-//	                System.out.println(tempObj.get("team"));
-//	                System.out.println(tempObj.get("played"));
-//	                System.out.println(tempObj.get("win"));
-//	                System.out.println(tempObj.get("draw"));
-//	                System.out.println(tempObj.get("loss"));
-//	                System.out.println(tempObj.get("goalsFor"));
-//	                System.out.println(tempObj.get("goalsAgainst"));
-//	                System.out.println(tempObj.get("points"));
-//	                System.out.println("----------------------------");
-// 	            }
-			
+	        	
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} catch (ParseException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 		

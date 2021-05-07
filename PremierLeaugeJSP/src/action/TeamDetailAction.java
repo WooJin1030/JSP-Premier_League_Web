@@ -33,6 +33,7 @@ public class TeamDetailAction implements Action {
 			System.out.println("Fail to connection.");
 		}
 		
+		
 		HttpSession session = request.getSession();
 		String sessionId = (String) session.getAttribute("userId");
 		

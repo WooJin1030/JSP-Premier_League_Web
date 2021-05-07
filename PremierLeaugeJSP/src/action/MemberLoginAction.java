@@ -1,7 +1,6 @@
 package action;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
 
@@ -18,12 +17,9 @@ import jdbc.ConnectionProvider;
 
 public class MemberLoginAction implements Action {
 	
-	PrintWriter out = null;
-	
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		
 		String action = request.getParameter("action");
-		
 		
 		if (action.equals("login")) {
 			
@@ -57,15 +53,12 @@ public class MemberLoginAction implements Action {
 					}
 					
 				} else {
-					System.out.println("환영합니다!" + id + "님");
 					
 					HttpSession session = request.getSession();
 					
 					session.setAttribute("userId", id);
 					session.setAttribute("team", idList.getMyteam());
 					// session.setAttribute("userPW", password);
-					
-					System.out.println("Welcome " + id);
 						
 					try {
 						RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
@@ -85,11 +78,7 @@ public class MemberLoginAction implements Action {
 		if (action.equals("logout")) {
 		    HttpSession session = request.getSession();  
             session.invalidate();  
-            
-			// System.out.println("Session Delete~");
-			System.out.println("logout");
-			
-			
+            			
 			try {
 				RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 				rd.forward(request, response);

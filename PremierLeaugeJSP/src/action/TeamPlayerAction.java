@@ -28,7 +28,7 @@ public class TeamPlayerAction implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		
 		int id = Integer.parseInt(request.getParameter("team"));
-		
+	
 		Connection conn = null;
 		
 		try {
@@ -53,7 +53,6 @@ public class TeamPlayerAction implements Action {
 		
 		try {
 			response2 = HttpClient.newHttpClient().send(request2, HttpResponse.BodyHandlers.ofString());
-			response2 = HttpClient.newHttpClient().send(request2, HttpResponse.BodyHandlers.ofString());
 			
 			String leaguePlayer = (String) response2.body();
 			
@@ -64,13 +63,11 @@ public class TeamPlayerAction implements Action {
 			jsonArr = (JSONArray) jsonParser.parse(leaguePlayer);
 			jsonObj.put("jsonArr", jsonArr);
 			
-			// System.out.println(jsonObj);
 			
 			JSONArray member1Array = (JSONArray) jsonObj.get("jsonArr");
-			JSONObject tempObj = (JSONObject) member1Array.get(0);
 			
+			JSONObject tempObj = (JSONObject) member1Array.get(0);
 			JSONArray member2Array = (JSONArray) tempObj.get("squad");
-	        // System.out.println(getLeagueArray());
 	      
 			 for(int i = 0 ; i < member2Array.size() ; i++){
 				 	JSONObject temp2Obj = (JSONObject) member2Array.get(i);

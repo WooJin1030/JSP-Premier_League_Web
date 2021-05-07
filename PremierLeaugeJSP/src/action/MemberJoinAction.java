@@ -1,7 +1,6 @@
 package action;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
 
@@ -18,9 +17,8 @@ import jdbc.ConnectionProvider;
 
 public class MemberJoinAction implements Action{
 	
-	PrintWriter out = null;
-	
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
+		
 		String id= request.getParameter("id");
 		String password = request.getParameter("password");
 		String name = request.getParameter("name");
@@ -97,40 +95,27 @@ public class MemberJoinAction implements Action{
 		if (id == null || id.equals("")) {
 			request.setAttribute("errorMessage", "id를 입력하지 않았습니다!");
 			try {
-				try {
-					RequestDispatcher rd = request.getRequestDispatcher("joinForm.jsp");
-					rd.forward(request, response);
-				} catch (ServletException e) {
-					e.printStackTrace();
-				}
-			} catch (IOException e) {
+				RequestDispatcher rd = request.getRequestDispatcher("joinForm.jsp");
+				rd.forward(request, response);
+			} catch (ServletException | IOException e) {
 				e.printStackTrace();
 			}
 	        return;
 	    } else if (name == null || name.equals("")) {
 	    	request.setAttribute("errorMessage", "이름을 입력하지 않았습니다!");
 			try {
-				try {
-					RequestDispatcher rd = request.getRequestDispatcher("joinForm.jsp");
-					rd.forward(request, response);
-				} catch (ServletException e) {
-					e.printStackTrace();
-				}
-			} catch (IOException e) {
+				RequestDispatcher rd = request.getRequestDispatcher("joinForm.jsp");
+				rd.forward(request, response);
+			} catch (ServletException | IOException e) {
 				e.printStackTrace();
 			}
-
 	        return;
 	    } else if (email == null || email.equals("")) {
 	    	request.setAttribute("errorMessage", "이메일을 입력하지 않았습니다!");
 			try {
-				try {
-					RequestDispatcher rd = request.getRequestDispatcher("joinForm.jsp");
-					rd.forward(request, response);
-				} catch (ServletException e) {
-					e.printStackTrace();
-				}
-			} catch (IOException e) {
+				RequestDispatcher rd = request.getRequestDispatcher("joinForm.jsp");
+				rd.forward(request, response);
+			} catch (ServletException | IOException e) {
 				e.printStackTrace();
 			}
 
@@ -138,27 +123,19 @@ public class MemberJoinAction implements Action{
 	    } else if (team == null || team.equals("")) {
 	    	request.setAttribute("errorMessage", "내 팀 정보를 입력하지 않았습니다!");
 			try {
-				try {
-					RequestDispatcher rd = request.getRequestDispatcher("joinForm.jsp");
-					rd.forward(request, response);
-				} catch (ServletException e) {
-					e.printStackTrace();
-				}
-			} catch (IOException e) {
+				RequestDispatcher rd = request.getRequestDispatcher("joinForm.jsp");
+				rd.forward(request, response);
+			} catch (ServletException | IOException e) {
 				e.printStackTrace();
 			}
 
 	        return;
 	    } else if (password.length() < 5) {
 	    	request.setAttribute("errorMessage", "비밀번호는 5자리 이상 설정해야합니다.");
-	        try {
-	        	try {
-					RequestDispatcher rd = request.getRequestDispatcher("joinForm.jsp");
-					rd.forward(request, response);
-				} catch (ServletException e) {
-					e.printStackTrace();
-				}
-			} catch (IOException e) {
+			try {
+				RequestDispatcher rd = request.getRequestDispatcher("joinForm.jsp");
+				rd.forward(request, response);
+			} catch (ServletException | IOException e) {
 				e.printStackTrace();
 			}
 	        return;
@@ -172,24 +149,20 @@ public class MemberJoinAction implements Action{
 			
 			if (idList == null) {
 				service.insert(member); 
-				
+							
 				try {
 					RequestDispatcher rd = request.getRequestDispatcher("loginForm.jsp");
 					rd.forward(request, response);
-				} catch (ServletException e) {
+				} catch (ServletException | IOException e) {
 					e.printStackTrace();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}	
+				}
+
 			} else {
-		
 				request.setAttribute("errorMessage", "존재하는 id가 있습니다!");
 				try {
 					RequestDispatcher rd = request.getRequestDispatcher("joinForm.jsp");
 					rd.forward(request, response);
-				} catch (ServletException e) {
-					e.printStackTrace();
-				} catch (IOException e) {
+				} catch (ServletException | IOException e) {
 					e.printStackTrace();
 				}
 			}
