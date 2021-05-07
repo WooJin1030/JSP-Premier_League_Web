@@ -19,7 +19,8 @@ public class LeagueTableManager {
 	
 	public LeagueTableManager() {
 		
-		JSONArray memberArray = leagueTableData.getLeagueArray();
+		leagueTableData data = new leagueTableData();
+		JSONArray memberArray = data.getLeagueArray();
 		
 		for(int i = 0 ; i < memberArray.size(); i++) {
 			JSONObject tempObj = (JSONObject) memberArray.get(i);

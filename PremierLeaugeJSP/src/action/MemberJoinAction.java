@@ -25,68 +25,68 @@ public class MemberJoinAction implements Action{
 		String email = request.getParameter("email");
 		String team = request.getParameter("teamname");
 		
-		String teamid = null;
+		int teamid = 0;
 		
 		switch(team) {
 		case "ManchesterCity":
-			teamid =  "9259";
+			teamid =  9259;
 			break;
 		case "ManchesterUnited":
-			teamid = "9260";
+			teamid = 9260;
 			break;
 		case "Leicester":
-			teamid = "9240";
+			teamid = 9240;
 			break;
 		case "WestHam":
-			teamid = "9427";
+			teamid = 9427;
 			break;
 		case "Chelsea":
-			teamid = "9092";
+			teamid = 9092;
 			break;
 		case "Liverpool":
-			teamid = "9249";
+			teamid = 9249;
 			break;
 		case "Tottenham":
-			teamid = "9406";
+			teamid = 9406;
 			break;
 		case "Everton":
-			teamid = "9158";
+			teamid = 9158;
 			break;
 		case "Leeds":
-			teamid = "9238";
+			teamid = 9238;
 			break;
 		case "Arsenal":
-			teamid = "9002";
+			teamid = 9002;
 			break;
 		case "AstonVilla":
-			teamid = "9008";
+			teamid = 9008;
 			break;
 		case "Wolverhampton":
-			teamid = "9446";
+			teamid = 9446;
 			break;
 		case "CrystalPalace":
-			teamid = "9127";
+			teamid = 9127;
 			break;
 		case "Southhampton":
-			teamid = "9363";
+			teamid = 9363;
 			break;
 		case "Newcastle":
-			teamid = "9287";
+			teamid = 9287;
 			break;
 		case "Brighton":
-			teamid = "9065";
+			teamid = 9065;
 			break;
 		case "Fullham":
-			teamid = "9175";
+			teamid = 9175;
 			break;
 		case "Burnley":
-			teamid = "9072";
+			teamid = 9072;
 			break;
 		case "WestBromwich":
-			teamid = "9426";
+			teamid = 9426;
 			break;
 		case "Sheffield":
-			teamid = "9348";
+			teamid = 9348;
 			break;
 		}
 		

@@ -12,6 +12,7 @@ import action.Action;
 import action.HomeAction;
 import action.MemberJoinAction;
 import action.MemberLoginAction;
+import action.MyTeamAction;
 import action.TeamArticleAction;
 import action.TeamDetailAction;
 import action.TeamPlayerAction;
@@ -84,6 +85,14 @@ public class leagueTableController extends HttpServlet {
 		if(command.equals("/JoinAction.do")) {
 			action = new MemberJoinAction();
 			action.execute(request, response);
+		}
+		
+		if(command.equals("/MyTeam.do")) {
+			action = new MyTeamAction();
+			action.execute(request, response);
+			
+			RequestDispatcher rd = request.getRequestDispatcher("myTeam.jsp");
+			rd.forward(request, response);
 		}
 		
 	}

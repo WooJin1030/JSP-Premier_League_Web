@@ -55,13 +55,18 @@
       }
       
       .head__userPage {
-      	text-align:right;
+      	display:flex;
+      	justify-content: flex-end;
+      	align-items: center;
       	margin-right: 32px;
+      	margin-top: 32px;
       	font-size: 24px;
       }
       
-      .head__userPage a {
-      	padding: 16px;
+      .head__userPage a img {
+      	margin-left: 16px;
+      	width: 40px;
+      	height: 40px;
       }
       
      @media screen and (max-width: 1600px) {

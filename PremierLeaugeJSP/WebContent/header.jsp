@@ -75,7 +75,7 @@
 	            </a> 
 	            <a href="TeamDetail.do?team=9446">
 	                <img src="https://user-images.githubusercontent.com/62231339/116050255-3b0c8d80-a6b2-11eb-8625-bf17ce9c0482.png" alt="Wolverhampton" />               
-	            </a>      
+	            </a>   
         	</div>
         </nav>
         <c:if test="${sessionState eq 'none'}">
@@ -93,8 +93,8 @@
        		<a href="LoginAction.do?action=logout" class="head__loginBtn">
                 Logout             
             </a>
-            <a href="MyTeam.do?team=${teamId}" class="head__loginBtn">
-           		${teamId}     
+            <a href="MyTeam.do?team=${memberTeam.getName()}" class="head__loginBtn">
+           		<img src="${memberTeam.getLogoUrl()}">
             </a> 
        	</div>
        	</c:if>

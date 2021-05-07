@@ -84,14 +84,9 @@ public class TeamPlayerAction implements Action {
 			 
 			 request.setAttribute("playerList", pList);
 			
-		} catch (IOException e) {
+		} catch (IOException | InterruptedException | ParseException e) {
 			e.printStackTrace();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		} catch (ParseException e) {
-            e.printStackTrace();
-        }
-		
+		} 
 		
 		HttpSession session = request.getSession();
 		String sessionId = (String) session.getAttribute("userId");

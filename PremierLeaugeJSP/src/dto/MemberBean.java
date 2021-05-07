@@ -8,13 +8,13 @@ public class MemberBean implements java.io.Serializable {
 	private String password;
 	private String name;
 	private String email;
-	private String myteam;
+	private int myteam;
 	
 	public MemberBean () {
-		this(null, null, null, null, null);
+		this(null, null, null, null, 0);
 	}
 	
-	public MemberBean(String id, String password, String name, String email, String myteam) {
+	public MemberBean(String id, String password, String name, String email, int myteam) {
 		super();
 		this.id = id;
 		this.password = password;
@@ -56,11 +56,11 @@ public class MemberBean implements java.io.Serializable {
 		this.email = email;
 	}
 
-	public String getMyteam() {
+	public int getMyteam() {
 		return myteam;
 	}
 
-	public void setMyteam(String myteam) {
+	public void setMyteam(int myteam) {
 		this.myteam = myteam;
 	}
 

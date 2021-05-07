@@ -7,5 +7,6 @@ public interface LeagueTeamInfoDAO {
 	
 	int edit(LeagueTeamInfoBean bean);
 	LeagueTeamInfoBean select(int id);
+	LeagueTeamInfoBean selectMemberTeam(int id);
 }
 
