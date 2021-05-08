@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import dto.LeagueTeamInfoBean;
 
@@ -163,6 +165,40 @@ public class LeagueTeamInfoImpl implements LeagueTeamInfoDAO {
 		
 	}
 	
+	
+	@Override
+	public List<LeagueTeamInfoBean> selectList() {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			String sql = "select * from teamdata";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			List<LeagueTeamInfoBean> teamList = new ArrayList<>();
+			while (rs.next()) {
+				teamList.add(createFromResultSet(rs));
+			}
+			return teamList;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if (pstmt != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return null;
+	}
 	
 	public LeagueTeamInfoBean createFromResultSet(ResultSet rs) {
 		

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import action.Action;
 import action.HomeAction;
 import action.MemberJoinAction;
+import action.MemberJoinFormAction;
 import action.MemberLoginAction;
 import action.MyTeamAction;
 import action.TeamArticleAction;
@@ -78,6 +79,9 @@ public class leagueTableController extends HttpServlet {
 		}
 		
 		if(command.equals("/JoinView.do")) {
+			action = new MemberJoinFormAction();
+			action.execute(request, response);
+			
 			RequestDispatcher rd = request.getRequestDispatcher("joinForm.jsp");
 			rd.forward(request, response);
 		}

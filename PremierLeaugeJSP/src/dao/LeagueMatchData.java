@@ -30,29 +30,16 @@ private static JSONArray matchArray = new JSONArray();
 				.method("GET", HttpRequest.BodyPublishers.noBody())
 				.build();
 		HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-		// System.out.println(response.body());
 	
 	try {
 		response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-		// System.out.println(response.body());
-		// System.out.println(response.body().getClass().getName());
+
 		
 		String leagueMatch = response.body();
 		System.out.println(leagueMatch);
 		
 		JSONParser jsonParser = new JSONParser();     
 		JSONArray matchArray = (JSONArray) jsonParser.parse(leagueMatch);
-		// System.out.println(matchArray);
-		
-//		for(int i=0 ; i<matchArray.size() ; i++){
-//		 	JSONObject temp2Obj = (JSONObject) matchArray.get(i);
-//		 	
-//		 	System.out.println(temp2Obj.get("formatted_date"));
-//            System.out.println(temp2Obj.get("visitorteam_name"));
-//            System.out.println(temp2Obj.get("localteam_name"));
-//            System.out.println(temp2Obj.get("ft_score"));
-//            System.out.println("----------------------------");
-//	 }
 
         setMatchArray(matchArray);
         

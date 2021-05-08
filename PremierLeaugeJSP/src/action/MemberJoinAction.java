@@ -10,8 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.LeagueTeamInfoDAO;
+import dao.LeagueTeamInfoImpl;
 import dao.MemberDAO;
 import dao.MemberImpl;
+import dto.LeagueTeamInfoBean;
 import dto.MemberBean;
 import jdbc.ConnectionProvider;
 
@@ -24,77 +27,8 @@ public class MemberJoinAction implements Action{
 		String password = request.getParameter("password");
 		String name = request.getParameter("name");
 		String email = request.getParameter("email");
-		
 		String team = request.getParameter("teamname");
-		
-		// join form에서 받아온 팀 이름을 팀 아이디로 변환
-		int teamid = 0;
-		
-		switch(team) {
-		case "ManchesterCity":
-			teamid =  9259;
-			break;
-		case "ManchesterUnited":
-			teamid = 9260;
-			break;
-		case "Leicester":
-			teamid = 9240;
-			break;
-		case "WestHam":
-			teamid = 9427;
-			break;
-		case "Chelsea":
-			teamid = 9092;
-			break;
-		case "Liverpool":
-			teamid = 9249;
-			break;
-		case "Tottenham":
-			teamid = 9406;
-			break;
-		case "Everton":
-			teamid = 9158;
-			break;
-		case "Leeds":
-			teamid = 9238;
-			break;
-		case "Arsenal":
-			teamid = 9002;
-			break;
-		case "AstonVilla":
-			teamid = 9008;
-			break;
-		case "Wolverhampton":
-			teamid = 9446;
-			break;
-		case "CrystalPalace":
-			teamid = 9127;
-			break;
-		case "Southhampton":
-			teamid = 9363;
-			break;
-		case "Newcastle":
-			teamid = 9287;
-			break;
-		case "Brighton":
-			teamid = 9065;
-			break;
-		case "Fulham":
-			teamid = 9175;
-			break;
-		case "Burnley":
-			teamid = 9072;
-			break;
-		case "WestBromwich":
-			teamid = 9426;
-			break;
-		case "Sheffield":
-			teamid = 9348;
-			break;
-		}
-		
-		MemberBean member = new MemberBean(id, password, name, email, teamid);
-		
+			
 		// join 조건 확인
 		if (id == null || id.equals("")) { // id 입력하지 않은 경우
 			request.setAttribute("errorMessage", "id를 입력하지 않았습니다!");
@@ -145,13 +79,21 @@ public class MemberJoinAction implements Action{
 	        return;
 		}
 		
-		
-		// 멤버 DB에서 확인
+
+		 // 멤버 DB에서 확인
 		Connection conn = null;
 		try {
 			conn = ConnectionProvider.getConnection();
+			
 			MemberDAO service = new MemberImpl(conn);
 			MemberBean idList = service.selectList(id);
+			
+			LeagueTeamInfoDAO service2 = new LeagueTeamInfoImpl(conn);
+			LeagueTeamInfoBean tiList = service2.selectByName(team);
+			int teamid = tiList.getId();
+	
+			// request.setAttribute("teamInfoList", tiList);
+			MemberBean member = new MemberBean(id, password, name, email, teamid);
 			
 			if (idList == null) { // 존재하고 있지 않은 id인 경우
 				service.insert(member); 						

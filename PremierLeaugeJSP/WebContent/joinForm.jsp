@@ -11,7 +11,9 @@
 	<jsp:include page="header.jsp" />
 	
 	<c:if test="${not empty errorMessage}">
-		<span>${errorMessage}</span>
+		<div class="errorMessage">
+			<span>${errorMessage}</span>
+		</div>
 	</c:if>
 	
 	<!-- join form -->
@@ -24,26 +26,9 @@
 		<label for="team-select">팀을 설정해주세요!</label>
 		<select id="team-select" name="teamname">
 		    <option value="">--Please choose an option--</option>
-		    <option value="Arsenal">Arsenal</option>
-		    <option value="AstonVilla">AstonVilla</option>
-		    <option value="Brighton">Brighton</option>
-		    <option value="Burnley">Burnley</option>
-		    <option value="Chelsea">Chelsea</option>
-		    <option value="CrystalPalace">CrystalPalace</option>
-		    <option value="Everton">Everton</option>
-		    <option value="Fulham">Fulham</option>
-		    <option value="Leeds">Leeds</option>
-		    <option value="Leicester">Leicester</option>
-		    <option value="Liverpool">Liverpool</option>
-		    <option value="ManchesterCity">ManchesterCity</option>
-		    <option value="ManchesterUnited">ManchesterUnited</option>
-		    <option value="Newcastle">Newcastle</option>
-		    <option value="Sheffield">Sheffield</option>
-		    <option value="Southhampton">Southhampton</option>
-		    <option value="Tottenham">Tottenham</option>
-		    <option value="WestBromwich">WestBromwich</option>
-		    <option value="WestHam">WestHam</option>
-		    <option value="Wolverhampton">Wolverhampton</option>
+		    <c:forEach var="team" items="${teamInfoList}">
+		    	<option value="${team.name}">${team.name}</option>
+		    </c:forEach>
 		</select>
 		<input type="submit" value="회원가입">
 	</form>
