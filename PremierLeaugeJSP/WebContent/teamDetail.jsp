@@ -46,7 +46,7 @@
 					<h2>감독:  ${teamInfoList.managername} </h2>
 				</li>
 				<li>
-					<a href= ${teamInfoList.getOfficialsite()} >
+					<a href= "${teamInfoList.officialsite}" >
 						<h2>공식 웹사이트:  </h2>
 						<h2 class="teamSite">${teamInfoList.officialsite}</h2>
 					</a>
