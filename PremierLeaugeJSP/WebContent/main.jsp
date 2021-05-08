@@ -82,64 +82,64 @@
 	                	<td class="ranking">${team.rank}</td>
 	                    <td class="teamname">
 	                    	<c:if test = "${team.team eq 'Manchester City'}">
-	                    	<img src="./img/logos/맨체스터시티.png" alt="ManchesterCity">
+	                    		<img src="https://user-images.githubusercontent.com/62231339/116050274-3e077e00-a6b2-11eb-83fe-58aaece8cfe6.png" alt="ManchesterCity">
 	                    	</c:if>
 	                    	<c:if test = "${team.team eq 'Manchester United'}">
-	                    	<img src="./img/logos/맨유.png" alt="ManchesterUnited">
+	                    		<img src=https://user-images.githubusercontent.com/62231339/116050238-38119d00-a6b2-11eb-823f-7539e716d1a4.png alt="ManchesterUnited">
 	                    	</c:if>
 	                    	<c:if test = "${team.team eq 'Leicester'}">
-	                    	<img src="./img/logos/레스터시티.png" alt="Leicester">
+	                    		<img src="https://user-images.githubusercontent.com/62231339/116050253-3a73f700-a6b2-11eb-9748-7e20017f6c2c.png" alt="Leicester">
 	                    	</c:if>
 	                    	<c:if test = "${team.team eq 'West Ham'}">
-	                    	<img src="./img/logos/웨스트햄.png" alt="WestHam">
+	                    		<img src="https://user-images.githubusercontent.com/62231339/116050262-3ba52400-a6b2-11eb-9298-3b7de530436b.png" alt="WestHam">
 	                    	</c:if>
 	                    	<c:if test = "${team.team eq 'Chelsea'}">
-	                    	<img src="./img/logos/첼시.png" alt="Chelsea">
+	                    		<img src="https://user-images.githubusercontent.com/62231339/116050252-3a73f700-a6b2-11eb-9017-70300e33cc88.png" alt="Chelsea">
 	                    	</c:if>
 	                    	<c:if test = "${team.team eq 'Liverpool'}">
-	                    	<img src="./img/logos/리버풀.png" alt="Liverpool">
+	                    		<img src="https://user-images.githubusercontent.com/62231339/116050246-3942ca00-a6b2-11eb-9ff7-61ecde2a5acd.png" alt="Liverpool">
 	                    	</c:if>
 	                    	<c:if test = "${team.team eq 'Tottenham'}">
-	                    	<img src="./img/logos/토트넘.png" alt="Tottenham">
+	                    		<img src="https://user-images.githubusercontent.com/62231339/116050271-3d6ee780-a6b2-11eb-86f7-e9380f8d8bb8.png" alt="Tottenham">
 	                    	</c:if>
 	                    	<c:if test = "${team.team eq 'Everton'}">
-	                    	<img src="./img/logos/에버튼.png" alt="Everton">
+	                    		<img src="https://user-images.githubusercontent.com/62231339/116050273-3d6ee780-a6b2-11eb-92bc-fa42a5451cd8.png" alt="Everton">
 	                    	</c:if>
 	                    	<c:if test = "${team.team eq 'Leeds'}">
-	                    	<img src="./img/logos/리즈.png" alt="Leeds">
+	                    		<img src="https://user-images.githubusercontent.com/62231339/116050259-3ba52400-a6b2-11eb-99a5-63fa8610bb26.png" alt="Leeds">
 	                    	</c:if>
 	                    	<c:if test = "${team.team eq 'Arsenal'}">
-	                    	<img src="./img/logos/아스날.png" alt="Arsenal">
+	                    		<img src="https://user-images.githubusercontent.com/62231339/116050257-3b0c8d80-a6b2-11eb-8488-7dc68f06383f.png" alt="Arsenal">
 	                    	</c:if>
 	                    	<c:if test = "${team.team eq 'Aston Villa'}">
-	                    	<img src="./img/logos/아스톤빌라.png" alt="AstonVilla">
+	                    		<img src="https://user-images.githubusercontent.com/62231339/116050276-3e077e00-a6b2-11eb-9c5c-5db8d4adaaa0.png" alt="AstonVilla">
 	                    	</c:if>
 	                    	<c:if test = "${team.team eq 'Wolverhampton Wanderers'}">
-	                    	<img src="./img/logos/울버햄튼.png" alt="WolverhamptonWanderers">
+	                    		<img src="https://user-images.githubusercontent.com/62231339/116050255-3b0c8d80-a6b2-11eb-8625-bf17ce9c0482.png" alt="WolverhamptonWanderers">
 	                    	</c:if>
 	                    	<c:if test = "${team.team eq 'Crystal Palace'}">
-	                    	<img src="./img/logos/크리스탈펠리스.png" alt="CrystalPalace">
+	                    		<img src="https://user-images.githubusercontent.com/62231339/116050263-3c3dba80-a6b2-11eb-9e4e-c5bf8762cab6.png" alt="CrystalPalace">
 	                    	</c:if>	
 	                    	<c:if test = "${team.team eq 'Southampton'}">
-	                    	<img src="./img/logos/사우스햄튼.png" alt="Southampton">
+	                    		<img src="https://user-images.githubusercontent.com/62231339/116050269-3cd65100-a6b2-11eb-86e3-b981982632f3.png" alt="Southampton">
 	                    	</c:if>
 	                    	<c:if test = "${team.team eq 'Newcastle United'}">
-	                    	<img src="./img/logos/뉴캐슬.png" alt="NewcastleUnited">
+	                    		<img src="https://user-images.githubusercontent.com/62231339/116050247-39db6080-a6b2-11eb-9a9d-60fad463ad18.png" alt="NewcastleUnited">
 	                    	</c:if>
 	                    	<c:if test = "${team.team eq 'Brighton'}">
-	                    	<img src="./img/logos/브라이튼.png" alt="Brighton">
+	                    		<img src="https://user-images.githubusercontent.com/62231339/116050243-38aa3380-a6b2-11eb-9aa6-f6ff7665d297.png" alt="Brighton">
 	                    	</c:if>
 	                    	<c:if test = "${team.team eq 'Burnley'}">
-	                    	<img src="./img/logos/번리.png" alt="Burnley">
+	                    		<img src="https://user-images.githubusercontent.com/62231339/116050265-3c3dba80-a6b2-11eb-87fd-ce7cdf38602f.png" alt="Burnley">
 	                    	</c:if>
 	                    	<c:if test = "${team.team eq 'Fulham'}">
-	                    	<img src="./img/logos/풀럼.png" alt="Fulham">
+	                    		<img src="https://user-images.githubusercontent.com/62231339/116050280-3ea01480-a6b2-11eb-8434-8abc4ff34ef3.png" alt="Fulham">
 	                    	</c:if>
 	                    	<c:if test = "${team.team eq 'West Bromwich Albion'}">
-	                    	<img src="./img/logos/웨스트브롬.png" alt="WestBromwichAlbion">
+	                    		<img src="https://user-images.githubusercontent.com/62231339/116050250-39db6080-a6b2-11eb-94dc-24d0a270b7b7.png" alt="WestBromwichAlbion">
 	                    	</c:if>
 	         				<c:if test = "${team.team eq 'Sheffield United'}">
-	                    	<img src="./img/logos/섀필드.png" alt="SheffieldUnited">
+	                    		<img src="https://user-images.githubusercontent.com/62231339/116050241-38aa3380-a6b2-11eb-93df-112b1f808f7e.png" alt="SheffieldUnited">
 	                    	</c:if>
 	                    	<c:choose>
 	                    		<c:when test = "${team.team eq 'West Bromwich Albion'}">
@@ -149,8 +149,7 @@
 	                    		<c:when test = "${team.team eq 'Wolverhampton Wanderers'}">
 	                    		<span>Wolverhampton</span>
 	                    		</c:when>
-	                    		
-	                    		
+	                    		                    		
 	             				<c:otherwise>
 	             				<span>${team.team}</span>
 	             				</c:otherwise>

@@ -5,6 +5,8 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -17,12 +19,18 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import dao.LeagueTeamInfoDAO;
+import dao.LeagueTeamInfoImpl;
+import dto.LeagueTeamInfoBean;
 import dto.MyTeamBean;
+import jdbc.ConnectionProvider;
 
 public class MyTeamAction implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		
 		// 자기가 설정한 팀 이름을 받아온다.
+		String teaminit = request.getParameter("team");
+		
 		String team = request.getParameter("team");
 		
 		// team이 띄어쓰기를 포함한 경우에는 가운데에 %20을 삽입한다.
@@ -30,9 +38,8 @@ public class MyTeamAction implements Action {
 			String[] teamArr = team.split(" ");
 			String part1 = teamArr[0];
 			String part2 = teamArr[1]; 
-		  team = part1 + "%20" + part2;
-		}
-		
+			team = part1 + "%20" + part2;
+		} 
 		// api에서 팀 전체의 정보를 가져운다.
 		// 팀이 홈인 경우
 		ArrayList<MyTeamBean> tList = new ArrayList<MyTeamBean>();
@@ -228,6 +235,24 @@ public class MyTeamAction implements Action {
 		} else {
 			request.setAttribute("sessionState", "loggedIn");
 			request.setAttribute("sessionId", sessionId);
+		}
+		
+		// 팀 정보 DB
+		
+		// 팀정보 DB를 불러옴
+		Connection conn = null;
+		try {
+			conn = ConnectionProvider.getConnection();
+			
+			LeagueTeamInfoDAO service2 = new LeagueTeamInfoImpl(conn);
+			LeagueTeamInfoBean tiList = service2.selectByName(teaminit);
+			System.out.println(teaminit);
+			request.setAttribute("teamInfoList", tiList);
+			
+			// request.setAttribute("teamName", teambefore);
+			
+		} catch (SQLException ex) {
+			System.out.println("Fail to connection.");
 		}
 		
 	}

@@ -31,7 +31,7 @@
 		    <option value="Chelsea">Chelsea</option>
 		    <option value="CrystalPalace">CrystalPalace</option>
 		    <option value="Everton">Everton</option>
-		    <option value="Fullham">Fullham</option>
+		    <option value="Fulham">Fulham</option>
 		    <option value="Leeds">Leeds</option>
 		    <option value="Leicester">Leicester</option>
 		    <option value="Liverpool">Liverpool</option>

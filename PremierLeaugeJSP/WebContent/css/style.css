@@ -54,6 +54,8 @@
       	transform: scale(1.1);
       }
       
+     
+      
       .head__userPage {
       	display:flex;
       	justify-content: flex-end;
@@ -67,6 +69,10 @@
       	margin-left: 16px;
       	width: 40px;
       	height: 40px;
+      }
+      
+      .head__userPage .head__loginBtn {
+      	margin-right: 16px;
       }
       
      @media screen and (max-width: 1600px) {
@@ -446,4 +452,71 @@
 		color: #606060;
 	}
 	
+	/* my team */
+	
+	.myteam {
+		text-align: center;
+		border : 2px solid black;
+		max-width: 70%;
+		margin: 0 auto;
+		margin-top: 48px;
+		padding: 16px 0;
+	}
+	
+	.myteam__title {
+		display:flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 16px; 
+		color: white;
+		padding: 16px 0;
+		margin-top: 16px;
+	}
+	
+	.myteam__title img {
+		margin-right: 4px;
+	}
+	
+	.myteam .myteam__matchNumber {
+		margin-bottom: 4px;
+	}
+	
+	.myteam .myteam__scheduled span{
+		font-size: 24px;
+		color: purple;
+	}
+	
+	.myteam .myteam__scheduled-home, .myteam__scheduled-away {
+		margin: 4px 0;
+	}
+	
+	.myteam .myteam__gameInfo {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	.myteam .myteam__gameInfo .myteam__homeTeam {
+		margin-right: 8px; 
+	}
+	
+	.myteam .myteam__gameInfo .myteam__awayTeamScore {
+		margin: 0 8px;
+	} 
+	
+	.myteam .myteam__win, .myteam__draw, .myteam__lost {
+		font-size: 24px;
+	}
+	
+	.myteam .myteam__win {
+		color: red;
+	}
+	
+	.myteam .myteam__lost {
+		color: blue;
+	}
+	
+	.myteam .myteam__draw {
+		color: green;
+	}
        

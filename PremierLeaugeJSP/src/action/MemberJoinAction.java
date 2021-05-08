@@ -79,7 +79,7 @@ public class MemberJoinAction implements Action{
 		case "Brighton":
 			teamid = 9065;
 			break;
-		case "Fullham":
+		case "Fulham":
 			teamid = 9175;
 			break;
 		case "Burnley":

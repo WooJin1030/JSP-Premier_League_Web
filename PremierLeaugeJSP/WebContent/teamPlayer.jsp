@@ -24,7 +24,6 @@
 	<!-- 선택된 팀의 선수 정보 -->
 	<div class="teamDetail__player">
 		<div class="gk">
-		
 			<!-- 골키퍼 -->
 			<h2 class="teamDetail__player__position">골키퍼</h2>
 			<hr class="teamDetail__player__hr" />	

@@ -49,7 +49,7 @@ public class LeagueTeamInfoImpl implements LeagueTeamInfoDAO {
 		}
 		return 0;
 	}
-
+	
 	@Override
 	public LeagueTeamInfoBean select(int id) {
 		PreparedStatement pstmt = null;
@@ -58,6 +58,43 @@ public class LeagueTeamInfoImpl implements LeagueTeamInfoDAO {
 			String sql = "select * from teamdata where id=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, id);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				return createFromResultSet(rs);
+			}
+			else {
+				return null;
+			}
+		} catch (SQLException e) {
+			System.out.println("fuck");
+			e.printStackTrace();
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if (pstmt != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return null;
+	}
+	
+	@Override
+	public LeagueTeamInfoBean selectByName(String name) {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			String sql = "select * from teamdata where name=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, name);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				return createFromResultSet(rs);
