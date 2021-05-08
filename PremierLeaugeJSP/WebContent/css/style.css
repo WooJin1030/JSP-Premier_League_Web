@@ -110,28 +110,27 @@
            margin-left: 4px;
            margin-top: 16px;
            overflow: hidden;
-           
        }
 
-       .sidenav h3 {
-           margin-top: 50%;
+       .sidenav .sidenav__text {
+           /* margin-top: 50%; */
            margin-bottom: 32px;
-           color: white;
            text-align: center;
-       }
-
-       .sidenav ul {
-           font-size: 20px;
-           margin-left: 8px;
            color: white;
-           list-style: none;
-           padding: 0;
        }
 
-       .sidenav li {
-           margin-bottom: 32px;
-       }
-
+		.sidenav .sidenav__match {
+			color:white;
+			text-align: center;
+		}
+		
+		.sidenav .sidenav__match-date {
+			margin-bottom: 8px;
+			color:white;
+			text-align: center;
+		}
+	
+	/* team main */
      .main {
        	   text-align: center;
            margin-left: 220px; 

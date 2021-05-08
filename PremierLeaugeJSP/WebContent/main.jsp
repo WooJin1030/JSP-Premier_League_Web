@@ -13,16 +13,18 @@
 
 	<jsp:include page="header.jsp" />
 	
-	    <div class="sidenav">
-	        <h3 class="sidenav__text">
-	            최근 3경기 결과
-	        </h3>
-	        <ul class="sidenav__game">
-	            <li><span>셰필드 0 : 3 아스널</span></li>
-	            <li><span>토트넘 1 : 3 맨유</span></li>
-	            <li><span>웨스트햄 3 : 2 레스터</span></li>
-	        </ul>
-    </div>
+ 	<div class="sidenav">
+    	<h3 class="sidenav__text">
+           최근 3경기 결과
+    	</h3>
+        <c:forEach var="match" items="${leagueMatch}">
+	       	<h3 class="sidenav__match-date">${match.formatted_date}</h3>
+	       	<h3 class="sidenav__match">${match.localteam_name}</h3>
+	       	<h3 class="sidenav__match">${match.ft_score}</h3>
+	       	<h3 class="sidenav__match">${match.visitorteam_name}</h3>
+           	<br />
+        </c:forEach>            
+     </div> 
 
 	
     <div class="main">

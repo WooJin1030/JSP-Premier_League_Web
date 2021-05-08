@@ -8,11 +8,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.LeagueMatchManager;
 import dao.LeagueTableManager;
 import dao.LeagueTeamInfoDAO;
 import dao.LeagueTeamInfoImpl;
 import dao.MemberDAO;
 import dao.MemberImpl;
+import dto.LeagueMatchBean;
 import dto.LeagueTableBean;
 import dto.LeagueTeamInfoBean;
 import dto.MemberBean;
@@ -45,18 +47,20 @@ public class HomeAction implements Action {
 			
 			MemberDAO service2 = new MemberImpl(conn);
 			MemberBean idList = service2.selectList(sessionId);
-			// System.out.println(idList);
+			
+			LeagueMatchManager service3 = LeagueMatchManager.getInstance();
+			List<LeagueMatchBean> vList = service3.getList();
+			request.setAttribute("leagueMatch", vList);
 			
 			if(idList != null) {
 				// 회원정보의 myteam db 와 팀정보 db를 join 시킴
-				LeagueTeamInfoDAO service3 = new LeagueTeamInfoImpl(conn);
-				LeagueTeamInfoBean mtList = service3.selectMemberTeam(idList.getMyteam());
+				LeagueTeamInfoDAO service4 = new LeagueTeamInfoImpl(conn);
+				LeagueTeamInfoBean mtList = service4.selectMemberTeam(idList.getMyteam());
 				
 				request.setAttribute("memberTeam", mtList);
-				System.out.println(mtList);
 			}
 
-		
+	
 		} catch (SQLException ex) {
 			System.out.println("Fail to connection.");
 		}
