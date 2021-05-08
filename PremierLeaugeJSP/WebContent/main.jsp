@@ -79,91 +79,91 @@
                 
                 <c:forEach var="team" items="${leagueTable}">
 	            	<tr>
-	                	<td class="ranking">${team.getRank()}</td>
+	                	<td class="ranking">${team.rank}</td>
 	                    <td class="teamname">
-	                    	<c:if test = "${team.getTeam() eq 'Manchester City'}">
+	                    	<c:if test = "${team.team eq 'Manchester City'}">
 	                    	<img src="./img/logos/맨체스터시티.png" alt="ManchesterCity">
 	                    	</c:if>
-	                    	<c:if test = "${team.getTeam() eq 'Manchester United'}">
+	                    	<c:if test = "${team.team eq 'Manchester United'}">
 	                    	<img src="./img/logos/맨유.png" alt="ManchesterUnited">
 	                    	</c:if>
-	                    	<c:if test = "${team.getTeam() eq 'Leicester'}">
+	                    	<c:if test = "${team.team eq 'Leicester'}">
 	                    	<img src="./img/logos/레스터시티.png" alt="Leicester">
 	                    	</c:if>
-	                    	<c:if test = "${team.getTeam() eq 'West Ham'}">
+	                    	<c:if test = "${team.team eq 'West Ham'}">
 	                    	<img src="./img/logos/웨스트햄.png" alt="WestHam">
 	                    	</c:if>
-	                    	<c:if test = "${team.getTeam() eq 'Chelsea'}">
+	                    	<c:if test = "${team.team eq 'Chelsea'}">
 	                    	<img src="./img/logos/첼시.png" alt="Chelsea">
 	                    	</c:if>
-	                    	<c:if test = "${team.getTeam() eq 'Liverpool'}">
+	                    	<c:if test = "${team.team eq 'Liverpool'}">
 	                    	<img src="./img/logos/리버풀.png" alt="Liverpool">
 	                    	</c:if>
-	                    	<c:if test = "${team.getTeam() eq 'Tottenham'}">
+	                    	<c:if test = "${team.team eq 'Tottenham'}">
 	                    	<img src="./img/logos/토트넘.png" alt="Tottenham">
 	                    	</c:if>
-	                    	<c:if test = "${team.getTeam() eq 'Everton'}">
+	                    	<c:if test = "${team.team eq 'Everton'}">
 	                    	<img src="./img/logos/에버튼.png" alt="Everton">
 	                    	</c:if>
-	                    	<c:if test = "${team.getTeam() eq 'Leeds'}">
+	                    	<c:if test = "${team.team eq 'Leeds'}">
 	                    	<img src="./img/logos/리즈.png" alt="Leeds">
 	                    	</c:if>
-	                    	<c:if test = "${team.getTeam() eq 'Arsenal'}">
+	                    	<c:if test = "${team.team eq 'Arsenal'}">
 	                    	<img src="./img/logos/아스날.png" alt="Arsenal">
 	                    	</c:if>
-	                    	<c:if test = "${team.getTeam() eq 'Aston Villa'}">
+	                    	<c:if test = "${team.team eq 'Aston Villa'}">
 	                    	<img src="./img/logos/아스톤빌라.png" alt="AstonVilla">
 	                    	</c:if>
-	                    	<c:if test = "${team.getTeam() eq 'Wolverhampton Wanderers'}">
+	                    	<c:if test = "${team.team eq 'Wolverhampton Wanderers'}">
 	                    	<img src="./img/logos/울버햄튼.png" alt="WolverhamptonWanderers">
 	                    	</c:if>
-	                    	<c:if test = "${team.getTeam() eq 'Crystal Palace'}">
+	                    	<c:if test = "${team.team eq 'Crystal Palace'}">
 	                    	<img src="./img/logos/크리스탈펠리스.png" alt="CrystalPalace">
 	                    	</c:if>	
-	                    	<c:if test = "${team.getTeam() eq 'Southampton'}">
+	                    	<c:if test = "${team.team eq 'Southampton'}">
 	                    	<img src="./img/logos/사우스햄튼.png" alt="Southampton">
 	                    	</c:if>
-	                    	<c:if test = "${team.getTeam() eq 'Newcastle United'}">
+	                    	<c:if test = "${team.team eq 'Newcastle United'}">
 	                    	<img src="./img/logos/뉴캐슬.png" alt="NewcastleUnited">
 	                    	</c:if>
-	                    	<c:if test = "${team.getTeam() eq 'Brighton'}">
+	                    	<c:if test = "${team.team eq 'Brighton'}">
 	                    	<img src="./img/logos/브라이튼.png" alt="Brighton">
 	                    	</c:if>
-	                    	<c:if test = "${team.getTeam() eq 'Burnley'}">
+	                    	<c:if test = "${team.team eq 'Burnley'}">
 	                    	<img src="./img/logos/번리.png" alt="Burnley">
 	                    	</c:if>
-	                    	<c:if test = "${team.getTeam() eq 'Fulham'}">
+	                    	<c:if test = "${team.team eq 'Fulham'}">
 	                    	<img src="./img/logos/풀럼.png" alt="Fulham">
 	                    	</c:if>
-	                    	<c:if test = "${team.getTeam() eq 'West Bromwich Albion'}">
+	                    	<c:if test = "${team.team eq 'West Bromwich Albion'}">
 	                    	<img src="./img/logos/웨스트브롬.png" alt="WestBromwichAlbion">
 	                    	</c:if>
-	         				<c:if test = "${team.getTeam() eq 'Sheffield United'}">
+	         				<c:if test = "${team.team eq 'Sheffield United'}">
 	                    	<img src="./img/logos/섀필드.png" alt="SheffieldUnited">
 	                    	</c:if>
 	                    	<c:choose>
-	                    		<c:when test = "${team.getTeam() eq 'West Bromwich Albion'}">
+	                    		<c:when test = "${team.team eq 'West Bromwich Albion'}">
 	                    		<span>West Bromwich</span>
 	                    		</c:when>
 	                    		
-	                    		<c:when test = "${team.getTeam() eq 'Wolverhampton Wanderers'}">
+	                    		<c:when test = "${team.team eq 'Wolverhampton Wanderers'}">
 	                    		<span>Wolverhampton</span>
 	                    		</c:when>
 	                    		
 	                    		
 	             				<c:otherwise>
-	             				<span>${team.getTeam()}</span>
+	             				<span>${team.team}</span>
 	             				</c:otherwise>
 	             			</c:choose>
    
 	                    </td>
-	                    <td>${team.getPlayed()}</td>               
-	                    <td>${team.getWin()}</td>
-	                    <td>${team.getDraw()}</td>
-	                    <td>${team.getLoss()}</td>
-	                    <td>${team.getGoalsFor()}</td>
-	                    <td>${team.getGoalsAgainst()}</td>
-	                    <td>${team.getPoints()}</td>
+	                    <td>${team.played}</td>               
+	                    <td>${team.win}</td>
+	                    <td>${team.draw}</td>
+	                    <td>${team.loss}</td>
+	                    <td>${team.goalsFor}</td>
+	                    <td>${team.goalsAgainst}</td>
+	                    <td>${team.points}</td>
 	                </tr>              
 	             </c:forEach>
                 </tbody>              

@@ -22,7 +22,10 @@ import dto.MyTeamBean;
 public class MyTeamAction implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		
+		// 자기가 설정한 팀 이름을 받아온다.
 		String team = request.getParameter("team");
+		
+		// team이 띄어쓰기를 포함한 경우에는 가운데에 %20을 삽입한다.
 		if (team.contains(" ")) {
 			String[] teamArr = team.split(" ");
 			String part1 = teamArr[0];
@@ -30,6 +33,8 @@ public class MyTeamAction implements Action {
 		  team = part1 + "%20" + part2;
 		}
 		
+		// api에서 팀 전체의 정보를 가져운다.
+		// 팀이 홈인 경우
 		ArrayList<MyTeamBean> tList = new ArrayList<MyTeamBean>();
 		
 		HttpRequest request2 = HttpRequest.newBuilder()
@@ -41,37 +46,50 @@ public class MyTeamAction implements Action {
 		
 		try {
 				try {
+					
 					HttpResponse<String> response2;
 					response2 = HttpClient.newHttpClient().send(request2, HttpResponse.BodyHandlers.ofString());
 					
+					// Json을 String으로 받아온다.
 					String leagueMatch = (String) response2.body();
 					System.out.println(leagueMatch);
 					
 					JSONParser jsonParser = new JSONParser();     
 					JSONObject jsonObj;
-
+					
+					// Json Object로 파싱한다.
 					jsonObj = (JSONObject) jsonParser.parse(leagueMatch);
+					
+					// Json Object에서 matches 키와 value들을 Json Array로 만든다.
 					JSONArray matchArray = (JSONArray) jsonObj.get("matches");
 					
 		        	for(int i = 0 ; i < matchArray.size() ; i++){
 		        		JSONObject tempObj = (JSONObject) matchArray.get(i);
-		                String when = String.valueOf(tempObj.get("when"));	                
+		        		
+		        		// 경기 시간
+		                String when = String.valueOf(tempObj.get("when"));
+		                // 심판 정보
 		                String referee = String.valueOf(tempObj.get("referee"));
+		                // 매치 넘버
 		                int matchNumber = Integer.parseInt(String.valueOf(tempObj.get("matchNumber")));
 		                
+		                // 홈팀
 		                JSONObject testDataObject = (JSONObject) tempObj.get("team1");
+		                // 홈팀 이름
 		                String team1Name = String.valueOf(testDataObject.get("teamName"));
         
 		                try {
 		                	
+		                	// 홈팀 득접
 		                	int team1Score;
-			                
+			                // temaScore가 null이거나 비어있는 경우에는 -1(아직 경기를 하지 않을 경우)
 			                if(String.valueOf(testDataObject.get("teamScore")) != "null" && !String.valueOf(testDataObject.get("teamScore")).isEmpty()) {			                	
 			                	team1Score = Integer.parseInt(String.valueOf(testDataObject.get("teamScore")));
 			                } else { 
 			                	team1Score = -1; 
 			                }
-			                	
+			                
+			                // 홈틴 전반전 득점
 			                int team1FirstHalfScore;
 			                
 			                if(String.valueOf(testDataObject.get("firstHalfScore")) != "null" && !String.valueOf(testDataObject.get("firstHalfScore")).isEmpty()) {
@@ -80,9 +98,11 @@ public class MyTeamAction implements Action {
 			                	team1FirstHalfScore = -1;
 			                }
 			                
+			                // 어웨이팀
 			                JSONObject testDataObject2 = (JSONObject) tempObj.get("team2");
 			                String team2Name = String.valueOf(testDataObject2.get("teamName"));
 			                
+			                // 어웨이팀 득점
 			                int team2Score; 
 			                if(String.valueOf(testDataObject2.get("teamScore")) != "null" && !String.valueOf(testDataObject2.get("teamScore")).isEmpty()) {
 			                	team2Score = Integer.parseInt(String.valueOf(testDataObject2.get("teamScore")));  
@@ -90,6 +110,7 @@ public class MyTeamAction implements Action {
 			                	team2Score = -1;
 			                }
 			                
+			                // 어웨이팀 전반전 득점
 			                int team2FirstHalfScore;
 			                if(String.valueOf(testDataObject2.get("firstHalfScore")) != "null" && !String.valueOf(testDataObject2.get("firstHalfScore")).isEmpty()) {
 			                	team2FirstHalfScore = Integer.parseInt(String.valueOf(testDataObject2.get("firstHalfScore")));
@@ -113,6 +134,7 @@ public class MyTeamAction implements Action {
 					e.printStackTrace();	        
 				}
 		
+		// 팀이 어웨이인 경우
 		HttpRequest request3 = HttpRequest.newBuilder()
 				.uri(URI.create("https://heisenbug-premier-league-live-scores-v1.p.rapidapi.com/api/premierleague?team2=" + team))
 				.header("x-rapidapi-key", "3fb0e2ffb0msh091247651585061p1ddfe3jsn1a702eb6c8a6")
@@ -193,9 +215,11 @@ public class MyTeamAction implements Action {
 					e.printStackTrace();	        
 				}
 		
-		Collections.sort(tList); // tList를 matchNumber로 정렬
+		// tList를 matchNumber로 정렬(오름차순)
+		Collections.sort(tList); 
 		request.setAttribute("myTeamList", tList);
 		
+		// 세션정보
 		HttpSession session = request.getSession();
 		String sessionId = (String) session.getAttribute("userId");
 		

@@ -19,20 +19,23 @@ public class MemberLoginAction implements Action {
 	
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		
+		
 		String action = request.getParameter("action");
 		
-		if (action.equals("login")) {
+		// action이 login / logout인지 판단
+		if (action.equals("login")) { // login인 경우
 			
 			String id= request.getParameter("id");
 			String password = request.getParameter("password");
 			
+			// memeber db확인
 			Connection conn = null;
 			try {
 				conn = ConnectionProvider.getConnection();
 				MemberDAO service = new MemberImpl(conn);
 				MemberBean idList = service.selectList(id);
 				
-				if(idList == null) {
+				if(idList == null) { // db에 일치하는 id가 없을 때 
 					request.setAttribute("errorMessage", "일치하는 id가 없습니다!");
 					
 					try {
@@ -42,7 +45,7 @@ public class MemberLoginAction implements Action {
 						e.printStackTrace();
 					}
 					
-				} else if (!idList.getPassword().equals(password)) {	
+				} else if (!idList.getPassword().equals(password)) { // db에 일치하는 id가 있지만 비밀번호가 틀린 경우 	
 					request.setAttribute("errorMessage", "비밀번호가 맞지 않습니다!");
 					
 					try {
@@ -53,12 +56,11 @@ public class MemberLoginAction implements Action {
 					}
 					
 				} else {
-					
+					// 로그인에 성공한 경우 -> 세션 설정
 					HttpSession session = request.getSession();
 					
 					session.setAttribute("userId", id);
 					session.setAttribute("team", idList.getMyteam());
-					// session.setAttribute("userPW", password);
 						
 					try {
 						RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
@@ -74,8 +76,9 @@ public class MemberLoginAction implements Action {
 			}
 
 		} 
-		
+		// logout인 경우
 		if (action.equals("logout")) {
+			// 세션 해제
 		    HttpSession session = request.getSession();  
             session.invalidate();  
             			
@@ -87,6 +90,7 @@ public class MemberLoginAction implements Action {
 			}
 		}
 		
+		// 세션 정보 확인
 		HttpSession session = request.getSession();
 		String sessionId = (String) session.getAttribute("userId");
 		

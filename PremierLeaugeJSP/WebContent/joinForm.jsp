@@ -11,9 +11,10 @@
 	<jsp:include page="header.jsp" />
 	
 	<c:if test="${not empty errorMessage}">
-	<span>${errorMessage}</span>
+		<span>${errorMessage}</span>
 	</c:if>
 	
+	<!-- join form -->
 	<form method="POST" action="JoinAction.do">
 		<input type="text" name="id" placeholder="enter your id">
 		<input type="password" name="password" placeholder="enter your password">

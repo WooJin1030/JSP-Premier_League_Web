@@ -15,12 +15,12 @@
 		<div>
 			<ul>
 				<li>
-					<h3>${team.getMatchNumber()}</h3>
+					<h3>${team.matchNumber}</h3>
 					<br />
-					<h3>${team.getTeam1Name()}</h3>
-					<h3>${team.getTeam1Score()}</h3>
-					<h3>${team.getTeam2Name()}</h3>
-					<h3>${team.getTeam2Score()}</h3>
+					<h3>${team.team1Name}</h3>
+					<h3>${team.team1Score}</h3>
+					<h3>${team.team2Name}</h3>
+					<h3>${team.team2Score}</h3>
 					<br />
 				</li>
 			</ul>

@@ -12,9 +12,11 @@
 </head>
 <body>
 	    <nav class="head">
+	    	<!-- home logo -->
         	<a href ="HomeAction.do" class="head__logo">
             	<img src="https://user-images.githubusercontent.com/62231339/116050281-3ea01480-a6b2-11eb-9127-bf7bec2ef439.png" alt="EplIcon" />
         	</a>
+        	<!-- header team's icon -->
 	        <div class="head__teamlist">
 	            <a href="TeamDetail.do?team=9002">
 	                <img src="https://user-images.githubusercontent.com/62231339/116050257-3b0c8d80-a6b2-11eb-8488-7dc68f06383f.png" alt="Arsenal" />
@@ -78,6 +80,9 @@
 	            </a>   
         	</div>
         </nav>
+        
+        <!-- user header -->
+        
         <c:if test="${sessionState eq 'none'}">
         <div class="head__userPage">
        		<a href="LoginView.do" class="head__loginBtn">
@@ -93,9 +98,9 @@
        		<a href="LoginAction.do?action=logout" class="head__loginBtn">
                 Logout             
             </a>
-            <c:if test="${!empty memberTeam.getName()}">
-	            <a href="MyTeam.do?team=${memberTeam.getName()}" class="head__loginBtn">
-	           		<img src="${memberTeam.getLogoUrl()}">
+            <c:if test="${!empty memberTeam.name}">
+	            <a href="MyTeam.do?team=${memberTeam.name}" class="head__loginBtn">
+	           		<img src="${memberTeam.logoUrl}">
 	            </a> 
 	        </c:if>
        	</div>

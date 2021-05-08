@@ -13,7 +13,7 @@ public class ConnectionProvider {
 
 	//  Database credentials
 	private static final String USER = "root";
-	private static final String PASS = "";
+	private static final String PASS = "102912samSAM";
 	
 	public static Connection getConnection() throws SQLException {
 		try {
