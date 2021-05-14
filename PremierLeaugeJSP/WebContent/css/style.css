@@ -75,6 +75,10 @@
       	margin-right: 16px;
       }
       
+      .head__userPage .head__logoutBtn {
+      	margin: 0 16px;
+      }
+      
      @media screen and (max-width: 1600px) {
      		
      		.head__logo img {
@@ -418,6 +422,10 @@
 		}
 		
 		/* team article */
+		
+		.team__article {
+			margin-top: 24px;
+		}
 		
 		.team__article .article {
 			display: flex;

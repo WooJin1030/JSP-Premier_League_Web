@@ -17,6 +17,8 @@ import action.MyTeamAction;
 import action.TeamArticleAction;
 import action.TeamDetailAction;
 import action.TeamPlayerAction;
+import action.UserEditAction;
+import action.UserEditFormAction;
 
 public class leagueTableController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -98,6 +100,22 @@ public class leagueTableController extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("myTeam.jsp");
 			rd.forward(request, response);
 		}
+		
+		if(command.equals("/UserEditForm.do")) {
+			action = new UserEditFormAction();
+			action.execute(request, response);
+			
+			RequestDispatcher rd = request.getRequestDispatcher("userEditForm.jsp");
+			rd.forward(request, response);
+		}
+		if(command.equals("/UserEditAction.do")) {
+			action = new UserEditAction();
+			action.execute(request, response);
+			
+			RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+			rd.forward(request, response);
+		}
+		
 		
 	}
 }

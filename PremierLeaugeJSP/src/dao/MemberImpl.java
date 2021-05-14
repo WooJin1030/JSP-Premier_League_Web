@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import dto.MemberBean;
 
 public class MemberImpl implements MemberDAO {
@@ -77,6 +76,33 @@ public class MemberImpl implements MemberDAO {
 		}
 		
 		return null;
+	}
+	
+	@Override
+	public int edit(MemberBean bean) {
+		PreparedStatement pstmt = null;
+		try {
+			String sql = "update members set password=?, name=?, email=?, myteam=? where id=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, bean.getPassword());
+			pstmt.setString(2, bean.getName());
+			pstmt.setString(3, bean.getEmail());
+			pstmt.setInt(4, bean.getMyteam());
+			pstmt.setString(5, bean.getId());
+			
+			return pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if (pstmt != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return 0;
 	}
 	
 	public MemberBean createFromResultSet(ResultSet rs) {
