@@ -14,11 +14,15 @@
 	<div class="team__article">
 			<c:forEach var="news" items="${newsList}">
 				<ul>
-					<li class="teamDetail__player__li">
-						<h3>제목: ${news.news_title}</h3>
-						<img src="${news.image_url}"></img>
+					<li class="article__li">
+						<div class="article">
+							<img src="${news.image_url}"></img>
+							<div class="article__meta">
+								<h3 class="article__title">${news.news_title}</h3>
+								<a href="${news.news_url}" class="article__url">${news.news_title}</a>
+							</div>
+						</div>
 						
-						<a href="${news.news_url}">${news.news_title}</a>
 						<span>${news.news_abstract_content}</span>
 					</li>
 				</ul>			
