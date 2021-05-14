@@ -24,12 +24,12 @@ public class HomeAction implements Action {
 
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		
-		// 리그 순위 테이블 정보
+		// league Table
 		LeagueTableManager service= LeagueTableManager.getInstance();
 		List<LeagueTableBean> tList = service.getList();
 		request.setAttribute("leagueTable", tList);
 		
-		// 세션 정보
+		// session info
 		HttpSession session = request.getSession();
 		String sessionId = (String) session.getAttribute("userId");
 		
@@ -40,7 +40,7 @@ public class HomeAction implements Action {
 		}
 				
 		
-		// 회원 정보 (DB)
+		// member info (DB)
 		Connection conn = null;
 		try {
 			conn = ConnectionProvider.getConnection();
@@ -53,7 +53,7 @@ public class HomeAction implements Action {
 			request.setAttribute("leagueMatch", vList);
 			
 			if(idList != null) {
-				// 회원정보의 myteam db 와 팀정보 db를 join 시킴
+				// members db join to team data db
 				LeagueTeamInfoDAO service4 = new LeagueTeamInfoImpl(conn);
 				LeagueTeamInfoBean mtList = service4.selectMemberTeam(idList.getMyteam());
 				

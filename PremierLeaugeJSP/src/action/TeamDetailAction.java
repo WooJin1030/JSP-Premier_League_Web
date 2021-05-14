@@ -17,11 +17,11 @@ public class TeamDetailAction implements Action {
 
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		
-		// 선택한 팀의 id를 가져옴
+		// get id from selected team
 		int id = Integer.parseInt(request.getParameter("team"));
 		request.setAttribute("id", id);
 		
-		// 팀정보 DB를 불러옴
+		// teamdata DB
 		Connection conn = null;
 		try {
 			conn = ConnectionProvider.getConnection();
@@ -35,7 +35,7 @@ public class TeamDetailAction implements Action {
 		}
 		
 		
-		// 세션 정보
+		// session info
 		HttpSession session = request.getSession();
 		String sessionId = (String) session.getAttribute("userId");
 		

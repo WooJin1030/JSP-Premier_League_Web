@@ -18,10 +18,10 @@
 	
 	<!-- join form -->
 	<form method="POST" action="JoinAction.do">
-		<input type="text" name="id" placeholder="enter your id">
-		<input type="password" name="password" placeholder="enter your password">
-		<input type="text" name="name" placeholder="enter your name">
-		<input type="email" name="email" placeholder="enter your email">
+		<input type="text" name="id" placeholder="enter your id" required>
+		<input type="password" name="password" placeholder="enter your password" required>
+		<input type="text" name="name" placeholder="enter your name" required>
+		<input type="email" name="email" placeholder="enter your email" required>
 		
 		<label for="team-select">팀을 설정해주세요!</label>
 		<select id="team-select" name="teamname">

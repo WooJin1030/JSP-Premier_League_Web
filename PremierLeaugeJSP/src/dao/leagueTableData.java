@@ -37,15 +37,15 @@ public class leagueTableData {
 		try {
 			response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
 			
-			// JSON을 String으로 받아온다
+			// JSON to String
 			String leagueTable = response.body();
 			System.out.println(leagueTable);
 			
-			// String을 JSON Object로 파싱한다.
+			// String to JSON Object
 			JSONParser jsonParser = new JSONParser();     
 			JSONObject jsonObj = (JSONObject) jsonParser.parse(leagueTable);
 			
-			// records 키와 value들을 뽑아 JsonArray로 만든다.
+			// get records key and value to JsonArray
 	        JSONArray memberArray = (JSONArray) jsonObj.get("records");
 	        
 	        setLeagueArray(memberArray);
