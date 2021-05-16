@@ -15,8 +15,58 @@ import org.json.simple.parser.ParseException;
 public class just {
 
 	public static void main(String[] args) {
-		Date date = new Date();
-		System.out.println(date.toString());
+		
+		String date = new Date().toString();
+		// System.out.println(date);
+		
+		String dateArr[] = date.split(" ");
+		String month = dateArr[1];
+		String day = dateArr[2];
+		String year = dateArr[5];
+	
+		String monthNumber = null;
+		
+		switch(month) {
+		case "January": 
+			monthNumber = "01";
+			break;
+		case "February": 
+			monthNumber = "02";
+			break;
+		case "March": 
+			monthNumber = "03";
+			break;
+		case "April": 
+			monthNumber = "04";
+			break;
+		case "May": 
+			monthNumber = "05";
+			break;
+		case "June": 
+			monthNumber = "06";
+			break;
+		case "July": 
+			monthNumber = "07";
+			break;
+		case "August": 
+			monthNumber = "08";
+			break;
+		case "September": 
+			monthNumber = "09";
+			break;
+		case "October": 
+			monthNumber = "10";
+			break;
+		case "November": 
+			monthNumber = "11";
+			break;
+		case "December": 
+			monthNumber = "12";
+			break;
+		}
+		
+		String todayDate = day + "." + monthNumber + "." + year;
+		System.out.println(todayDate);
 		
 		HttpRequest request = HttpRequest.newBuilder()
 				.uri(URI.create("https://heisenbug-premier-league-live-scores-v1.p.rapidapi.com/api/premierleague?team1=Leeds"))

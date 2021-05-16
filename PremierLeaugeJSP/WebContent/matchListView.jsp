@@ -20,7 +20,7 @@
 		<tr>
 					<th>경기 날짜</th>   
 					<th>홈팀</th>                             
-					<th>점수</thm>
+					<th>점수</th>
 					<th>원정팀</th>
 		</tr>
 			<c:forEach var="match" items="${leagueMatch}" begin="0" end="9">
@@ -42,7 +42,7 @@
 	 			<c:when test="${month eq \"01\" or \"03\" or \"05\" or \"07\" or \"08\" or \"10\" or \"12\" and day eq \"31\" }">
 	 			<c:if test="${month eq \"12\" }">
 	 			<tr>
-		               	<td class="match__date">${match.getFormatted_date()}</td>
+		               	<td class="match__date">01.01.${year+1}</td>
 		               	<td class="match__home">${match.getLocalteam_name()}</td> 
 		               	<td class="match__score">${match.getFt_score()}</td> 
 		               	<td class="match__away">${match.getVisitorteam_name()}</td>       	
@@ -50,7 +50,7 @@
 	 			</c:if>
 	 			<c:if test="${month ne \"12\" }">
 	            <tr>
-		               	<td class="match__date">${match.getFormatted_date()}</td>
+		               	<td class="match__date">01.${month+1}.${year}</td>
 		               	<td class="match__home">${match.getLocalteam_name()}</td> 
 		               	<td class="match__score">${match.getFt_score()}</td> 
 		               	<td class="match__away">${match.getVisitorteam_name()}</td>        	
@@ -59,7 +59,7 @@
 	            </c:when>
 	            <c:when test="${month eq \"02\" and day eq \"28\" }">
 	            <tr>
-		               	<td class="match__date">${match.getFormatted_date()}</td>
+		               	<td class="match__date">01.${month+1}.${year}</td>
 		               	<td class="match__home">${match.getLocalteam_name()}</td> 
 		               	<td class="match__score">${match.getFt_score()}</td> 
 		               	<td class="match__away">${match.getVisitorteam_name()}</td>          	
@@ -67,7 +67,7 @@
 	            </c:when>
 	            <c:when test="${month eq \"04\" or \"06\" or \"09\" or \"11\" and day eq \"30\" }">
 	            <tr>
-		               	<td class="match__date">${match.getFormatted_date()}</td>
+		               	<td class="match__date">01.${month+1}.${year}</td>
 		               	<td class="match__home">${match.getLocalteam_name()}</td> 
 		               	<td class="match__score">${match.getFt_score()}</td> 
 		               	<td class="match__away">${match.getVisitorteam_name()}</td>       	
@@ -75,7 +75,7 @@
 	            </c:when>
 	            <c:otherwise>
 	            <tr>
-		               	<td class="match__date">${match.getFormatted_date()}</td>
+		               	<td class="match__date">${day+1}.${month}.${year}</td>
 		               	<td class="match__home">${match.getLocalteam_name()}</td> 
 		               	<td class="match__score">${match.getFt_score()}</td> 
 		               	<td class="match__away">${match.getVisitorteam_name()}</td>       	

@@ -33,32 +33,32 @@
  			<c:choose>
  			<c:when test="${month eq \"01\" or \"03\" or \"05\" or \"07\" or \"08\" or \"10\" or \"12\" and day eq \"31\" }">
  			<c:if test="${month eq \"12\" }">
-               	<h3 class="match__date">${match.getFormatted_date()}</h3>
+               	<h3 class="match__date">01.01.${year+1}</h3>
                	<h3 class="match__away">${match.getVisitorteam_name()}</h3>
                	<h3 class="match__score">${match.getFt_score()}</h3>
                	<h3 class="match__home">${match.getLocalteam_name()}</h3>	
  			</c:if>
  			<c:if test="${month ne \"12\" }">
-               	<h3 class="match__date">${match.getFormatted_date()}</h3>
+               	<h3 class="match__date">01.${month+1}.${year}</h3>
                	<h3 class="match__away">${match.getVisitorteam_name()}</h3>
                	<h3 class="match__score">${match.getFt_score()}</h3>
                	<h3 class="match__home">${match.getLocalteam_name()}</h3>             	
             </c:if>
             </c:when>
             <c:when test="${month eq \"02\" and day eq \"28\" }">
-               	<h3 class="match__date">${match.getFormatted_date()}</h3>
+               	<h3 class="match__date">01.${month+1}.${year}</h3>
                	<h3 class="match__away">${match.getVisitorteam_name()}</h3>
                	<h3 class="match__score">${match.getFt_score()}</h3>
                	<h3 class="match__home">${match.getLocalteam_name()}</h3>        	
             </c:when>
             <c:when test="${month eq \"04\" or \"06\" or \"09\" or \"11\" and day eq \"30\" }">
-               	<h3 class="match__date">${match.getFormatted_date()}</h3>
+               	<h3 class="match__date">01.${month+1}.${year}</h3>
                	<h3 class="match__away">${match.getVisitorteam_name()}</h3>
                	<h3 class="match__score">${match.getFt_score()}</h3>
                	<h3 class="match__home">${match.getLocalteam_name()}</h3>             	
             </c:when>
             <c:otherwise>
-               	<h3 class="match__date">${match.getFormatted_date()}</h3>
+               	<h3 class="match__date">${day+1}.${month}.${year}</h3>
                	<h3 class="match__away">${match.getVisitorteam_name()}</h3>
                	<h3 class="match__score">${match.getFt_score()}</h3>
                	<h3 class="match__home">${match.getLocalteam_name()}</h3>
