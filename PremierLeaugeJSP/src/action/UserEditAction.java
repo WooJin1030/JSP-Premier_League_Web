@@ -1,8 +1,11 @@
 package action;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -32,6 +35,20 @@ public class UserEditAction implements Action {
 			request.setAttribute("sessionState", "loggedIn");
 			request.setAttribute("sessionId", sessionId);
 		}
+		
+
+		if (team == null || team.equals("")) { // team 설정을 하지 않은 경우
+	    	request.setAttribute("errorMessage", "내 팀 정보를 입력하지 않았습니다!");
+			try {
+
+				RequestDispatcher rd = request.getRequestDispatcher("UserEditForm.do");
+				rd.forward(request, response);
+			} catch (ServletException | IOException e) {
+				e.printStackTrace();
+			}
+
+	        return;
+			    }
 		
 		
 		Connection conn = null;

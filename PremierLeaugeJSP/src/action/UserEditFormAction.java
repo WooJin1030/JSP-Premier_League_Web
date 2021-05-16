@@ -45,9 +45,7 @@ public class UserEditFormAction implements Action {
 			List<LeagueTeamInfoBean> tiList = service2.selectList();
 			
 			request.setAttribute("teamInfoList", tiList);
-			
 
-			
 		} catch (SQLException ex) {
 			System.out.println("Fail to connection.");
 		}
