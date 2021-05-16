@@ -8,17 +8,19 @@ public class LeagueMatchBean implements java.io.Serializable {
 	private String visitorteam_name;
 	private String localteam_name;
 	private String ft_score;
+	private String time;
 	
 	public LeagueMatchBean() {
-		this(null, null, null, null);
+		this(null, null, null, null, null);
 	}
 
-	public LeagueMatchBean(String formatted_date, String visitorteam_name, String localteam_name, String ft_score) {
+	public LeagueMatchBean(String formatted_date, String visitorteam_name, String localteam_name, String ft_score, String time) {
 		super();
 		this.formatted_date = formatted_date;
 		this.visitorteam_name = visitorteam_name;
 		this.localteam_name = localteam_name;
 		this.ft_score = ft_score;
+		this.time = time;
 	}
 
 	public String getFormatted_date() {
@@ -53,9 +55,17 @@ public class LeagueMatchBean implements java.io.Serializable {
 		this.ft_score = ft_score;
 	}
 
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
+	}
+
 	@Override
 	public String toString() {
 		return "LeagueMatchBean [formatted_date=" + formatted_date + ", visitorteam_name=" + visitorteam_name
-				+ ", localteam_name=" + localteam_name + ", ft_score=" + ft_score + "]";
+				+ ", localteam_name=" + localteam_name + ", ft_score=" + ft_score + ", time=" + time + "]";
 	}
 }

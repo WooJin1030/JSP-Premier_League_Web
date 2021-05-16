@@ -45,6 +45,14 @@ public class leagueTableController extends HttpServlet {
 			rd.forward(request, response);
 		}
 		
+		if(command.equals("/MatchListAction.do")) {
+			action = new HomeAction();
+			action.execute(request, response);
+			
+			RequestDispatcher rd = request.getRequestDispatcher("matchListView.jsp");
+			rd.forward(request, response);
+		}
+		
 		if(command.equals("/TeamDetail.do")) {
 			action = new TeamDetailAction();
 			action.execute(request, response);

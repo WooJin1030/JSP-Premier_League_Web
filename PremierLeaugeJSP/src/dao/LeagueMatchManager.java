@@ -20,26 +20,25 @@ public class LeagueMatchManager {
 	
 	public LeagueMatchManager() {
 		
-		
+		leagueMatchData data = null;
 		try {
-			
-			LeagueMatchData data = null;
-			data = new LeagueMatchData();
-			JSONArray matchArray = data.getMatchArray();
-			
-			for(int i = 0 ; i < matchArray.size(); i++) {
-				JSONObject tempObj = (JSONObject) matchArray.get(i);	
-				vList.add(new LeagueMatchBean( 
-						(String)tempObj.get("formatted_date"), 
-						(String)tempObj.get("visitorteam_name"),
-						(String)tempObj.get("localteam_name"),
-						(String)tempObj.get("ft_score")));
-			}
-			
+			data = new leagueMatchData();
 		} catch (IOException | InterruptedException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		JSONArray matchArray = data.getMatchArray();
 		
+		for(int i = matchArray.size()-1; i >= 0; i--) {
+			JSONObject tempObj = (JSONObject) matchArray.get(i);
+
+			vList.add(new LeagueMatchBean( 
+					(String)tempObj.get("formatted_date"), 
+					(String)tempObj.get("visitorteam_name"),
+					(String)tempObj.get("localteam_name"),
+					(String)tempObj.get("ft_score"),
+					(String)tempObj.get("time")));
+		}
 	}
 
 	public List<LeagueMatchBean> getList() {

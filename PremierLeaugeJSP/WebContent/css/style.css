@@ -114,25 +114,38 @@
            margin-left: 4px;
            margin-top: 16px;
            overflow: hidden;
+           text-align: center;
+           
        }
 
        .sidenav .sidenav__text {
            /* margin-top: 50%; */
            margin-bottom: 32px;
-           text-align: center;
            color: white;
        }
 
-		.sidenav .sidenav__match {
+		.sidenav h3 {
 			color:white;
-			text-align: center;
+			font-size: 16px;
 		}
 		
-		.sidenav .sidenav__match-date {
-			margin-bottom: 8px;
-			color:white;
-			text-align: center;
+		.sidenav .match__recent {
+		 	color: white;
+		
 		}
+	
+	/* match list */
+	
+	.match__table {
+		margin-top: 32px;
+		text-align: center;
+	}
+	
+	.match__table tr td{
+		border: 1px solid blakc;
+		padding: 16px 24px;
+		margin: 8px 0;
+	}
 	
 	/* team main */
      .main {

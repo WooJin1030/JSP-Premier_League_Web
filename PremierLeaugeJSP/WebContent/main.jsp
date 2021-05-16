@@ -14,18 +14,61 @@
 	<jsp:include page="header.jsp" />
 	
  	<div class="sidenav">
-    	<h3 class="sidenav__text">
-           최근 3경기 결과
-    	</h3>
-        <c:forEach var="match" items="${leagueMatch}">
-	       	<h3 class="sidenav__match-date">${match.formatted_date}</h3>
-	       	<h3 class="sidenav__match">${match.localteam_name}</h3>
-	       	<h3 class="sidenav__match">${match.ft_score}</h3>
-	       	<h3 class="sidenav__match">${match.visitorteam_name}</h3>
-           	<br />
-        </c:forEach>            
-     </div> 
-
+        <h3 class="sidenav__text">
+            최근 3경기 결과
+        </h3>
+               <c:forEach var="match" items="${leagueMatch}" begin="0" end="2">
+               <c:set var="timetest" value="${match.getTime().substring(0,2)*60+match.getTime().substring(3)}"/>
+               <c:set var="day" value="${match.getFormatted_date().substring(0,2) }"/>
+               <c:set var="month" value="${match.getFormatted_date().substring(3,5) }"/>
+               <c:set var="year" value="${match.getFormatted_date().substring(6) }"/>
+               
+               <c:if test="${timetest<\"900\"}">
+               	<h3 class="match__date">${match.getFormatted_date()}</h3>
+               	<h3 class="match__away">${match.getVisitorteam_name()}</h3>
+               	<h3 class="match__score">${match.getFt_score()}</h3>
+               	<h3 class="match__home">${match.getLocalteam_name()}</h3>    	
+            </c:if>
+            <c:if test="${timetest>=\"900\"}">
+ 			<c:choose>
+ 			<c:when test="${month eq \"01\" or \"03\" or \"05\" or \"07\" or \"08\" or \"10\" or \"12\" and day eq \"31\" }">
+ 			<c:if test="${month eq \"12\" }">
+               	<h3 class="match__date">${match.getFormatted_date()}</h3>
+               	<h3 class="match__away">${match.getVisitorteam_name()}</h3>
+               	<h3 class="match__score">${match.getFt_score()}</h3>
+               	<h3 class="match__home">${match.getLocalteam_name()}</h3>	
+ 			</c:if>
+ 			<c:if test="${month ne \"12\" }">
+               	<h3 class="match__date">${match.getFormatted_date()}</h3>
+               	<h3 class="match__away">${match.getVisitorteam_name()}</h3>
+               	<h3 class="match__score">${match.getFt_score()}</h3>
+               	<h3 class="match__home">${match.getLocalteam_name()}</h3>             	
+            </c:if>
+            </c:when>
+            <c:when test="${month eq \"02\" and day eq \"28\" }">
+               	<h3 class="match__date">${match.getFormatted_date()}</h3>
+               	<h3 class="match__away">${match.getVisitorteam_name()}</h3>
+               	<h3 class="match__score">${match.getFt_score()}</h3>
+               	<h3 class="match__home">${match.getLocalteam_name()}</h3>        	
+            </c:when>
+            <c:when test="${month eq \"04\" or \"06\" or \"09\" or \"11\" and day eq \"30\" }">
+               	<h3 class="match__date">${match.getFormatted_date()}</h3>
+               	<h3 class="match__away">${match.getVisitorteam_name()}</h3>
+               	<h3 class="match__score">${match.getFt_score()}</h3>
+               	<h3 class="match__home">${match.getLocalteam_name()}</h3>             	
+            </c:when>
+            <c:otherwise>
+               	<h3 class="match__date">${match.getFormatted_date()}</h3>
+               	<h3 class="match__away">${match.getVisitorteam_name()}</h3>
+               	<h3 class="match__score">${match.getFt_score()}</h3>
+               	<h3 class="match__home">${match.getLocalteam_name()}</h3>
+            </c:otherwise>
+            </c:choose>
+            </c:if>
+                <br>
+         </c:forEach>
+         <a href="MatchListAction.do" class="match__recent">최근 10경기 보기</a>            
+       </div>
 	
     <div class="main">
     	
