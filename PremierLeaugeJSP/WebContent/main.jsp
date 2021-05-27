@@ -120,6 +120,7 @@
                     <col width="9%">
         
                 </colgroup>
+                <!--  
                 <tbody>
                 
                 <c:forEach var="team" items="${leagueTable}">
@@ -210,7 +211,8 @@
 	                    <td>${team.points}</td>
 	                </tr>              
 	             </c:forEach>
-                </tbody>              
+                </tbody> 
+                -->             
             </table>
         </div>   
     </div>

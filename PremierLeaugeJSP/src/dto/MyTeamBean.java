@@ -120,5 +120,5 @@ public class MyTeamBean implements Comparable<MyTeamBean> {
 
 	}
 
-
+	
 }

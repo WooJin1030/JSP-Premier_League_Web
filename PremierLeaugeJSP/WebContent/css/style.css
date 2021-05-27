@@ -3,17 +3,17 @@
 	/* * */
 
 	* {
-      	margin: 0;
-        box-sizing: border-box;
-       }
-
- 	button {
-          outline: none;
-          background-color: transparent;
-          border: none;
-          cursor: pointer;
-      }
-      
+	     	margin: 0;
+	       box-sizing: border-box;
+	      }
+	
+		button {
+	         outline: none;
+	         background-color: transparent;
+	         border: none;
+	         cursor: pointer;
+	     }
+	     
 	a {
 		border: none;
 		color: black;
@@ -23,74 +23,75 @@
 	ul {
 		list-style: none;
 	}
-	
+
 	/* header */
 	
-      .head {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 100%;
-      }
+	.head {
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    width: 100%;
+	}
+	
+	.head__logo img{
+	    width: 250px;
+	    height: 200px;
+	}
+	
+	.head__teamlist {
+	    background-color: rgb(55,0,60);
+	    padding: 18px;
+	    border-radius: 30px;
+	}
+	.head__teamlist a img {
+	    width: 40px;
+	    height: 40px;
+	    margin-right: 16px;
+	    transition: all 300ms ease-in;
+	}
+	
+	.head__teamlist a img:hover {
+		transform: scale(1.1);
+	}
+	
+	
+	
+	.head__userPage {
+		display:flex;
+		justify-content: flex-end;
+		align-items: center;
+		margin-right: 64px;
+		margin-top: 32px;
+		font-size: 24px;
+	}
+	
+	.head__userPage a img {
+		margin-left: 16px;
+		width: 40px;
+		height: 40px;
+	}
       
-      .head__logo img{
-          width: 250px;
-          height: 200px;
-      }
-
-      .head__teamlist {
-          background-color: rgb(55,0,60);
-          padding: 18px;
-          border-radius: 30px;
-      }
-      .head__teamlist a img {
-          width: 40px;
-          height: 40px;
-          margin-right: 16px;
-          transition: all 300ms ease-in;
-      }
+	 .head__userPage .head__loginBtn {
+	 	margin-right: 16px;
+	 }
+	 
+	.head__userPage .head__logoutBtn {
+	 	margin: 0 16px;
+	 }
+	 
+	@media screen and (max-width: 1600px) {
+			
+		.head__logo img {
+			width: 200px;
+			height: 150px;
+		}
+	 
+		.head__teamlist img {
+			width: 30px;
+			height: 30px;
+			}
+	}
       
-      .head__teamlist a img:hover {
-      	transform: scale(1.1);
-      }
-      
-     
-      
-      .head__userPage {
-      	display:flex;
-      	justify-content: flex-end;
-      	align-items: center;
-      	margin-right: 32px;
-      	margin-top: 32px;
-      	font-size: 24px;
-      }
-      
-      .head__userPage a img {
-      	margin-left: 16px;
-      	width: 40px;
-      	height: 40px;
-      }
-      
-      .head__userPage .head__loginBtn {
-      	margin-right: 16px;
-      }
-      
-      .head__userPage .head__logoutBtn {
-      	margin: 0 16px;
-      }
-      
-     @media screen and (max-width: 1600px) {
-     		
-     		.head__logo img {
-     			width: 200px;
-     			height: 150px;
-     		}
-     
-			.head__teamlist img {
-				width: 30px;
-				height: 30px;
-				}
-      }
       
       @media screen and (max-width: 800px) {
       	.head__teamlist {
@@ -100,39 +101,40 @@
        
        /* main page */
        
-       .sidenav {
-           height: 55%; 
-           width: 220px;
-           position: fixed; 
-           z-index: 1;
-           top: 200px; 
-           left: 0;
-           background-color: rgb(55,0,60);
-           overflow-x: hidden;
-           padding-top: 20px;
-           border-radius: 8px;
-           margin-left: 4px;
-           margin-top: 16px;
-           overflow: hidden;
-           text-align: center;
-           
-       }
-
-       .sidenav .sidenav__text {
-           /* margin-top: 50%; */
-           margin-bottom: 32px;
-           color: white;
-       }
-
-		.sidenav h3 {
-			color:white;
-			font-size: 16px;
-		}
-		
-		.sidenav .match__recent {
-		 	color: white;
-		
-		}
+	.sidenav {
+	    height: 55%; 
+	    width: 220px;
+	    position: fixed; 
+	    z-index: 1;
+	    top: 200px; 
+	    left: 0;
+	    background-color: rgb(55,0,60);
+	    overflow-x: hidden;
+	    padding-top: 20px;
+	    border-radius: 8px;
+	    margin-left: 4px;
+	    margin-top: 16px;
+	    overflow: hidden;
+	    text-align: center;
+	    
+	}
+	
+	.sidenav .sidenav__text {
+	    /* margin-top: 50%; */
+	         margin-bottom: 32px;
+	         color: white;
+	     }
+	
+	.sidenav h3 {
+		color:white;
+		font-size: 16px;
+	}
+	
+	
+	.sidenav .match__recent {
+	 	color: white;
+	
+	}
 	
 	/* match list */
 	
@@ -148,63 +150,63 @@
 	}
 	
 	/* team main */
-     .main {
-       	   text-align: center;
-           margin-left: 220px; 
-           margin-top: 36px;
-           top: 200px;
-           min-height: 70vh;
-           
-       }
+	.main {
+		text-align: center;
+	    margin-left: 220px; 
+	    margin-top: 36px;
+	    top: 200px;
+	    min-height: 70vh;
+	      
+	  }
 
 	.main__title {
 		margin-bottom: 16px;
+		}
+
+     .main table {
+     	margin: auto;
+       border-collapse: collapse;
+       text-align: center;
+       width: 1000px;
+     }
+
+     .main table th,td {
+         border: 1px solid gray;
+     }
+     
+
+     .table__divide {
+     	margin: auto;
+       max-height: 400px;
+       overflow-y: scroll;
+       overflow-x: hidden;
+       width: 1000px;
+     }
+     
+	.table__divide::-webkit-scrollbar {
+ 			width: 10px;
 	}
 	
-       .main table {
-       	margin: auto;
-           border-collapse: collapse;
-           text-align: center;
-           width: 1000px;
-       }
+ 	.table__divide::-webkit-scrollbar-thumb {
+   	background-color: purple;
+ 	}
+ 	
+ 	.table__divide::-webkit-scrollbar-track {
+   	background-color: grey;
+ 	}
+ 	
+     .main table .teamname {
+        	display: flex;
+        	align-items: center;
+        	justify-content: flex-start;
+     }
 
-       .main table th,td {
-           border: 1px solid gray;
-       }
-       
-
-       .table__divide {
-       	margin: auto;
-           max-height: 400px;
-           overflow-y: scroll;
-           overflow-x: hidden;
-           width: 1000px;
-       }
-       
- 		.table__divide::-webkit-scrollbar {
-   			width: 10px;
- 		}
- 		
-	  	.table__divide::-webkit-scrollbar-thumb {
-	    	background-color: purple;
-	  	}
-	  	
-	  	.table__divide::-webkit-scrollbar-track {
-	    	background-color: grey;
-	  	}
-	  	
-       .main table .teamname {
-          	display: flex;
-          	align-items: center;
-          	justify-content: flex-start;
-       }
-	
-       .main table img {
-           margin-right: 16px;
-           margin-left: 8px;
-           width: 30px;
-           height: 30px;
-       } 
+     .main table img {
+         margin-right: 16px;
+         margin-left: 8px;
+         width: 30px;
+         height: 30px;
+     } 
 
 	
 	@media screen and (max-width: 1600px) {
@@ -327,6 +329,7 @@
 			text-align: left;
 			margin-left: 36px;
 			margin-top: 48px;
+			font-size: 12px;
 		}
 	
 		.teamDetail__main ul li {
@@ -356,6 +359,7 @@
 		/* stadium */
 		
 		.teamDetail__stadium {
+			font-size: 12px;
 			text-align: left;
 			margin-left: 36px;
 			margin-top: 48px;
@@ -506,10 +510,9 @@
 			display:flex;
 			justify-content: center;
 			align-items: center;
-			margin-top: 16px; 
+			margin-top: 24px; 
 			color: white;
-			padding: 16px 0;
-			margin-top: 16px;
+			padding: 24px 0;
 		}
 		
 		.myteam__title img {
@@ -558,4 +561,40 @@
 		.myteam .myteam__draw {
 			color: green;
 		}
-	       
+	    
+	    .comment__container .comment__form {
+	    	display: flex;
+	    	flex-direction: row;
+	    	justify-content: center;
+	    }
+	    
+	    .comment__container .form__submit {
+	    	width: 50px;
+	    	cursor: pointer;
+	    	padding: 0;
+	    }
+	    
+	    .comment__container .comment__ul {
+	    	display: flex;
+	    	flex-direction: column;
+	    	justify-content: center;
+	    	align-items: center;
+	    }
+	    
+	    .comment__container .comment__ul li {
+	    	margin-bottom: 8px;
+	    }
+	   
+	   .comment__container .comment__ul .comment__btn {
+	   		margin-left: 8px;
+	   		color: red;
+	   		font-weight: 700;
+	   		transition: all 300ms ease-in;
+	   }
+	   
+	   .comment__container .comment__ul .comment__btn:hover {
+	   		transform: scale(1.1);
+	   }
+	   
+	    
+	    

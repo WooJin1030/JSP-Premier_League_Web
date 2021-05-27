@@ -106,7 +106,6 @@ public class TeamArticleAction implements Action{
        int[] i_arr = {0, 11, 15, 19, 23, 27};
        
         Path path = Paths.get("E:/project/EPL-Info/chromedriver_win32/chromedriver.exe"); 
-
         System.setProperty("webdriver.chrome.driver", path.toString());
    
         ChromeOptions options = new ChromeOptions();

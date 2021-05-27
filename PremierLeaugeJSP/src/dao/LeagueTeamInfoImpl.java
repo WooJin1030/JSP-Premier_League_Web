@@ -165,6 +165,45 @@ public class LeagueTeamInfoImpl implements LeagueTeamInfoDAO {
 		
 	}
 	
+	@Override
+	public LeagueTeamInfoBean selectTeamById(int id) {
+		
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			String sql = "select * from teamdata inner join comments on teamdata.id=comments.teamid where teamdata.id=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, id);
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				return createFromResultSet(rs);
+			} else {
+				return null;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if (pstmt != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		return null;
+		
+	}
+	
 	
 	@Override
 	public List<LeagueTeamInfoBean> selectList() {

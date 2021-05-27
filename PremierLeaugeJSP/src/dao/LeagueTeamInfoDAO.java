@@ -12,5 +12,6 @@ public interface LeagueTeamInfoDAO {
 	List<LeagueTeamInfoBean> selectList();
 	LeagueTeamInfoBean selectByName(String name);
 	LeagueTeamInfoBean selectMemberTeam(int id);
+	LeagueTeamInfoBean selectTeamById(int id);
 }
 

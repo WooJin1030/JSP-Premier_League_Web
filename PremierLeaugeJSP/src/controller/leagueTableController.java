@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
+import action.AddCommentAction;
+import action.DeleteCommentAction;
 import action.HomeAction;
 import action.MemberJoinAction;
 import action.MemberJoinFormAction;
@@ -123,7 +125,14 @@ public class leagueTableController extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 			rd.forward(request, response);
 		}
-		
+		if(command.equals("/AddCommentAction.do")) {
+			action = new AddCommentAction();
+			action.execute(request, response);
+		}
+		if(command.equals("/DeleteCommentAction.do")) {
+			action = new DeleteCommentAction();
+			action.execute(request, response);
+		}
 		
 	}
 }
