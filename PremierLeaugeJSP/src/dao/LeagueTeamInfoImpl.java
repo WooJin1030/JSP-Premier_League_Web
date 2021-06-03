@@ -256,6 +256,7 @@ public class LeagueTeamInfoImpl implements LeagueTeamInfoDAO {
 		int capacity = -1;
 		String fieldsize = null;
 		String teamcolor = null;
+		int managercount = -1;
 		
 		try {
 			id = rs.getInt("id");
@@ -273,12 +274,13 @@ public class LeagueTeamInfoImpl implements LeagueTeamInfoDAO {
 			capacity = rs.getInt("capacity");
 			fieldsize = rs.getString("fieldsize");
 			teamcolor = rs.getString("teamcolor");
+			managercount = rs.getInt("managercount");
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
-		return new LeagueTeamInfoBean(id, name, origin, establishment, nickname, logoUrl, managername, managerimageurl, chairmanname, officialsite, stadiumname, stadiumimageurl, capacity, fieldsize, teamcolor);
+		return new LeagueTeamInfoBean(id, name, origin, establishment, nickname, logoUrl, managername, managerimageurl, chairmanname, officialsite, stadiumname, stadiumimageurl, capacity, fieldsize, teamcolor, managercount);
 	}
 	
 }

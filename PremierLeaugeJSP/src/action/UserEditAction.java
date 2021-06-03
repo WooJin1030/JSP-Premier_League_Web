@@ -36,8 +36,8 @@ public class UserEditAction implements Action {
 			request.setAttribute("sessionId", sessionId);
 		}
 		
-
-		if (team == null || team.equals("")) { // team 설정을 하지 않은 경우
+		// team 설정을 하지 않은 경우
+		if (team == null || team.equals("")) { 
 	    	request.setAttribute("errorMessage", "내 팀 정보를 입력하지 않았습니다!");
 			try {
 
@@ -69,6 +69,9 @@ public class UserEditAction implements Action {
 			MemberBean member = new MemberBean(id, password, name, email, teamid);
 			
 			service.edit(member);
+			
+			session.setAttribute("userId", id);
+			session.setAttribute("team", teamid);
 			
 		} catch (SQLException ex) {
 			System.out.println("Fail to connetcion. <br>");

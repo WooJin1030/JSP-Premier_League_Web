@@ -33,7 +33,9 @@ private static JSONArray matchArray = new JSONArray();
 		String month = dateArr[1];
 		String day = dateArr[2];
 		String year = dateArr[5];
-	
+		
+		System.out.println(month);
+		
 		String monthNumber = null;
 		
 		switch(month) {
@@ -52,7 +54,7 @@ private static JSONArray matchArray = new JSONArray();
 		case "May": 
 			monthNumber = "05";
 			break;
-		case "June": 
+		case "Jun": 
 			monthNumber = "06";
 			break;
 		case "July": 

@@ -95,6 +95,7 @@
        	</c:if>
        	<c:if test="${sessionState eq 'loggedIn'}">
         <div class="head__userPage">
+        	<a href="VoteManagerForm.do" class="head__voteManager">Vote Manager</a>
         	<a href="UserEditForm.do" class="head__editBtn">Edit</a>
        		<a href="LoginAction.do?action=logout" class="head__logoutBtn">
                 Logout             

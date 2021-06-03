@@ -21,6 +21,8 @@ import action.TeamDetailAction;
 import action.TeamPlayerAction;
 import action.UserEditAction;
 import action.UserEditFormAction;
+import action.VoteManagerAction;
+import action.VoteManagerFormAction;
 
 public class leagueTableController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -131,6 +133,18 @@ public class leagueTableController extends HttpServlet {
 		}
 		if(command.equals("/DeleteCommentAction.do")) {
 			action = new DeleteCommentAction();
+			action.execute(request, response);
+		}
+		if(command.equals("/VoteManagerForm.do")) {
+			action = new VoteManagerFormAction();
+			action.execute(request, response);
+			
+			RequestDispatcher rd = request.getRequestDispatcher("managerVoteForm.jsp");
+			rd.forward(request, response);
+		}
+		
+		if(command.equals("/VoteManager.do")) {
+			action = new VoteManagerAction();
 			action.execute(request, response);
 		}
 		

@@ -19,16 +19,17 @@ public class LeagueTeamInfoBean implements java.io.Serializable {
 	private int capacity;
 	private String fieldsize;
 	private String teamcolor;
+	private int managercount;
 	
 	
 	
 	public LeagueTeamInfoBean() {
-		this(0, null, null, 0, null, null, null, null, null, null, null, null, 0, null, null);
+		this(0, null, null, 0, null, null, null, null, null, null, null, null, 0, null, null, 0);
 	}
 
 	public LeagueTeamInfoBean(int id, String name, String origin, int establishment, String nickname, String logoUrl,
 			String managername, String managerimageurl, String chairmanname, String officialsite, String stadiumname,
-			String stadiumimageurl, int capacity, String fieldsize, String teamcolor) {
+			String stadiumimageurl, int capacity, String fieldsize, String teamcolor, int managercount) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -45,6 +46,7 @@ public class LeagueTeamInfoBean implements java.io.Serializable {
 		this.capacity = capacity;
 		this.fieldsize = fieldsize;
 		this.teamcolor = teamcolor;
+		this.managercount = managercount;
 	}
 	
 	public int getId() {
@@ -137,13 +139,21 @@ public class LeagueTeamInfoBean implements java.io.Serializable {
 	public void setTeamcolor(String teamcolor) {
 		this.teamcolor = teamcolor;
 	}
+	
+	public int getManagercount() {
+		return managercount;
+	}
+	public void setManagercount(int managercount) {
+		this.managercount = managercount;
+	}
+	
 	@Override
 	public String toString() {
 		return "LeagueTeamInfoBean [id=" + id + ", name=" + name + ", origin=" + origin + ", establishment="
 				+ establishment + ", nickname=" + nickname + ", logoUrl=" + logoUrl + ", managername=" + managername
 				+ ", managerimageurl=" + managerimageurl + ", chairmanname=" + chairmanname + ", officialsite="
 				+ officialsite + ", stadiumname=" + stadiumname + ", stadiumimageurl=" + stadiumimageurl + ", capacity="
-				+ capacity + ", fieldsize=" + fieldsize + "teamcolor=" + teamcolor + "]";
+				+ capacity + ", fieldsize=" + fieldsize + "teamcolor=" + teamcolor + "managercount=" + managercount + "]";
 	}
 	
 	

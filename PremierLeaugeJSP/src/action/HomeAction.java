@@ -45,20 +45,25 @@ public class HomeAction implements Action {
 		try {
 			conn = ConnectionProvider.getConnection();
 			
-			MemberDAO service2 = new MemberImpl(conn);
-			MemberBean idList = service2.selectList(sessionId);
+			if(sessionId != null) {
+				MemberDAO service2 = new MemberImpl(conn);
+				MemberBean idList = service2.selectList(sessionId);
+				
+				if(idList != null) {
+					// members db join to team data db
+					LeagueTeamInfoDAO service4 = new LeagueTeamInfoImpl(conn);
+					LeagueTeamInfoBean mtList = service4.selectMemberTeam(idList.getMyteam());
+					
+					request.setAttribute("memberTeam", mtList);
+				}
+				
+			}
 			
 			LeagueMatchManager service3 = LeagueMatchManager.getInstance();
 			List<LeagueMatchBean> vList = service3.getList();
 			request.setAttribute("leagueMatch", vList);
 			
-			if(idList != null) {
-				// members db join to team data db
-				LeagueTeamInfoDAO service4 = new LeagueTeamInfoImpl(conn);
-				LeagueTeamInfoBean mtList = service4.selectMemberTeam(idList.getMyteam());
-				
-				request.setAttribute("memberTeam", mtList);
-			}
+			
 
 	
 		} catch (SQLException ex) {
