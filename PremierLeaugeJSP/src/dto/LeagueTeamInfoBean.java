@@ -1,6 +1,6 @@
 package dto;
 
-public class LeagueTeamInfoBean implements java.io.Serializable {
+public class LeagueTeamInfoBean implements Comparable<LeagueTeamInfoBean> {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -156,5 +156,13 @@ public class LeagueTeamInfoBean implements java.io.Serializable {
 				+ capacity + ", fieldsize=" + fieldsize + "teamcolor=" + teamcolor + "managercount=" + managercount + "]";
 	}
 	
+	@Override
+	public int compareTo(LeagueTeamInfoBean compareMyteam) {
+		
+	   int compareMatchNumber = compareMyteam.getManagercount();
+        return compareMatchNumber - this.getManagercount();
+
+	}
+
 	
 }

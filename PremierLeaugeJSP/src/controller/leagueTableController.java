@@ -23,6 +23,7 @@ import action.UserEditAction;
 import action.UserEditFormAction;
 import action.VoteManagerAction;
 import action.VoteManagerFormAction;
+import action.VoteManagerResultAction;
 
 public class leagueTableController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -146,6 +147,14 @@ public class leagueTableController extends HttpServlet {
 		if(command.equals("/VoteManager.do")) {
 			action = new VoteManagerAction();
 			action.execute(request, response);
+		}
+		
+		if(command.equals("/VoteManagerResult.do")) {
+			action = new VoteManagerResultAction();
+			action.execute(request, response);
+			
+			RequestDispatcher rd = request.getRequestDispatcher("managerVoteResult.jsp");
+			rd.forward(request, response);
 		}
 		
 	}

@@ -11,6 +11,17 @@
 	
 	<jsp:include page="header.jsp" />
 	
+	<!-- 선택한 팀의 로고, 이름 -->
+	<div class="teamDetail__title">
+		<img src="${teamInfoList.logoUrl}"></img>
+		<h1>${teamInfoList.name}</h1>
+	</div>
+	<hr>
+	<div class="teamDetail__selectBtn" style="background-color: ${teamInfoList.teamcolor}">
+			<button>Articles</button>
+		<hr>
+	</div>
+	
 	<div class="team__article">
 			<c:forEach var="news" items="${newsList}">
 				<ul>
@@ -18,12 +29,11 @@
 						<div class="article">
 							<img src="${news.image_url}"></img>
 							<div class="article__meta">
-								<h3 class="article__title">${news.news_title}</h3>
-								<a href="${news.news_url}" class="article__url">${news.news_title}</a>
+								<a href="${news.news_url}" class="article__title">${news.news_title}</a>
+								<span>${news.news_abstract_content}</span>
 							</div>
-						</div>
+						</div>				
 						
-						<span>${news.news_abstract_content}</span>
 					</li>
 				</ul>			
 			</c:forEach>

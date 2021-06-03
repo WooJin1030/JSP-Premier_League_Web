@@ -22,21 +22,25 @@ public class LeagueTeamInfoImpl implements LeagueTeamInfoDAO {
 	public int edit(LeagueTeamInfoBean bean) {
 		PreparedStatement pstmt = null;
 		try {
-			String sql = "update teamdata set name=?, origin=?, nickname=?, logoUrl=?, managername=?, managerimageurl=?, chairmanname=?, stadiumname=?, stadiumimageurl=?, capacity=?, fieldsize=? where id=?";
+			String sql = "update teamdata set name=?, origin=?, establishment=?, nickname=?, logoUrl=?, managername=?, managerimageurl=?, chairmanname=?, officialsite=?, stadiumname=?, stadiumimageurl=?, capacity=?, fieldsize=?, teamcolor=?, managercount=? where id=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, bean.getName());
 			pstmt.setString(2, bean.getOrigin());
-			pstmt.setString(3, bean.getNickname());
-			pstmt.setString(4, bean.getLogoUrl());
-			pstmt.setString(5, bean.getManagername());
-			pstmt.setString(6, bean.getManagerimageurl());
-			pstmt.setString(7, bean.getChairmanname());
-			pstmt.setString(8, bean.getStadiumname());
-			pstmt.setString(9, bean.getStadiumimageurl());
-			pstmt.setInt(10, bean.getCapacity());
-			pstmt.setString(11, bean.getFieldsize());
+			pstmt.setInt(3, bean.getEstablishment());
+			pstmt.setString(4, bean.getNickname());
+			pstmt.setString(5, bean.getLogoUrl());
+			pstmt.setString(6, bean.getManagername());
+			pstmt.setString(7, bean.getManagerimageurl());
+			pstmt.setString(8, bean.getChairmanname());
+			pstmt.setString(9, bean.getOfficialsite());
+			pstmt.setString(10, bean.getStadiumname());
+			pstmt.setString(11, bean.getStadiumimageurl());
+			pstmt.setInt(12, bean.getCapacity());
+			pstmt.setString(13, bean.getFieldsize());
+			pstmt.setString(14, bean.getTeamcolor());
+			pstmt.setInt(15, bean.getManagercount());
+			pstmt.setInt(16, bean.getId());
 			
-			pstmt.setInt(12, bean.getId());
 			return pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

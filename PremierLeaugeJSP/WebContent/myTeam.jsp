@@ -92,7 +92,6 @@
 		<img src=""></img>
 		<h1>name</h1>
 	</div>
-	<hr>
 	<div class="myteam">
 		<ul>
 			<li>
