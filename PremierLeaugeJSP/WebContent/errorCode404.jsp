@@ -14,8 +14,10 @@
 <body>
 <div class="error__container">
 	<h1 class="error__title">404 에러</h1>
-	<p class="error__content">요청한 페이지는 존재하지 않습니다!! - 이 에러는 클라이언트가 요청한 문서를 찾지 못한 경우에 발생합니다.</p>
-	<p class="error__content">URL을 다시 잘 보고 주소가 올바로 입력되었는지를 확인하시길 바랍니다.</p>
+	<div class="error__metaContainer">
+		<span class="error__content">요청한 페이지는 존재하지 않습니다!! - 이 에러는 클라이언트가 요청한 문서를 찾지 못한 경우에 발생합니다.</span>
+		<span class="error__content">URL을 다시 잘 보고 주소가 올바로 입력되었는지를 확인하시길 바랍니다.</span>
+	</div>
 </div>
 
 <div class="error__refreshContainer">
