@@ -9,4 +9,3 @@
 <body>
 <jsp:forward page="HomeAction.do"/>
 </body>
-</html>

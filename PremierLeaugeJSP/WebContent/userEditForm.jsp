@@ -10,6 +10,11 @@
 <body>
 	<jsp:include page="header.jsp" />
 	
+	<c:if test="${sessionState eq \"none\"}">
+		<jsp:forward page="LoginView.do"/>
+	</c:if>
+	
+	
 	<c:if test="${not empty errorMessage}">
 		<div class="errorMessage">
 			<span>${errorMessage}</span>

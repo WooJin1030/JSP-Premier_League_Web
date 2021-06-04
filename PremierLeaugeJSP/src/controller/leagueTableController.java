@@ -15,6 +15,7 @@ import action.HomeAction;
 import action.MemberJoinAction;
 import action.MemberJoinFormAction;
 import action.MemberLoginAction;
+import action.MemberLoginViewAction;
 import action.MyTeamAction;
 import action.TeamArticleAction;
 import action.TeamDetailAction;
@@ -48,113 +49,91 @@ public class leagueTableController extends HttpServlet {
 			
 			RequestDispatcher rd = request.getRequestDispatcher("main.jsp");
 			rd.forward(request, response);
-		}
-		
-		if(command.equals("/MatchListAction.do")) {
+		} else if(command.equals("/MatchListAction.do")) {
 			action = new HomeAction();
 			action.execute(request, response);
 			
 			RequestDispatcher rd = request.getRequestDispatcher("matchListView.jsp");
 			rd.forward(request, response);
-		}
-		
-		if(command.equals("/TeamDetail.do")) {
+		} else if(command.equals("/TeamDetail.do")) {
 			action = new TeamDetailAction();
 			action.execute(request, response);
 			
 			RequestDispatcher rd = request.getRequestDispatcher("teamDetail.jsp");
 			rd.forward(request, response);
-		}
-		
-		if(command.equals("/TeamPlayerAction.do")) {
+		} else if(command.equals("/TeamPlayerAction.do")) {
 			action = new TeamPlayerAction();
 			action.execute(request, response);
 			
 			RequestDispatcher rd = request.getRequestDispatcher("teamPlayer.jsp");
 			rd.forward(request, response);
-		}
-		
-		if(command.equals("/TeamArticleAction.do")) {
+		} else if(command.equals("/TeamArticleAction.do")) {
 			action = new TeamArticleAction();
 			action.execute(request, response);
 			
 			RequestDispatcher rd = request.getRequestDispatcher("teamArticle.jsp");
 			rd.forward(request, response);
-		}
-		
-		if(command.equals("/LoginView.do")) {
-			RequestDispatcher rd = request.getRequestDispatcher("loginForm.jsp");
-			rd.forward(request, response);
-		}
-		
-		if(command.equals("/LoginAction.do")) {
-			action = new MemberLoginAction();
+		} else if(command.equals("/LoginView.do")) {
+			action = new MemberLoginViewAction();
 			action.execute(request, response);
 			
-		}
-		
-		if(command.equals("/JoinView.do")) {
+			RequestDispatcher rd = request.getRequestDispatcher("loginForm.jsp");
+			rd.forward(request, response);
+		} else if(command.equals("/LoginAction.do")) {
+			action = new MemberLoginAction();
+			action.execute(request, response);
+		} else if(command.equals("/JoinView.do")) {
 			action = new MemberJoinFormAction();
 			action.execute(request, response);
 			
 			RequestDispatcher rd = request.getRequestDispatcher("joinForm.jsp");
 			rd.forward(request, response);
-		}
-		
-		if(command.equals("/JoinAction.do")) {
+		} else if(command.equals("/JoinAction.do")) {
 			action = new MemberJoinAction();
 			action.execute(request, response);
-		}
-		
-		if(command.equals("/MyTeam.do")) {
+			
+		} else if(command.equals("/MyTeam.do")) {
 			action = new MyTeamAction();
 			action.execute(request, response);
 			
 			RequestDispatcher rd = request.getRequestDispatcher("myTeam.jsp");
 			rd.forward(request, response);
-		}
-		
-		if(command.equals("/UserEditForm.do")) {
+		} else if(command.equals("/UserEditForm.do")) {
 			action = new UserEditFormAction();
 			action.execute(request, response);
 			
 			RequestDispatcher rd = request.getRequestDispatcher("userEditForm.jsp");
 			rd.forward(request, response);
-		}
-		if(command.equals("/UserEditAction.do")) {
+		} else if(command.equals("/UserEditAction.do")) {
 			action = new UserEditAction();
 			action.execute(request, response);
 			
 			RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 			rd.forward(request, response);
-		}
-		if(command.equals("/AddCommentAction.do")) {
+		} else if(command.equals("/AddCommentAction.do")) {
 			action = new AddCommentAction();
 			action.execute(request, response);
-		}
-		if(command.equals("/DeleteCommentAction.do")) {
+		} else if(command.equals("/DeleteCommentAction.do")) {
 			action = new DeleteCommentAction();
 			action.execute(request, response);
-		}
-		if(command.equals("/VoteManagerForm.do")) {
+		} else if(command.equals("/VoteManagerForm.do")) {
 			action = new VoteManagerFormAction();
 			action.execute(request, response);
 			
 			RequestDispatcher rd = request.getRequestDispatcher("managerVoteForm.jsp");
 			rd.forward(request, response);
-		}
-		
-		if(command.equals("/VoteManager.do")) {
+		} else if(command.equals("/VoteManager.do")) {
 			action = new VoteManagerAction();
 			action.execute(request, response);
-		}
-		
-		if(command.equals("/VoteManagerResult.do")) {
+		} else if(command.equals("/VoteManagerResult.do")) {
 			action = new VoteManagerResultAction();
 			action.execute(request, response);
 			
 			RequestDispatcher rd = request.getRequestDispatcher("managerVoteResult.jsp");
 			rd.forward(request, response);
+		} else {
+			RequestDispatcher rd = request.getRequestDispatcher("errorCode404.jsp");
+	        rd.forward(request, response);
 		}
 		
 	}

@@ -97,6 +97,7 @@ public class MemberLoginAction implements Action {
 		
 		if (sessionId == null || sessionId.equals("")) {
 			request.setAttribute("sessionState", "none");
+
 		} else {
 			request.setAttribute("sessionState", "loggedIn");
 			request.setAttribute("sessionId", sessionId);

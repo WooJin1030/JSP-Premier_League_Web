@@ -11,6 +11,10 @@
 
 	<jsp:include page="header.jsp" />
 	
+	<c:if test="${sessionState eq \"none\"}">
+		<jsp:forward page="LoginView.do"/>
+	</c:if>
+	
 	<!--  
 	<div class="myteam__title" style="background-color: ${teamInfoList.teamcolor}">
 		<img src="${teamInfoList.logoUrl}"></img>
