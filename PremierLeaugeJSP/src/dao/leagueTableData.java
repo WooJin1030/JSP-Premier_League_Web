@@ -28,7 +28,7 @@ public class leagueTableData {
 		
 		HttpRequest request = HttpRequest.newBuilder()
 				.uri(URI.create("https://heisenbug-premier-league-live-scores-v1.p.rapidapi.com/api/premierleague/table"))
-				.header("x-rapidapi-key", "3fb0e2ffb0msh091247651585061p1ddfe3jsn1a702eb6c8a6")
+				.header("x-rapidapi-key", "api key")
 				.header("x-rapidapi-host", "heisenbug-premier-league-live-scores-v1.p.rapidapi.com")
 				.method("GET", HttpRequest.BodyPublishers.noBody())
 				.build();

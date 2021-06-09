@@ -50,7 +50,7 @@ public class TeamPlayerAction implements Action {
 		ArrayList<LeaugePlayerBean> pList = new ArrayList<LeaugePlayerBean>();
 		
 		HttpRequest request2 = HttpRequest.newBuilder()
-				.uri(URI.create("https://data.football-api.com/v3/teams/" + id + "?Authorization=0aBDqt7O7T8bpQWX6MH0o9WmWJRmC9GF5vBlbMf5"))
+				.uri(URI.create("https://data.football-api.com/v3/teams/" + id + "?Authorization=api key"))
 				.method("GET", HttpRequest.BodyPublishers.noBody())
 				.build();
 		HttpResponse<String> response2;

@@ -82,6 +82,7 @@ public class leagueTableController extends HttpServlet {
 		} else if(command.equals("/LoginAction.do")) {
 			action = new MemberLoginAction();
 			action.execute(request, response);
+			
 		} else if(command.equals("/JoinView.do")) {
 			action = new MemberJoinFormAction();
 			action.execute(request, response);

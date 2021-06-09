@@ -23,7 +23,7 @@ public class TeamArticleAction implements Action {
    @Override
    public void execute(HttpServletRequest request, HttpServletResponse response) {
 	   
-		// teamdata DB
+	// teamdata DB
 	   
 		int teamid = Integer.parseInt(request.getParameter("team"));
 		
@@ -40,11 +40,11 @@ public class TeamArticleAction implements Action {
 			System.out.println("Fail to connection.");
 		}
 		
-	   // Crawling
+   
       int id = Integer.parseInt(request.getParameter("team"));
       String team_name_eng = null;
       String team_name_kor = null;
-      
+
       try {
          conn = ConnectionProvider.getConnection();
 
@@ -93,10 +93,10 @@ public class TeamArticleAction implements Action {
       case "Manchester City":
          team_name_kor = "맨체스터 시티";
          break;
-      case "Manchester United ":
+      case "Manchester United":
          team_name_kor = "멘체스터 유나이티드";
          break;
-      case "Newcastle United ":
+      case "Newcastle United":
          team_name_kor = "뉴캐슬 유나이티드";
          break;
       case "Sheffield United":
@@ -105,10 +105,10 @@ public class TeamArticleAction implements Action {
       case "Southampton":
          team_name_kor = "사우스 햄튼";
          break;
-      case "Tottenham Hotspur":
+      case "Tottenham":
          team_name_kor = "토트넘 핫스퍼";
          break;
-      case "West Bromwich":
+      case "West Bromwich Albion":
          team_name_kor = "웨스트 브롬위치";
          break;
       case "West Ham":
@@ -123,17 +123,21 @@ public class TeamArticleAction implements Action {
     		  "E:/project/EPL-Info/chromedriver_win32/chromedriver.exe");
       System.setProperty("webdriver.chrome.driver", path.toString());
 
+      
       ChromeOptions options = new ChromeOptions();
       options.addArguments("--start-maximized");
       options.addArguments("--disable-popup-blocking");
       options.addArguments("--disable-default-apps");
+      //added option
+      // options.addArguments("headless");
 
       ChromeDriver driver = new ChromeDriver(options);
 
+      
       List<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 
       driver.switchTo().window(tabs.get(0));
-
+      
       for(int search_num=1; search_num<=2 ; search_num++) {
          String input_keyword;
          
@@ -160,7 +164,6 @@ public class TeamArticleAction implements Action {
          search.click();
 
          List<WebElement> el1 = driver.findElements(By.className("menu"));
-
          for (int i = 0; i < el1.size(); i++) {
             if (el1.get(i).getText().equals("뉴스")) {
                el1.get(i).click();

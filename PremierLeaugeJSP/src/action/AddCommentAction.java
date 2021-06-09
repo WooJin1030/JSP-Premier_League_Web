@@ -48,17 +48,18 @@ public class AddCommentAction implements Action {
 			LeagueTeamInfoBean tList = service2.select(teamid);
 			String teamname = tList.getName();
 			
-			// String team = request.getParameter("team");
-//			// If the team includes spacing, insert %20 in the middle.
-//			if (team.contains(" ")) {
-//				String[] teamArr = team.split(" ");
-//				String part1 = teamArr[0];
-//				String part2 = teamArr[1]; 
-//				team = part1 + "%20" + part2;
-//			} 
-//			// get team's match info api
-//			// case team is home
-//			ArrayList<MyTeamBean> tList = new ArrayList<MyTeamBean>()
+			// If the team includes spacing, insert %20 in the middle.
+			if (teamname.equals("West Bromwich Albion")) {
+				teamname = "West%20Bromwich%20Albion";
+			}
+			if (teamname.contains(" ")) {
+				String[] teamArr = teamname.split(" ");
+				String part1 = teamArr[0];
+				String part2 = teamArr[1]; 
+				teamname = part1 + "%20" + part2;
+			} 
+			// get team's match info api
+			// case team is home
 			
 			response.sendRedirect("MyTeam.do?team=" + teamname);
 			

@@ -25,9 +25,9 @@ public class HomeAction implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		
 		// league Table
-//		LeagueTableManager service= LeagueTableManager.getInstance();
-//		List<LeagueTableBean> tList = service.getList();
-//		request.setAttribute("leagueTable", tList);
+		LeagueTableManager service= LeagueTableManager.getInstance();
+		List<LeagueTableBean> tList = service.getList();
+		request.setAttribute("leagueTable", tList);
 		
 		// session info
 		HttpSession session = request.getSession();

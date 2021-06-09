@@ -82,7 +82,7 @@ private static JSONArray matchArray = new JSONArray();
 		
 		
 		HttpRequest request = HttpRequest.newBuilder()
-				.uri(URI.create("https://data.football-api.com/v3/matches?comp_id=1204&from_date=30.04.2021&to_date=" + todayDate + "&Authorization=cfnR6LWc4i4MDFLlPJrajoa465c4qjF594kpIy4b"))
+				.uri(URI.create("https://data.football-api.com/v3/matches?comp_id=1204&from_date=30.04.2021&to_date=" + todayDate + "&Authorization=api key"))
 				.method("GET", HttpRequest.BodyPublishers.noBody())
 				.build();
 		HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());

@@ -109,7 +109,6 @@ public class LeagueTeamInfoImpl implements LeagueTeamInfoDAO {
 				return null;
 			}
 		} catch (SQLException e) {
-			System.out.println("fuck");
 			e.printStackTrace();
 		} finally {
 			if (rs != null) {

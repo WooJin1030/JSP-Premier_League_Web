@@ -124,11 +124,11 @@
 	}
 	
 	.sidenav .sidenav__text {
-	    /* margin-top: 50%; */
-	         margin-bottom: 32px;
-	         color: white;
-	     }
-	
+  		margin-top: 32px;
+        margin-bottom: 32px;
+        color: white;
+    }
+
 	.sidenav h3 {
 		color:white;
 		font-size: 16px;
@@ -138,6 +138,15 @@
 	.sidenav .match__recent {
 	 	color: white;
 	
+	}
+	
+	.sidenav .match__recent:hover {
+		transform: scale(1.1);
+		color: gray;
+	}
+	
+	.sidenav .match__date {
+		color: gray;
 	}
 	
 	/* match list */
@@ -152,6 +161,8 @@
 		padding: 16px 24px;
 		margin: 8px 0;
 	}
+	
+
 	
 	/* team main */
 	.main {
